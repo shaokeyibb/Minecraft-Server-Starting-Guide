@@ -1,0 +1,30 @@
+{
+  "name": "minecraft-server-starting-guide",
+  "version": "1.0.0",
+  "description": "The starting guide for newbies who are interested in minecraft server",
+  "main": "index.js",
+  "dependencies": {
+    "markdown-it-footnote": "^3.0.2",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaokeyibb/Minecraft-Server-Starting-Guide.git"
+  },
+  "keywords": [
+    "minecraft",
+    "guide",
+    "minecraft-server"
+  ],
+  "author": "shaokeyibb",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/shaokeyibb/Minecraft-Server-Starting-Guide/issues"
+  },
+  "homepage": "https://github.com/shaokeyibb/Minecraft-Server-Starting-Guide#readme"
+}

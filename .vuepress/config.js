@@ -18,5 +18,12 @@ module.exports = {
         "vuepress-plugin-auto-sidebar": {
             titleMode: "titlecase",
         },
+    },
+    markdown: {
+        plugins: [
+            "footnote",
+            "sup",
+            "sub"
+        ]
     }
 }
