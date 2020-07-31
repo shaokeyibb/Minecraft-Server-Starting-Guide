@@ -522,11 +522,11 @@
   Fabric是**模块化**[^41]的，这意味着他不想高耦合的Forge，每次Minecraft源代码更新就要折腾一阵子推倒重来，他完全可以拆出不兼容的模块，并更换上兼容新版本的模块以快速发布更新，这也是Fabric甚至有针对每一个Minecraft预览版(Snapshot)的支持的原因。
   VanillaFabric则和VanillaForge类似，是基于Vanilla的实现了FabricAPI支持的服务端，他允许你安装FabricMod。
 
-  Fabric 有如下属性:
+  VanillaFabric 有以下属性:
 
-  - 基于Vanilla
-  - **不可以** 安装基于任何API的插件
-  - **可以** 安装基于FabricAPI的模组
+  - 基于 Vanilla
+  - **不可以** 安装基于任何 API 的插件
+  - **可以** 安装基于 FabricAPI 的模组
   - 稳定性较好
   - 性能相对较好
   - 可插拔性强，易于更新
