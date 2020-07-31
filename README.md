@@ -1,22 +1,36 @@
 # [2020]一条龙服务: 开服从入门到精通
 
+
 # 零.前言
 
   之所以想写这一篇一条龙教程，实在是因为国人开服，功利心很重，不需要过程，只需要结果。有的人开服，喜欢网上抓一个整合包就开起来，自己不会改，但是只要能得到“结果”就好了。在这个大环境下，国内服务器圈弥漫着一股粗制滥造和模板化的问题。而真正想从零开始的小白服主，又很难找到一个精准，完全的开服教程，往往要东拼西凑，获得经验。
 
+
   本文的初衷是一条龙服务，为希望认真学习开服技术的小白服主们提供全面的服务。通过循序渐进的方式，通过夹杂着故事的技术讲解，为小白服主们揭开服务端的神秘面纱。
+
 
   本文为本人耗时多天完成，难免有一定纰漏，如有技术上或语言上的问题欢迎指正。同时，本文还会持续更新，如果您有什么不理解的开服问题需要详细了解，也欢迎回复告诉我您的想法。
 
-==请 **务必** 注意查看标注的每一个注释，他们都非常有用==
-==本文 的 面向用户 不是 基岩版服主==
-==本文 不讨论代理服务端==
-==本文 不讨论如何进行端口映射，端口转发等工作==
-==本文 已假设您的操作系统环境均已显示文件拓展名，且改名要求均包含拓展名==
+
+请 **务必** 注意查看标注的每一个注释，他们都非常有用
+
+
+本文 的 面向用户 不是 基岩版服主
+
+
+本文 不讨论代理服务端
+
+
+本文 不讨论如何进行端口映射，端口转发等工作
+
+
+本文 已假设您的操作系统环境均已显示文件拓展名，且改名要求均包含拓展名
+
 
 # 一.服务端核心介绍
 
   所谓`服务端核心`(简称核心，有时也被叫做服务端)是指开服时需要使用的服务端运行核心文件或是补丁安装器，他们一般以.jar后缀结尾，一般情况下，我们可以使用CMD(文件以.bat为结尾)或是Linux Shell(文件以.sh为结尾)运行这样的jar以管理服务器
+
 
 ## 为什么要说"服务端运行核心文件或是补丁安装器"
 
@@ -26,13 +40,13 @@
     但这不是我们要说的补丁安装器，他是用来编译核心的，最终得到的核心属于`服务端运行核心文件`，是包含Minecraft代码的核心文件，那么补丁安装器是什么?
     大家可能已经发现了BuildTools的弊端:麻烦，为了开个服我既要准备编译环境[^3]，又要花差不多半个小时编译一遍核心，慢死了。因此，后来的PaperMC团队使用了一种更灵活的方式糅合服务端核心:`打补丁(patch)`。
     其实很容易理解所谓的打补丁，PaperMC团队会把每一次Paper的更新制作成一个个补丁文件的形式，然后我们可以在Paper官网下载到包含这些补丁的补丁安装器，然后运行补丁安装器，下载原版服务端[^4]文件，安装补丁，生成已打补丁文件并运行（如果你用过，或是即将使用Paper核心，那么可以留心paper服务端运行后会在根目录[^5]的cache文件夹内生成一个mojang_X.X.X.jar和patched.X.X.X.jar，他们便是原版服务端文件和已打补丁文件(已打补丁文件便是包含Minecraft代码的`服务端运行核心文件`)）
-    
 
 [^1]: 指通过某些方式，将已经编译成计算机能够识别并运行的Java字节码文件(.class)还原回Java源代码(.java)的行为
 [^2]: 与反编译相反，是指将Java源代码处理为字节码文件的行为
 [^3]: 指编译时需要准备的前置软件，此处指`Git`
 [^4]: 有关原版服务端的内容请见下文对`Vanilla`服务端核心的介绍
 [^5]: 指服务端核心所在的那一层文件夹，下文可能会以`.\`标识，如`.\cache`即指服务端根目录下的cache文件夹目录
+
 
 ## 什么是CMD，什么又是Linux Shell?为什么我们不能直接双击jar运行服务端核心?
 
@@ -43,19 +57,20 @@
   那么为什么我们要使用这些东西来开服，直接双击jar运行服务端核心不行吗?
   答案是因为有时行，有时不行，而且行的那个也不是很彳亍:对于一部分服务端，当你双击运行服务端核心时，会弹出一个Minecraft官方服务端提供的原生的控制台窗口，但有些服务端是不提供的，直接双击会导致服务端运行但看不到运行状态，也不能向执行命令(而且那个原生的控制台窗口不支持显示颜色)。
 
-
-
 [^6]: 即开放源代码，指向所有人开放软件的源代码并在一定程度上供人们修改
 [^7]: 事实上，不存在Linux操作系统，Linux只是一个内核，因此你用的Linux其实是Linux的发行版，他们基于Linux内核，并实现了不同的功能供你使用(如Ubuntu,CentOS,Debian等)
+
 
 ## 到底有哪些服务端核心
 
   那么说完上面的，那么现在究竟有哪些核心，他们应该怎么区分，又有什么区别呢?
-==注意: 为了方便查阅，我们将会用**粗体**表示推荐使用的服务端核心，使用*斜体*表示另类，冷门，不推荐使用的服务端核心==
-==注意:此处我们只会介绍目前还在积极更新的，或是有一定历史意义的服务端核心，对于刚出生就夭寿的，无意义的服务端，此处不多赘述==
+注意: 为了方便查阅，我们将会用**粗体**表示推荐使用的服务端核心，使用*斜体*表示另类，冷门，不推荐使用的服务端核心
+注意:此处我们只会介绍目前还在积极更新的，或是有一定历史意义的服务端核心，对于刚出生就夭寿的，无意义的服务端，此处不多赘述
+
 
 1.Vanilla
   对于Java版来说，绝大多数服务端的始祖便是Mojang提供的官方服务端了，按照习惯，我们把官服叫做Vanilla(香草，代指纯净)，其实他本身的名字应该是Minecraft_Server(但是大多数情况下我们不会用这个Server)
+
   Vanilla 有以下的属性
 
   - **不能** 安装基于任何API的模组[^8]
@@ -65,45 +80,51 @@
   - 即开即用
   - 性能较差
 
+
   根据以上属性，我们可以发现Vanilla基本上啥都干不了，就是原生兼容好，因此比较适合开**适合原版的服务器**(比如**玩玩命令方块小游戏地图啊，基友联机啊**之类的)
 
+
   下载Vanilla: 
-      1. 前往正版启动器手动选择版本下载
-      2. 前往第三方下载站下载（如GetBukkit:https://getbukkit.org/download/vanilla）
 
-
+    1. 前往正版启动器手动选择版本下载
+    2. 前往第三方下载站下载（如GetBukkit:https://getbukkit.org/download/vanilla）
 
 [^8]: 此处指基于ForgeAPI，LiteLoaderAPI，RiftAPI，FabricAPI等API开发的模组(Mod)。如果你无法理解，或是从未使用过该服务端所兼容的ModAPI，那么我建议你不要使用此服务端开服
 [^9]: 此处指基于BukkitAPI，SpongeAPI或是其他API开发的插件(Plugin)。如果你无法理解，或是从未使用过该服务端所兼容的PluginAPI，那么也没关系，船到桥头自然直，毕竟我们讲的就是这个
 
+
 *2.CraftBukkit(有时被称为Bukkit[^10])*
   这可不太好，因为仅用Vanilla我们无法快速，高效的从底层[^11]拓展游戏内容，因此，我们急需一个"窗口"，能够让有开发能力的服主通过这个窗口深入Minecraft，拓展MC内容。于是，CraftBukkit带着BukkitAPI出现在了我们的面前。
-  CraftBukkit是一个包含了BukkitAPI的服务端，这意味着开发者们可以通过BukkitAPI提供的(有限的)内容来拓展服务器逻辑，增强游戏性。不同的开发者们把包含不同额外功能的拓展内容使用.jar文件包装起来，以让我们把这些文件放入CraftBukkit独有[^12]的插件文件夹(`.\plugins`)加载不同的功能。这些东西就叫做**插件**
-  CraftBukkit 有以下的属性
+  CraftBukkit是一个包含了BukkitAPI的服务端，这意味着开发者们可以通过BukkitAPI提供的(有限的)内容来拓展服务器逻辑，增强游戏性。不同的开发者们把包含不同额外功能的拓展内容使用.jar文件包装起来，以让我们把这些文件放入CraftBukkit独有[^12]的插件文件夹(`.\plugins`)加载不同的功能。这些东西就叫做**插件**。
+
+  CraftBukkit 有以下的属性:
 
   - 基于Vanilla
   - **可以** 安装基于BukkitAPI的插件
   - **基本不可以** 安装基于任何API的模组[^13]
   - 性能较差
 
+
   *为什么不推荐?:CraftBukkit虽然是跨时代性的，但他和Vanilla的性能一样差(甚至更差)，因此在后来的日子里诞生了很多自带优化的服务端，CraftBukkit对于我们来说只是一个过去时代的丰碑罢了，并不能满足实际使用需求了*
   *讲个题外话，CraftBukkit曾经的开发者现在要么离开了自己心爱的项目，要么去了SpigotMC团队，有一个人挺不寻常，他叫Searge，他最后收到了Mojang的邀请，前去开发Minecraft了。对于有的Mod开发者来说，你应当知道Mod Code Pack(MCP)也是由Searge等人发起的，而MCP使用的映射名"Srg名"，也是为了纪念Searge这位巨佬*
 
+
   下载CraftBukkit: 
-      1. BukkitDev官方:~~http://dl.bukkit.org/~~ (由于Mojang EULA和DMCA的要求，已停止服务)
-      2. SpigotMC官方:https://hub.spigotmc.org/jenkins/job/BuildTools/ (CraftBukkit不直接提供，你只能通过BuildTools手动构建)
-      3. 使用第三方下载站下载已经构建好的CraftBukkit（如GetBukkit:https://getbukkit.org/download/craftbukkit）
 
-
+    1. BukkitDev官方:~~http://dl.bukkit.org/~~ (由于Mojang EULA和DMCA的要求，已停止服务)
+    2. SpigotMC官方:https://hub.spigotmc.org/jenkins/job/BuildTools/ (CraftBukkit不直接提供，你只能通过BuildTools手动构建)
+    3. 使用第三方下载站下载已经构建好的CraftBukkit（如GetBukkit:https://getbukkit.org/download/craftbukkit）
 
 [^10]: 把CraftBukkit称作Bukkit其实是不负责任的，Bukkit其实是一个规范，他仅包含接口，不包含实现，我们不应将两者划等号
 [^11]: 本指原始代码，此处指从代码层面修改游戏内容
 [^12]: 这里是指在当时，不是指现在
 [^13]: 为什么说是`基本`呢?因为其实在1.6时代有一个叫做PlayerAPI的玩意允许你配合CraftBukkit玩一些类似于灵活动作的玩意，不过现在早已销声匿迹了
 
+
 3.Spigot
-  CraftBukkit是挺好，但是他性能和Vanilla一样捉急，甚至装多了插件还可能会更差，人们急切需要一个能够优化服务端处理逻辑，提升服务器性能的服务端，曾经有过多种这样的服务端，有的可能优化了TNT爆炸逻辑，有的可能优化了耕田逻辑，但是活到最后的，是包含了他们之中绝大部分优化功能的**Spigot**
-  Spigot由SpigotMC团队开发，可以说是CraftBukkit的正统续作，他不仅完全兼容BukkitAPI规范，还提供了更多独有的开发API[^14]，最重要的是，这个服务端优化很好，因此十分稳定
+  CraftBukkit是挺好，但是他性能和Vanilla一样捉急，甚至装多了插件还可能会更差，人们急切需要一个能够优化服务端处理逻辑，提升服务器性能的服务端，曾经有过多种这样的服务端，有的可能优化了TNT爆炸逻辑，有的可能优化了耕田逻辑，但是活到最后的，是包含了他们之中绝大部分优化功能的**Spigot**。
+  Spigot由SpigotMC团队开发，可以说是CraftBukkit的正统续作，他不仅完全兼容BukkitAPI规范，还提供了更多独有的开发API[^14]，最重要的是，这个服务端优化很好，因此十分稳定。
+
   Spigot 有以下的属性:
 
   - 基于CraftBukkit
@@ -112,15 +133,18 @@
   - 稳定性好
   - 性能较好
 
+
   下载Spigot:
-      1.SpigotMC官方:https://hub.spigotmc.org/jenkins/job/BuildTools/ (Spigot不直接提供，你只能通过BuildTools手动构建)
-      2. 使用第三方下载站下载已经构建好的Spigot（如GetBukkit:https://getbukkit.org/download/spigot）
 
+    1. SpigotMC官方:https://hub.spigotmc.org/jenkins/job/BuildTools/ (Spigot不直接提供，你只能通过BuildTools手动构建)
+    2. 使用第三方下载站下载已经构建好的Spigot（如GetBukkit:https://getbukkit.org/download/spigot）
 
-    [^14]:Spigot提供的独有API被称作SpigotAPI，其独立于CraftBukkit原生的BukkitAPI(虽然CraftBukkit现在由SpigotMC同时维护，但依然把一些API分开了)，后面要提的Paper服务端也同样提供了PaperAPI，同SpigotAPI和BukkitAPI隔离了起来。这也是服主们开服时某些插件在不同的服务端有不同的运行情况(有的能用有的不能了)的原因。此处独有也是指在当时，现在只要基于Spigot的核心都应支持SpigotAPI
+[^14]: Spigot提供的独有API被称作SpigotAPI，其独立于CraftBukkit原生的BukkitAPI(虽然CraftBukkit现在由SpigotMC同时维护，但依然把一些API分开了)，后面要提的Paper服务端也同样提供了PaperAPI，同SpigotAPI和BukkitAPI隔离了起来。这也是服主们开服时某些插件在不同的服务端有不同的运行情况(有的能用有的不能了)的原因。此处独有也是指在当时，现在只要基于Spigot的核心都应支持SpigotAPI
+
 
 **4.Paper(曾用名PaperSpigot，有时被称为PaperClip[^15])**
   一方面是认为Spigot更新太慢了，又一方面是认为Spigot的BuildTools太麻烦了，还一方面是因为Spigot的优化还 不 够 劲，因此，一群人创建了Paper。
+
   Paper 有以下的属性:
 
   - 基于Spigot
@@ -134,12 +158,13 @@
   - 构建、使用方便
   - 搭载了较为先进的Aikar's Timings®性能分析系统[^19]
 
+
 *为什么推荐?:Paper是一个兼具稳定，性能，拓展的服务端核心，不仅提供了很多有效的优化，更有很多自定义选项供服主选择，几乎100%兼容BukkitAPI插件也是人们选择Paper的主要原因*
 
+
   下载Paper:
-    1.PaperMC官方: https://papermc.io/downloads (对于旧版本核心，你可以前往页末的`LEGACY`标签下载不受支持的旧版的Paper核心
 
-
+    1. PaperMC官方: https://papermc.io/downloads (对于旧版本核心，你可以前往页末的`LEGACY`标签下载不受支持的旧版的Paper核心
 
 [^15]: 此处PaperClip应当指的是Paper的**补丁安装器**，不含Paper核心本体，但因为用补丁安装器安装补丁并启动服务器基本感觉是一气呵成的所以大家总是把PaperClip当做Paper本体
 [^16]: 之所以说部分支持，是因为大部分版本Spigot是把这个丑到爆炸的控制台删掉了的(即只能使用CMD或Linux Shell开服)，但自某个高于1.15的版本起，Paper又恢复了这个控制台以防你手贱双击打开了JAR但没有办法操控服务器，但这会导致在你不指定`nogui`参数时用命令行开服依然会把那个控制台给召唤出来
@@ -147,12 +172,14 @@
 [^18]: Hey，也许你是一个生电玩家转生的新手服主，希望开一个生电服，如果如此，请切记**不要**使用Paper，Paper内含对包括0tick等Minecraft原版"特性"的修复，可能会导致你和你的玩家感到疑惑，因此，你应当使用**Spigot**
 [^19]: Timings是一种自Spigot开始自带的性能分析器，允许你通过一个网页查看一段时间内服务器的总耗能情况，据此推断出哪些插件，或是哪些世界，或是哪些生物卡服。Spigot也有Timings，但是是旧版的，一般称作Spigot Timings，虽也是由Aikar设计但是网页界面观感和功能都相差甚远。Aikar's Timings同时也搭载在Sponge核心中
 
+
 5.Tuinity
   众所周知，Paper是开源的，那么这意味着，所有人都可以通过Paper所在的代码托管网站*Github*向PaperMC团队提交各种各样的漏洞修复/性能优化代码，而PaperMC团队也可以选择性的将这些代码合并到自己的项目中，完成一次协作。前往Paper的Github的 [Pull Request](https://github.com/PaperMC/Paper/pulls) 界面，你可以看到这里依然还有超过60个的代码合并请求尚在活跃状态但未被PaperMC团队合并。这些提交中可能包含着诸如视距优化这样的刚需，也包含对开发者有益的API更新。
   但Paper就是不合并，你也没办法。
   因此，一名叫做*Spottedleaf*的大佬站了出来，Fork[^20]了Paper的仓库，然后把那一堆PR[^21]全合并了，又作了一些改动，最后，Tuinity横空出世了
   曾经一段时间内，Tuinity仅支持JRE11[^22]作为其运行环境 但现在Tuinity只需JRE8+即可运行
   启动Tuinity会生成tuinity.yml，在其中可设置单玩家怪物生成，分离视距等高级参数。即使你不会设置这些参数，Tuinity自身自带的一个个优化也足以你的服务器使用。
+
   Tuinity 有以下的属性:
 
   - 基于Paper
@@ -162,14 +189,15 @@
   - 更新较快
   - 较为稳定
 
+
   下载Tuinity:
-    1.:CodeMC自动构建站: https://ci.codemc.io/job/Spottedleaf/job/Tuinity/
 
-
+    1. CodeMC自动构建站: https://ci.codemc.io/job/Spottedleaf/job/Tuinity/
 
 [^20]: 指使用Git克隆(拷贝)别人的代码仓库到自己的名下的行为
 [^21]: 即Pull Request，拉取请求，就是上面说的那些希望合并的代码
 [^22]: 即Java Runtime Environment(Version 11)，Java11的运行环境。同理，后文中JRE8+也指Java8以上的运行环境
+
 
 6.Akarin/Torch[^23]
   用*Akarin Project*开发者们的原话来说，Akarin是一个 **"来自新纬度的服务端"** *(A server software from the 'new dimension'.)*，其本质原因是Akarin以 **多线程** *(Multi-Threaded)*著称。
@@ -177,7 +205,8 @@
   在Akarin之前，绝大多数的服务端的核心任务都是由主线程这一条线程完成的，如果同时有很多事情要做，那么他得做完了一个再做另外一个，这就会引起卡顿，如果做的这件事情无线重复，或是要花费太长时间以至于连服务器的基本运行事件都给挡住了，那么就会引起**堵塞**，导致服务器瞬卡甚至崩溃。
   通过使用Akarin，我们可以将主线程本应完成的动作转移到其他子线程同时执行，极大的减缓了服务器压力。
   当然，因为这是一个新技术，同时让一个本不兼容多线程的东西兼容多线程是一个很难的工程，因此总会有不稳定因素。
-Akarin 有如下的属性:
+
+  Akarin 有如下的属性:
 
   - 基于Paper/Tuinity[^24]
   - **可以** 安装基于BukkitAPI,SpigotAPI,PaperAPI，**可能可以**安装基于TuinityAPI的插件
@@ -187,35 +216,39 @@ Akarin 有如下的属性:
   - 更新不快
   - 不太稳定
 
+
   下载Akarin:
-    1.Github Actions: https://github.com/Akarin-project/Akarin/actions
-    2.JosephWorks Jenkins: http://josephworks.ddns.net:8080/job/Akarin-project/
 
-
+    1. Github Actions: https://github.com/Akarin-project/Akarin/actions
+    2. JosephWorks Jenkins: http://josephworks.ddns.net:8080/job/Akarin-project/
 
 [^23]: Torch，前称TorchSpigot，是一个支持1.8.8的优化核心，是Akarin服务端的前身。由于在部分代码和统计系统上，Akarin仍使用*"Torch"*表示Akarin服务端，因此这里同时将Torch写上
 [^24]: 自1.14开始，Akarin开始使用*Tuinity*作为其项目前置，而不是原来的*Paper*，同时因此该服务端对不同API的插件兼容性需注意使用的服务端版本
 
+
 如果你看到了这里，那么恭喜你，你已经结束了所有**主流**BukkitAPI系服务端的介绍，接下来是一些搭载ForgeAPI或FabricAPI的模组服务端，两个基于SpongeAPI的服务端和两个魔怔猎奇基于其他API的服务端介绍，如果你不需要了解这些，请直接跳到下一节。
+
 
 7.VanillaForge
   让我们把视线调转回刚开始的Vanilla，如果说Bukkit让修改服务端变成了可能，那么就一定有一个技术能够让修改客户端变为可能，那么这个可能就是Forge。
   VanillaForge则是一个Vanilla+ForgeAPI的服务端，他允许你像服务端安装ForgeMod，处理自定义物品，自定义方块，自定义实体操作。
+
   VanillaForge 有如下的属性:
 
-   - 基于Vanilla
-     - **不可以** 安装基于任何API的插件
-       - **可以** 安装基于ForgeAPI的模组
-       - 稳定性较好
-       - 性能较差
-       - 可插拔性强，易于更新[^25]
+  - 基于Vanilla
+  - **不可以** 安装基于任何API的插件
+  - **可以** 安装基于ForgeAPI的模组
+  - 稳定性较好
+  - 性能较差
+  - 可插拔性强，易于更新[^25]
+
 
   下载VanillaForge:
-    1.前往Forge官网下载Forge Installer，并选择install server模式，将安装目录指向运行过一次的Vanilla服务端: http://files.minecraftforge.net/
 
-
+    1. 前往Forge官网下载Forge Installer，并选择install server模式，将安装目录指向运行过一次的Vanilla服务端: http://files.minecraftforge.net/
 
 [^25]: 为什么要可以强调“可插拔性强，易于更新”呢，因为后面你将会看到，所有BukkitAPI+ForgeAPI的服务端（甚至Sponge系服务端)都需要糅合自己的API和ForgeAPI的代码，这导致Forge的部分代码和库是强制写死在服务端上的，你不能手动更新Forge版本。但VanillaForge只支持ForgeAPI，因此没有这个问题
+
 
 *8.Cauldron/MCPC+*
   “但是老弟你看，你这个逻辑有问题啊，我是可以加Forge模组了，但我还想加Bukkit插件啊，你那个VanillaForge什么的搞不了插件啊”
@@ -224,120 +257,152 @@ Akarin 有如下的属性:
     答案是当然，最初搞出来这个玩意的服务端叫做MCPC+，自1.7.10起改名为Cauldron。
     但是很遗憾，因为糅合代码是个技术活，而且你也看到了，“糅合”，这是不符合Mojang EULA和DMCA规定的，因此Cauldron自1.7.10起停更，不再支持后面的版本。
     同时你也将看到，由于“糅合”的复杂性和难以维护性，因此每一个BukkitAPI+ForgeAPI服务端几乎都只维护一个主流版本，这也是此类服务端遍地开花的一个主要原因。
+
     Cauldron 有如下的属性:
-      - 已停更
-      - 基于Spigot
-      - **可以** 安装基于BukkitAPI,SpigotAPI的插件
-      - **可以** 安装基于ForgeAPI的模组
-      - ==支持至最高1.7.10==
+    - 已停更
+    - 基于Spigot
+    - **可以** 安装基于BukkitAPI,SpigotAPI的插件
+    - **可以** 安装基于ForgeAPI的模组
+    - 支持至最高1.7.10
+
 
 *为什么不推荐?:同CraftBukkit一样，Cauldron也已然成为了一个时代的奠基人和里程碑，其原始的完整代码仓库现在甚至无法被找到，我们也只能在各式各样的第三方构建站看到他的身影。只闻其声，不闻其形。*
 
+
   下载Cauldron:
-    1.前往第三方构建站下载
+
+    1. 前往第三方构建站下载
+
 
 9.KCauldron
   KCauldron是Cauldron的优化版/继承。
+
   KCauldron 有如下的属性:   
 
-   - 已停更
-     - 基于Cauldron
-       - **可以** 安装基于BukkitAPI,SpigotAPI的插件
-       - **可以** 安装基于ForgeAPI的模组
-       - ==仅支持1.7.10==
+  - 已停更
+  - 基于Cauldron
+  - **可以** 安装基于BukkitAPI,SpigotAPI的插件
+  - **可以** 安装基于ForgeAPI的模组
+  - 仅支持1.7.10
+
 
   下载KCauldron:
     1.前往第三方构建站下载
 
+
 10.Thermos
   Thermos是KCauldron的优化版。
+
   Thermos 有如下的属性:
-    - 已停更
-    - 基于KCauldron
-    - **可以** 安装基于BukkitAPI,SpigotAPI的插件
-    - **可以** 安装基于ForgeAPI的模组
-    - ==仅支持1.7.10==
+
+  - 已停更
+  - 基于KCauldron
+  - **可以** 安装基于BukkitAPI,SpigotAPI的插件
+  - **可以** 安装基于ForgeAPI的模组
+  - 仅支持1.7.10
+
 
   下载Thermos:
-    1.Github Releases: https://github.com/CyberdyneCC/Thermos/releases
+
+    1. Github Releases: https://github.com/CyberdyneCC/Thermos/releases
+
 
 11.Contigo
   Contigo是Thermos的优化版/继承。
+
   Contigo 有如下的属性:
-    - 已停更
-    - 基于Thermos
-    - **可以** 安装基于BukkitAPI,SpigotAPI的插件
-    - **可以** 安装基于ForgeAPI的模组
-    - ==仅支持1.7.10==
+
+  - 已停更
+  - 基于Thermos
+  - **可以** 安装基于BukkitAPI,SpigotAPI的插件
+  - **可以** 安装基于ForgeAPI的模组
+  - 仅支持1.7.10
+
 
   下载Contigo:
-    1.Github Releases: https://github.com/djoveryde/Contigo/releases
+
+    1. Github Releases: https://github.com/djoveryde/Contigo/releases
+
 
 12.Uranium
   Uranium是一款基于KCauldron的BukkitAPI+ForgeAPI服务端，其整合了部分Thermos对服务端的修复，同时进行了一些输入书与笔虚体问题的BUG修复。其最大的特点[^26]是强制使用UTF-8编码作为配置文件编码[^27]和通过UraniumPlus Mod令1.7.10客户端支持Title和Actionbar[^28]。
+
   Uranium 有如下的属性:
-        - 基于KCauldron
-        - **可以** 安装基于BukkitAPI,SpigotAPI的插件
-        - **可以** 安装基于ForgeAPI的模组
-        - ==仅支持1.7.10==
+
+  - 基于KCauldron
+  - **可以** 安装基于BukkitAPI,SpigotAPI的插件
+  - **可以** 安装基于ForgeAPI的模组
+  - 仅支持1.7.10
+
 
   下载Uranium:
-    1.Jenkins CI: https://ci.uraniummc.cc/job/Uranium-dev/
 
-
+    1. Jenkins CI: https://ci.uraniummc.cc/job/Uranium-dev/
 
 [^26]: 仅代表个人观点
 [^27]: 事实上，我们看到的所有文本，其内容都是经过编码存储在计算机上的，对于Minecraft服务端来说，在1.7.10-版本，Windows使用ANSI编码，而Linux使用UTF-8编码，这引起了诸多不便，因此Uranium强制在所有操作系统上运行该服务端，文件编码均为UTF-8，简化了使用流程
 [^28]: Title是自1.8引入的，在客户端上显示大标题和副标题的功能;Actionbar是自1.8引入的，在客户端物品栏上方显示字幕的功能
 
+
 **13.CatServer**
   此时聪明的网友已经发现了一个问题:怎么上面的BukkitAPI+ForgeAPI服务端都只支持1.7.10啊，有没有支持高版本的?
   答案很显然是肯定的，CatServer就是在那样的大环境下诞生的服务端，他支持1.12.2的BukkitAPI+ForgeAPI，发展至今已十分稳定，同时也拥有独特的优化和BUG修复。
+
   CatServer 有如下的属性:
-        - 基于Spigot
-        - **可以** 安装基于BukkitAPI,SpigotAPI的插件
-        - **可以** 安装基于ForgeAPI的模组
-        - 稳定性好
-        - 性能较好
-        - 更新较快
-        - ==仅支持1.12.2==
+
+  - 基于Spigot
+  - **可以** 安装基于BukkitAPI,SpigotAPI的插件
+  - **可以** 安装基于ForgeAPI的模组
+  - 稳定性好
+  - 性能较好
+  - 更新较快
+  - 仅支持1.12.2
 
 *为什么推荐?:CatServer历经多年的打磨，其已经非常稳定，同时因为1.12.2版本从技术上讲依然是一个稳定的年轻版本，因此使用CatServer开Mod服或许是你的不二之选*
 *又一个题外话:如果你刚入服主圈，那么你可能不知道，由于作为第一个支持高版本的BukkitAPI+ForgeAPI服务端，CatServer有过一段艰苦，黑暗的发展历史，从“抄袭风波”到收购风波，从付费风波再到“后门风波”，CatServer曾有过一段饱受诟病的日子，甚至还和下面某些服务端作者产生过争执......笔者作为那段时代的亲历者，只能用一句话来形容那时:
   “黑，真他妈的黑啊”*
 
+
   下载CatServer:
-    1.Github Releases: https://github.com/Luohuayu/CatServer/releases
+
+    1. Github Releases: https://github.com/Luohuayu/CatServer/releases
+
   下载CatServer-Async[^29]:
-    1.Github Releases: https://github.com/Luohuayu/CatServer/releases/tag/Async-final
 
-
+    1. Github Releases: https://github.com/Luohuayu/CatServer/releases/tag/Async-final
 
 [^29]: 即CatServer的多线程版本，用开发者的话来说，“由于多线程版存在过多兼容性问题无法修复, 不再提供更新, 也不推荐使用.”，该版本最后停更于`Mar 19,2020`。本文笔者也不推荐使用此版本
+
 
 14.Mohist(曾用名PFCraft)
   Mohist和下面的Magma一样，都有一点“另类”，他们本体基于Paper，而不是Spigot，这意味着这两个服务端不仅可以享受Paper带来的漏洞修复和优化，还可以让你轻松使用基于PaperAPI开发的插件。
   但这还没完，Mohist还支持控制台信息国际化[^30]，可选择服务端Mod语言[^31]，内置插件管理器[^32]，NMS向下兼容[^33]等等非常实用的功能！同时，其开发者正在开发的Mohist-BungeeCord可以让你在跨服使用Mohist时减少各种问题[^34]。
   但是很遗憾，由于Mohist本身工程量大难以维护，也由于Mohist开发组重组，近几个月内的Mohist稳定性并不是很好。
+
   Mohist 有如下的属性:
-        - 基于Paper
-        - **可以** 安装基于BukkitAPI,SpigotAPI,PaperAPI的插件
-        - **可以** 安装基于ForgeAPI的模组
-        - 稳定性较差
-        - 性能较好
-        - 更新较快
-        - 控制台/模组本地化支持
-        - 内置插件管理器
-        - NMS向下兼容
-        - ==支持1.12.2,1.15.2==[^35]
+
+  - 基于Paper
+  - **可以** 安装基于BukkitAPI,SpigotAPI,PaperAPI的插件
+  - **可以** 安装基于ForgeAPI的模组
+  - 稳定性较差
+  - 性能较好
+  - 更新较快
+  - 控制台/模组本地化支持
+  - 内置插件管理器
+  - NMS向下兼容
+  - 支持1.12.2,1.15.2[^35]
+
 
 *说个题外话:笔者曾有幸参与了Mohist控制台信息的简体中文、繁体中文本地化工作，并亲眼见证了Mohist从使用高峰到现在的开发过程。Mohist的原开发者Mgazul是个好人，而且能在家庭条件十分有限的情况下，开发出Mohist并开源供大家使用，可以说是我们这个圈子的幸运。*
 
-  下载Mohist-1.12.2:
-    1.CodeMC Jenkins CI: https://ci.codemc.io/job/Mohist-Community/job/Mohist-1.12.2/
-  下载Mohist-1.15.2:
-    1.CodeMC Jenkins CI: https://ci.codemc.io/job/Mohist-Community/job/Mohist-1.15.2/
 
+  下载Mohist-1.12.2:
+
+    1. CodeMC Jenkins CI: https://ci.codemc.io/job/Mohist-Community/job/Mohist-1.12.2/
+
+  下载Mohist-1.15.2:
+
+    1. CodeMC Jenkins CI: https://ci.codemc.io/job/Mohist-Community/job/Mohist-1.15.2/
 
 
 [^30]: 该功能会自动本地化控制台信息，为你展示你能看得懂文字(Mohist现支持简体中文和繁体中文的控制台本地化)，效果大约如下:
@@ -350,52 +415,67 @@ Akarin 有如下的属性:
 [^34]: 有关BungeeCord等跨服代理的内容超出了本文的范围，故不多赘述
 [^35]: 有消息称Mohist开发组正在研发/测试1.16.x版本的Mohist，且Mohist代码仓库中确实存在标签为"1.16.x"的代码分支(空仓库)
 
+
 15.Magma
   Magma同样是一个基于Paper[^36]的BukkitAPI+ForgeAPI服务端。
+
   Magma 有如下的属性:
-        - 基于Paper
-        - **可以** 安装基于BukkitAPI,SpigotAPI,PaperAPI[^36]的插件
-        - **可以** 安装基于ForgeAPI的模组
-        - 稳定性较好
-        - 性能较好
-        - 更新较快
-        - ==支持1.12.2,1.15.2==[^37]
+
+  - 基于Paper
+  - **可以** 安装基于BukkitAPI,SpigotAPI,PaperAPI[^36]的插件
+  - **可以** 安装基于ForgeAPI的模组
+  - 稳定性较好
+  - 性能较好
+  - 更新较快
+  - 支持1.12.2,1.15.2[^37]
+
 
   下载Magma-1.12.2:
-    1.Github Releases: https://github.com/magmafoundation/Magma/releases (稳定版，请下载-server结尾的版本，-installer结尾的版本暂无法使用)
-    2.Jenkins CI: https://ci.hexeption.dev/job/Magma%20Foundation/job/Magma/job/master/ (开发版)
+
+    1. Github Releases: https://github.com/magmafoundation/Magma/releases (稳定版，请下载-server结尾的版本，-installer结尾的版本暂无法使用)
+    2. Jenkins CI: https://ci.hexeption.dev/job/Magma%20Foundation/job/Magma/job/master/ (开发版)
+
   下载Magma-1.12.2-全Paper特性支持版:
-    1.Jenkins CI: https://ci.hexeption.dev/job/Magma%20Foundation/job/Magma/job/feature%252Ffull-paper-support/ (开发版)
+
+    1. Jenkins CI: https://ci.hexeption.dev/job/Magma%20Foundation/job/Magma/job/feature%252Ffull-paper-support/ (开发版)
+
   下载Magma-1.15.2:
-    1.Jenkins CI: https://ci.hexeption.dev/job/Magma%20Foundation/job/Magma-1.15.x/job/1.15.x/lastSuccessfulBuild/ (开发版)
 
-
+    1. Jenkins CI: https://ci.hexeption.dev/job/Magma%20Foundation/job/Magma-1.15.x/job/1.15.x/lastSuccessfulBuild/ (开发版)
 
 [^36]: Magma的主要发行版本并未应用所有PaperAPI和Paper的补丁，这可能会带来一些问题
 [^37]: 根据Magma项目说明，Magma尚在积极开发对1.16版本的支持，同时，Magma-1.15.2目前仅处于Beta测试版阶段，可能尚不稳定
 
+
 16.Arclight
   Arclight是一款由 @海螺螺 开发的“在 Forge 上使用 Mixin 实现的 Bukkit 服务端”，提供了1.14.4和1.15.2两个高版本的BukkitAPI+ForgeAPI支持
+
   Arclight 有如下的属性:
-        - 基于Spigot
-        - **可以** 安装基于BukkitAPI,SpigotAPI的插件
-        - **可以** 安装基于ForgeAPI的模组
-        - 稳定性相对较好
-        - 性能较好
-        - 更新较快
-        - ==支持1.14.4,1.15.2==
+
+  - 基于Spigot
+  - **可以** 安装基于BukkitAPI,SpigotAPI的插件
+  - **可以** 安装基于ForgeAPI的模组
+  - 稳定性相对较好
+  - 性能较好
+  - 更新较快
+  - 支持1.14.4,1.15.2
+
 
   下载Arclight(1.14.4,1.15.2):
-    1.Github Releases: https://github.com/IzzelAliz/Arclight/releases
-    2.AppVeyor CI: https://ci.appveyor.com/project/IzzelAliz/arclight/build/artifacts
+
+    1. Github Releases: https://github.com/IzzelAliz/Arclight/releases
+    2. AppVeyor CI: https://ci.appveyor.com/project/IzzelAliz/arclight/build/artifacts
+
 
 如果你看到了这里，那么恭喜你已经结束了所有**主流**BukkitAPI+ForgeAPI服务端的学习，接下来是一些搭载FabricAPI的模组服务端，两个基于SpongeAPI的服务端和两个魔怔猎奇基于其他API的服务端介绍，如果你不需要了解这些，请直接跳到下一节。
+
 
 17.SpongeVanilla&SpongeForge
   让我们再将目光转回CraftBukkit时期。一群人做出BukkitAPI以后，发现这个东西实在是太垃圾了:对Mod兼容性差，没有开发文档，代码规范随意，这不是他们想要的那个API。于是，一群人离开了Bukkit开发团队，转而开始制作他们心目中的那个完美的API框架——幸运的是，他们做出来了，这就是SpongeAPI和他的服务端实现:Sponge
   Sponge分为SpongeVanilla和SpongeForge两个版本:前者需要与Vanilla一起使用，他通过注入[^38]的方式，允许你在Vanilla服务端上安装基于SpongeAPI的插件；后者实现在Forge上，允许你在VanillaForge上安装基于SpongeAPI的插件（同时享受安装基于ForgeAPI的模组），需要提到的是，在SpongeForge中，其其实是作为一个**ForgeMod**来使用（即将其放入`.\mods`中并启动服务端），而非作为一个完整的服务端运行核心文件。
   很遗憾的是，由于生不逢时，Sponge并没有得到大多数开发者的支持，因此基于SpongeAPI开发的插件少之甚少，主流BukkitAPI插件迁移至SpongeAPI的更是屈指可数，因此对于普通服主来说，使用Sponge会导致在插件支持上落后于Bukkit使用者。
   同时，由于自1.13起，由于Minecraft源代码的大幅度改动导致ForgeAPI大幅度改动其代码，致使Sponge始终难以兼容1.13+版本，直到最近才发布了对*1.14.4*版本的支持
+
   SpongeVanilla 有如下属性:
 
   - **可以** 安装基于Sponge的插件
@@ -405,8 +485,11 @@ Akarin 有如下的属性:
   - 稳定性很好
   - 社区支持友好
   - 插件生态较差
-  - ==支持至最高1.14.4==
+  - 支持至最高1.14.4
+
+
     SpongeForge 有如下属性:
+
   - 基于ForgeAPI
   - **可以** 安装基于SpongeAPI的插件
   - **可以** 安装基于ForgeAPI的模组  
@@ -416,18 +499,21 @@ Akarin 有如下的属性:
   - 社区支持友好
   - 插件生态较差
   - 对模组兼容性极佳
-  - ==支持至最高1.14.4==
+  - 支持至最高1.14.4
+
 
   下载SpongeVanilla:
-    1.SpongePowered官方: https://www.spongepowered.org/downloads/spongevanilla/stable/
+
+    1. SpongePowered官方: https://www.spongepowered.org/downloads/spongevanilla/stable/
+
   下载SpongeForge: 
-    1.SpongePowered官方: https://www.spongepowered.org/downloads/spongeforge/stable/
-    
+
+    1. SpongePowered官方: https://www.spongepowered.org/downloads/spongeforge/stable/
+
 *题外话:曾经有一段时间，Sponge是市面上唯一一个支持1.8+高版本插件+模组的服务端，当Bukkit阵营始终停留在1.7.10时，已经支持之1.12.2的Sponge收到了大部分神奇宝贝服服主的欢迎——直到CatServer的发布*
 
-
-
 [^38]: 是一种将自定义代码导入到已有的计算机程序内，从而改变原程序的行为的行为
+
 
 18.VanillaFabric
   前面我们提到了`由于自1.13起，Minecraft源代码的大幅度改动`，这导致了CraftBukkit/Spigot，Sponge，Forge等项目分别出现了时常不同的窗口期，这段时间内这些项目都没有发布对新版本的支持。Sponge最为严重，直至今日还未发布对1.13版本的支持，其次是Forge，直至Minecraft发布1.14版本Forge都没有发布甚至是一个预览版本的Forge1.13，且当后来Forge1.13(.2)终于发布后，直至今日，Forge1.13(.2)都未发布一个稳定版。
@@ -435,33 +521,40 @@ Akarin 有如下的属性:
   Fabric和Rift不同，他不是在那段窗口期诞生的替代产品，他早自1.12时代就已出现，只不过和Sponge一样同样生不逢时，虽然设计先进，但大多数开发者当时依然只依赖于Forge开发模组而不是Fabric，知道窗口期的来临，Fabric才得以重获新生，得到了一部分开发者的支持[^40]。
   Fabric是**模块化**[^41]的，这意味着他不想高耦合的Forge，每次Minecraft源代码更新就要折腾一阵子推倒重来，他完全可以拆出不兼容的模块，并更换上兼容新版本的模块以快速发布更新，这也是Fabric甚至有针对每一个Minecraft预览版(Snapshot)的支持的原因。
   VanillaFabric则和VanillaForge类似，是基于Vanilla的实现了FabricAPI支持的服务端，他允许你安装FabricMod。
+
   Fabric 有如下属性:
-    - 基于Vanilla
-    - **不可以** 安装基于任何API的插件
-    - **可以** 安装基于FabricAPI的模组
-    - 稳定性较好
-    - 性能相对较好
-    - 可插拔性强，易于更新
+
+  - 基于Vanilla
+  - **不可以** 安装基于任何API的插件
+  - **可以** 安装基于FabricAPI的模组
+  - 稳定性较好
+  - 性能相对较好
+  - 可插拔性强，易于更新
+
 
   下载VanillaFabric:
-    1.前往Fabric官网下载Fabric Installer，并选择install server模式，将安装目录指向运行过一次的Vanilla服务端: https://fabricmc.net/use/
 
-
+    1. 前往Fabric官网下载Fabric Installer，并选择install server模式，将安装目录指向运行过一次的Vanilla服务端: https://fabricmc.net/use/
 
 [^39]: 此处很显然不严谨，Fabric本体是一个模组加载器（Mod Loader），不是一个ModAPI，Fabric的ModAPI是FabricAPI，但因为Fabric的模块化设计，FabricAPI作为FabricMod与Fabric本体（Fabric Loader）分离，不默认提供，因此FabricAPI又不能代表Fabric，故如此表示
 [^40]: 虽然设计确实先进，但随着Forge发布对新版本的支持，Fabric又逐渐趋向没落，只留下来了一些或是小型的，或是客户端向模组的青睐，比如ReplayMod
 [^41]: 是指将一整个代码项目设计成由多个互不相关又互相联系的模块，方便维护的代码设计模式
 
+
 *19.Fukkit*
   Fukkit是一款实现了BukkitAPI+FabricAPI支持的服务端，现已停更归档，因此不多赘述，也不提供下载地址。
 
+
 *为什么不推荐?:已归档，不稳定*
 
+
 如果你看到了这里，那么恭喜你已经结束了所有**主流**服务端的介绍，接下来是两个*看看就好*的魔怔服务端的介绍，如果你不需要了解这些，请直接跳到下一节。
+
 
 *20.Glowstone*
   如果你是个聪明人，你会发现上面的所有服务端都基于Mojang提供的官方服务端Vanilla，那么有没有不依赖于Vanilla的服务端呢，答案是有，这就是Glowstone。
   Glowstone完全不依赖任何Mojang的源码，因此他非常的自由，不会受到Mojang EULA和DMCA的管控。
+
   Glowstone 有如下属性:
 
   - 少更新
@@ -471,16 +564,18 @@ Akarin 有如下的属性:
   - 性能较好
   - 缺少很多原版内容
   - 缺少NMS支持
-  - ==仅支持1.12.2==
+  - 仅支持1.12.2
+
 
 *为什么不推荐?:由于Glowstone不基于Vanilla，所有Vanilla负责的游戏行为都由其自行处理，因此Vanilla提供的一些功能（比如NMS，一些游戏逻辑）未在Glowstone中提供，同时他也不支持OBC[^42]，这会导致一些基于NMS的插件无法在Glowstone运行，因此对于绝大多数服主都不友好，故不推荐使用*
 
+
   下载Glowstone:
-    1.Glowstone官方: https://glowstone.net/#downloads
 
-
+    1. Glowstone官方: https://glowstone.net/#downloads
 
 [^42]: （谁起的怪名字根本没听过）即`org.bukkit.craftbukkit`包，某些Bukkit插件需要使用该包内提供的代码具体实现
+
 
 *21.Cuberite*
   如果你还是个聪明人，你会发现上面所有的服务端都基于Java开发，那么有没有不基于Java的服务端呢，答案是依然有，这就是Cuberite。
@@ -498,25 +593,28 @@ Akarin 有如下的属性:
   - 性能较好
   - 缺少很多原版内容
   - 缺少NMS支持
-  - ==同时支持1.8-1.12.2==[^43]
+  - 同时支持1.8-1.12.2[^43]
 
 *为什么不推荐?:一个由C++制作的服务端虽然可以通过内存管理在理论上无限调优性能，但他不基于Vanilla，甚至不基于Minecraft的开发语言——Java，这导致了一系列兼容问题，因此不推荐使用*
 
   下载Cuberite:
-    1.Cuberite官方: https://cuberite.org/
 
+    1. Cuberite官方: https://cuberite.org/
 
 
 [^43]: 来自其官网说明，但根据其开源项目提交日志，Cuberite应已支持1.14版本的连接，并正在尝试对1.15的特性进行兼容
 
+
 最后，以上服务端的迭代关系大致如下:
 ![anMron.png](https://s1.ax1x.com/2020/07/30/anMron.png)
 
+
 至此，你已经完成第一节的所有学习，并基本了解了所有主流服务端以及其迭代关系
+
 
 # 二.服务端核心的安装与使用
 
-==由于篇幅原因，本节仅介绍上文中**非不推荐**核心的安装和使用方式==，其他服务端的安装方式请自行查阅文档或自行探索
+由于篇幅原因，本节仅介绍上文中**非不推荐**核心的安装和使用方式，其他服务端的安装方式请自行查阅文档或自行探索
 
 ## 安装Java
 
@@ -544,21 +642,19 @@ Akarin 有如下的属性:
 
   有一种非官方的JVM[^46]实现，他的名字叫做OpenJ9，其以`高性能，可拓展`著称，此处我们不介绍OpenJ9的详细安装方式，但有需要的服主可前往[AdoptOpenJDK](https://adoptopenjdk.net/)网站了解并下载OpenJ9 JVM
 
-
-
 [^44]: Minecraft使用的开发环境也是Java8，且截止目前，Java8仍然是Oracle公司指定的长期支持版本，因此使用Java8十分稳定
 [^45]: 此处提供了繁体中文版的`下載適用於所有作業系統的 Java`界面，简体中文版的界面因)为不明原因长期无法连接
 [^46]: 指Java虚拟机，运行Java应用程序的中间人
 
 ## 安装服务端
 
-==此处我们已假设您已正确安装Java运行环境（JRE）并已完成您所需要的服务端核心的下载==
-==为了方便和美观起见，您应当创建一个新的文件夹，并放入您的服务端核心，以此文件夹作为根目录开始您的开服旅程==
+此处我们已假设您已正确安装Java运行环境（JRE）并已完成您所需要的服务端核心的下载
+为了方便和美观起见，您应当创建一个新的文件夹，并放入您的服务端核心，以此文件夹作为根目录开始您的开服旅程
 
 ### 适用于Vanilla,CraftBukkit,Spigot的安装和使用教程
 
-  1.对于Windows用户，您可通过直接双击`minecraft_server_1.x.x.jar`运行服务端，当服务器完全就绪[^47]后即可通过默认的连接地址[^48]连接到服务器。
-  2.对于希望使用CMD控制台的Windows用户来说，您可通过`Shift+右键`在服务端根目录启动命令行，或是直接创建一个以.bat结尾的批处理文件，并写入:
+    1. 对于Windows用户，您可通过直接双击`minecraft_server_1.x.x.jar`运行服务端，当服务器完全就绪[^47]后即可通过默认的连接地址[^48]连接到服务器。
+    2. 对于希望使用CMD控制台的Windows用户来说，您可通过`Shift+右键`在服务端根目录启动命令行，或是直接创建一个以.bat结尾的批处理文件，并写入:
 
 ```cmd
 @echo off
@@ -568,13 +664,16 @@ pause
 
   其中的`-Xmx1024M`用于指定最大内存，您可将`1024M`更换为您需要指定的最大内存，例如`-Xmx2048M`，`-Xmx4G`。
   核心名称中的1.x.x代表你的服务器版本
-  3.对于Linux用户，您可通过`cd`指令进入服务端根目录，或是直接在服务端根目录创建一个以.sh结尾的Linux shell文件，并写入
+
+    3. 对于Linux用户，您可通过`cd`指令进入服务端根目录，或是直接在服务端根目录创建一个以.sh结尾的Linux shell文件，并写入
 
 ```shell
 java -Xmx1024M -jar .\minecraft_server_1.x.x.jar -nogui
 ```
 
   其中，你应将`java`替换为`"您的Java JRE存放位置\bin\java.exe"`
+
+
   自1.8起，当你第一次启动服务端时，服务器会先在根目录生成一个`eula.txt`，随后服务器会自动关闭。
   请打开`eula.txt`，届时您会看到这样的文字：
 
@@ -584,10 +683,9 @@ java -Xmx1024M -jar .\minecraft_server_1.x.x.jar -nogui
 eula=false
 ```
 
+
 请将其中的`eula=false`修改为`eula=true`[^49]，然后重新启动服务器，服务器才会正式启动。
   最后，您可通过在控制台[^50]内输入stop或在游戏内输入/stop关闭服务器。
-
-
 
 [^47]: 一般来说，服务端完全就绪的标志是一段以`Done!`开头的句子，但是有的服务端插件可能因为完全就绪后要发送检查更新报告等信息，这段话很容易被忽略，因此您可尝试通过试探性的输入一段存在或不存在的指令，如果控制台反馈了该指令的帮助或是提示类似于`Unknown Command. Type /help or ? for help.`的未知指令信息，那么大致可认定为服务端已就绪
 [^48]: 默认连接地址为`你的IP地址:25565`，通过本地连接可使用`localhost:25565`，如果您的服务商为您设置了指定端口访问或您只是想单纯不用`25565`这个端口，那么您可参见下一节设置服务端端口
@@ -612,17 +710,12 @@ eula=false
   请先按照第三则教程安装并完全启动一次与SpongeForge下载页上标注的Forge版本相同的VanillaForge，随后关闭服务端。
   将SpongeForge的jar文件**直接拖入**`.\mods`文件夹，之后启动服务器即可开服[^51]。
 
-
-
 [^51]: 您可通过在控制台输入`/sponge plugins`查看是否有反馈以确认Sponge是否正常安装至VanillaForge
 
 ### 适用于Thermos,Contigo的安装和使用教程
 
   请在下载这两种服务端核心时注意需要同时下载`libraries.zip`[^52]。
   将您下载到的`libraries.zip`内的`libraries`文件夹(包括文件夹)解压至服务端根目录，然后按照第一则教程的启动方式启动服务器。
-
-
-
 
 [^52]: 需要注意的是，Thermos提供了两个版本的核心，分别对应着包含了稳定版本(文件名中包含`-1558`，代表`Forge1.7.10 - 10.13.4.1558`)和最新版本(文件名中包含`-1614`，代表`Forge1.7.10 - 10.13.4.1614`)的Forge1.7.10。对于现在来说，我们只需直接选择使用`Forge1.7.10 - 10.13.4.1614`的最新版本即可。
 
@@ -637,11 +730,12 @@ eula=false
 
 至此，你已经完成第二节的所有学习，并应已经启动过一次服务器并通过`stop`指令安全的关闭服务器。
 
+
 # 三.服务端核心的配置
 
-==由于篇幅原因，本节仅介绍**Spigot**核心的**主要**配置文件的**主要**配置项==
+由于篇幅原因，本节仅介绍**Spigot**核心的**主要**配置文件的**主要**配置项
 
-==本配置对应的服务器版本为`1.16.1`==
+本配置对应的服务器版本为`1.16.1`
 
 ## on `server.properties`
 
@@ -759,8 +853,6 @@ motd=A Minecraft Server
 
 有关server.properties的更多信息请见https://minecraft.gamepedia.com/Server.properties
 
-
-
 [^53]: 边长的计算公式为2x+1，如设置为1则代表将会以出生点为中心3x3边长的出生点
 [^54]: 某些插件可能会通过让你右键/左键某个方块触发特定的行为，比如右键木牌加入起床战争小游戏，当这样的方块位于出生点保护半径内时，行为将不会被触发
 [^55]: 此项目在Windows操作系统上默认为开启
@@ -830,7 +922,6 @@ aliases: now-in-commands.yml
 
 
 有关bukkit.yml的更多信息请见https://bukkit.gamepedia.com/Bukkit.yml[^65]
-
 
 
 [^63]: 此处使用了一种和上面的`server.properties`完全不同的文件格式，名为`YAML`，文件名一般以`.yml`结尾。在Bukkit系服务端中，我们会经常见到此种文件格式，因此，您需要熟悉这种文件格式以编辑更多的文件
@@ -1007,7 +1098,7 @@ world-settings:
 2. [SpigotMC Forum](https://www.spigotmc.org/resources/)（英文）——SpigotMC团队管理的论坛，现在大部分Bukkit插件都在此处发布
 3. [PaperMC Forum](https://papermc.io/forums/c/plugin-releases/paper)（英文）——PaperMC团队管理的论坛，一小部分只兼容PaperAPI的插件会在此处发布
 
-3. [MCBBS](https://www.mcbbs.net/forum-servermod-1.html)（中文）——国内著名MC交流论坛，拥有一部分优秀的国人原创插件和搬运自国外的插件
+4. [MCBBS](https://www.mcbbs.net/forum-servermod-1.html)（中文）——国内著名MC交流论坛，拥有一部分优秀的国人原创插件和搬运自国外的插件
 
 ### 安装插件
 
