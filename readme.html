@@ -1,0 +1,874 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>readme</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3em;
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+   padding-bottom: .3em;
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = ''><h1><a name="2020一条龙服务-开服从入门到精通" class="md-header-anchor"></a><span>[2020]一条龙服务: 开服从入门到精通</span></h1><h1><a name="零前言" class="md-header-anchor"></a><span>零.前言</span></h1><p><span>  之所以想写这一篇一条龙教程，实在是因为国人开服，功利心很重，不需要过程，只需要结果。有的人开服，喜欢网上抓一个整合包就开起来，自己不会改，但是只要能得到“结果”就好了。在这个大环境下，国内服务器圈弥漫着一股粗制滥造和模板化的问题。而真正想从零开始的小白服主，又很难找到一个精准，完全的开服教程，往往要东拼西凑，获得经验。</span></p><p><span>  本文的初衷是一条龙服务，为希望认真学习开服技术的小白服主们提供全面的服务。通过循序渐进的方式，通过夹杂着故事的技术讲解，为小白服主们揭开服务端的神秘面纱。</span></p><p><span>  本文为本人耗时多天完成，难免有一定纰漏，如有技术上或语言上的问题欢迎指正。同时，本文还会持续更新，如果您有什么不理解的开服问题需要详细了解，也欢迎回复告诉我您的想法。</span></p><p><span>==请 </span><strong><span>务必</span></strong><span> 注意查看标注的每一个注释，他们都非常有用==</span>
+<span>==本文 的 面向用户 不是 基岩版服主==</span>
+<span>==本文 不讨论代理服务端==</span>
+<span>==本文 不讨论如何进行端口映射，端口转发等工作==</span>
+<span>==本文 已假设您的操作系统环境均已显示文件拓展名，且改名要求均包含拓展名==</span></p><h1><a name="一服务端核心介绍" class="md-header-anchor"></a><span>一.服务端核心介绍</span></h1><p><span>  所谓</span><code>服务端核心</code><span>(简称核心，有时也被叫做服务端)是指开服时需要使用的服务端运行核心文件或是补丁安装器，他们一般以.jar后缀结尾，一般情况下，我们可以使用CMD(文件以.bat为结尾)或是Linux Shell(文件以.sh为结尾)运行这样的jar以管理服务器</span></p><h2><a name="为什么要说服务端运行核心文件或是补丁安装器" class="md-header-anchor"></a><span>为什么要说&quot;服务端运行核心文件或是补丁安装器&quot;</span></h2><p><span>  一般情况下，我们都应该认为一个服务器的所有运行代码都存在那一个小小的罐子(指jar)里，但是对于某些服务端核心来说，用于运行服务器核心代码完全不在这个jar里，如果提及原因的话，时间要拉回好几年前:</span>
+<span>  根据Mojang的最终用户许可协议(EULA)，任何人能二次分发Minecraft二进制文件，不能分发Minecraft的源代码</span><sup class='md-footnote'><a href='#dfref-footnote-1' name='ref-footnote-1'>1</a></sup><span>，也不能在其项目中包含Minecraft的代码部分，因此，一切插件服务端的伊始，CraftBukkit服务端因为本体包含Minecraft代码，违反了Mojang EULA和千禧年数字版权法(DMCA)，面临被起诉的风险，最终被迫停止开发。</span>
+<span>  于是，前来接起CraftBukkit服务端核心大旗的，是SpigotMC团队和他们开发的SpigotMC核心。SpigotMC团队很聪明，他们直接不提供编译</span><sup class='md-footnote'><a href='#dfref-footnote-2' name='ref-footnote-2'>2</a></sup><span>好的核心，而是向用户分发一个叫做</span><code>BuildTools</code><span>的工具，通过BuildTools工具，我们可以在自己的计算机上在线合成Minecraft代码和Spigot代码，最终合成为Spigot核心供我们使用，以此绕开了Mojang EULA和DMCA的管辖(SpigotMC团队:我没提供源代码，是用户自己编译的，他们也没分发，就自己用用，没人犯法啊(笑))</span>
+<span>    但这不是我们要说的补丁安装器，他是用来编译核心的，最终得到的核心属于</span><code>服务端运行核心文件</code><span>，是包含Minecraft代码的核心文件，那么补丁安装器是什么?</span>
+<span>    大家可能已经发现了BuildTools的弊端:麻烦，为了开个服我既要准备编译环境</span><sup class='md-footnote'><a href='#dfref-footnote-3' name='ref-footnote-3'>3</a></sup><span>，又要花差不多半个小时编译一遍核心，慢死了。因此，后来的PaperMC团队使用了一种更灵活的方式糅合服务端核心:</span><code>打补丁(patch)</code><span>。</span>
+<span>    其实很容易理解所谓的打补丁，PaperMC团队会把每一次Paper的更新制作成一个个补丁文件的形式，然后我们可以在Paper官网下载到包含这些补丁的补丁安装器，然后运行补丁安装器，下载原版服务端</span><sup class='md-footnote'><a href='#dfref-footnote-4' name='ref-footnote-4'>4</a></sup><span>文件，安装补丁，生成已打补丁文件并运行（如果你用过，或是即将使用Paper核心，那么可以留心paper服务端运行后会在根目录</span><sup class='md-footnote'><a href='#dfref-footnote-5' name='ref-footnote-5'>5</a></sup><span>的cache文件夹内生成一个mojang_X.X.X.jar和patched.X.X.X.jar，他们便是原版服务端文件和已打补丁文件(已打补丁文件便是包含Minecraft代码的</span><code>服务端运行核心文件</code><span>)）</span>
+<span>  </span><br/><span>注释:</span></p><h2><a name="什么是cmd什么又是linux-shell为什么我们不能直接双击jar运行服务端核心" class="md-header-anchor"></a><span>什么是CMD，什么又是Linux Shell?为什么我们不能直接双击jar运行服务端核心?</span></h2><p><span>  Hey，你知道吗，这个世界上有三种主流的计算机操作系统，他们分别是</span><code>Microsoft Windows</code><span>，</span><code>Mac OS</code><span>和</span><code>Linux</code><span>，在这里我们只谈论Windows和Linux。</span>
+<span>  大部分人都使用的是Windows操作系统，他以易用和图形化著称，其缺点是系统性能消耗相对较高，且极度依赖图形界面;而Linux，以高性能和开放性著称，他是开源</span><sup class='md-footnote'><a href='#dfref-footnote-6' name='ref-footnote-6'>6</a></sup><span>的，因此高度可定制，同时不依赖与图形界面，很适合服务器操作系统，缺点是对于服务器版Linux发行版</span><sup class='md-footnote'><a href='#dfref-footnote-7' name='ref-footnote-7'>7</a></sup><span>操作系统，一般没有图形化界面，只有黑白的代码界面，因此需要一定Linux系统知识才能使用。</span>
+<span>  对于新手来说，除非你有一定运维知识，否则我推荐你使用Windows操作系统(比如你正在用的这台)来开服</span>
+<span>  CMD是Windows操作系统的命令提示符，我们可以使用CMD的.bat批处理文件在Windows上批量完成某些任务;Linux Shell则用途相同，是Linux上用于批量执行任务的东西</span>
+<span>  那么为什么我们要使用这些东西来开服，直接双击jar运行服务端核心不行吗?</span>
+<span>  答案是因为有时行，有时不行，而且行的那个也不是很彳亍:对于一部分服务端，当你双击运行服务端核心时，会弹出一个Minecraft官方服务端提供的原生的控制台窗口，但有些服务端是不提供的，直接双击会导致服务端运行但看不到运行状态，也不能向执行命令(而且那个原生的控制台窗口不支持显示颜色)。</span></p><p><span>注释:</span></p><h2><a name="到底有哪些服务端核心" class="md-header-anchor"></a><span>到底有哪些服务端核心</span></h2><p><span>  那么说完上面的，那么现在究竟有哪些核心，他们应该怎么区分，又有什么区别呢?</span>
+<span>==注意: 为了方便查阅，我们将会用</span><strong><span>粗体</span></strong><span>表示推荐使用的服务端核心，使用</span><em><span>斜体</span></em><span>表示另类，冷门，不推荐使用的服务端核心==</span>
+<span>==注意:此处我们只会介绍目前还在积极更新的，或是有一定历史意义的服务端核心，对于刚出生就夭寿的，无意义的服务端，此处不多赘述==</span></p><p><span>1.Vanilla</span>
+<span>  对于Java版来说，绝大多数服务端的始祖便是Mojang提供的官方服务端了，按照习惯，我们把官服叫做Vanilla(香草，代指纯净)，其实他本身的名字应该是Minecraft_Server(但是大多数情况下我们不会用这个Server)</span>
+<span>  Vanilla 有以下的属性</span></p><ul><li><strong><span>不能</span></strong><span> 安装基于任何API的模组</span><sup class='md-footnote'><a href='#dfref-footnote-8' name='ref-footnote-8'>8</a></sup></li><li><strong><span>不能</span></strong><span> 安装基于任何API的插件</span><sup class='md-footnote'><a href='#dfref-footnote-9' name='ref-footnote-9'>9</a></sup></li><li><span>原生兼容好(如命令方块，MCFunction)</span></li><li><span>自带原生GUI控制台窗口</span></li><li><span>即开即用</span></li><li><span>性能较差</span></li></ul><p><span>  根据以上属性，我们可以发现Vanilla基本上啥都干不了，就是原生兼容好，因此比较适合开</span><strong><span>适合原版的服务器</span></strong><span>(比如</span><strong><span>玩玩命令方块小游戏地图啊，基友联机啊</span></strong><span>之类的)</span></p><p><span>  下载Vanilla: </span>
+<span>      1. 前往正版启动器手动选择版本下载</span>
+<span>      2. 前往第三方下载站下载（如GetBukkit:</span><a href='https://getbukkit.org/download/vanilla' target='_blank' class='url'>https://getbukkit.org/download/vanilla</a><span>）</span></p><p><span>注释:</span></p><p><em><span>2.CraftBukkit(有时被称为Bukkit</span><sup class='md-footnote'><a href='#dfref-footnote-10' name='ref-footnote-10'>10</a></sup><span>)</span></em>
+<span>  这可不太好，因为仅用Vanilla我们无法快速，高效的从底层</span><sup class='md-footnote'><a href='#dfref-footnote-11' name='ref-footnote-11'>11</a></sup><span>拓展游戏内容，因此，我们急需一个&quot;窗口&quot;，能够让有开发能力的服主通过这个窗口深入Minecraft，拓展MC内容。于是，CraftBukkit带着BukkitAPI出现在了我们的面前。</span>
+<span>  CraftBukkit是一个包含了BukkitAPI的服务端，这意味着开发者们可以通过BukkitAPI提供的(有限的)内容来拓展服务器逻辑，增强游戏性。不同的开发者们把包含不同额外功能的拓展内容使用.jar文件包装起来，以让我们把这些文件放入CraftBukkit独有</span><sup class='md-footnote'><a href='#dfref-footnote-12' name='ref-footnote-12'>12</a></sup><span>的插件文件夹(</span><code>.\plugins</code><span>)加载不同的功能。这些东西就叫做</span><strong><span>插件</span></strong>
+<span>  CraftBukkit 有以下的属性</span></p><ul><li><span>基于Vanilla</span></li><li><strong><span>可以</span></strong><span> 安装基于BukkitAPI的插件</span></li><li><strong><span>基本不可以</span></strong><span> 安装基于任何API的模组</span><sup class='md-footnote'><a href='#dfref-footnote-13' name='ref-footnote-13'>13</a></sup></li><li><span>性能较差</span></li></ul><p><span>  </span><em><span>为什么不推荐?:CraftBukkit虽然是跨时代性的，但他和Vanilla的性能一样差(甚至更差)，因此在后来的日子里诞生了很多自带优化的服务端，CraftBukkit对于我们来说只是一个过去时代的丰碑罢了，并不能满足实际使用需求了</span></em>
+<span>  </span><em><span>讲个题外话，CraftBukkit曾经的开发者现在要么离开了自己心爱的项目，要么去了SpigotMC团队，有一个人挺不寻常，他叫Searge，他最后收到了Mojang的邀请，前去开发Minecraft了。对于有的Mod开发者来说，你应当知道Mod Code Pack(MCP)也是由Searge等人发起的，而MCP使用的映射名&quot;Srg名&quot;，也是为了纪念Searge这位巨佬</span></em></p><p><span>  下载CraftBukkit: </span>
+<span>      1. BukkitDev官方:</span><del><a href='http://dl.bukkit.org/' target='_blank' class='url'>http://dl.bukkit.org/</a></del><span> (由于Mojang EULA和DMCA的要求，已停止服务)</span>
+<span>      2. SpigotMC官方:</span><a href='https://hub.spigotmc.org/jenkins/job/BuildTools/' target='_blank' class='url'>https://hub.spigotmc.org/jenkins/job/BuildTools/</a><span> (CraftBukkit不直接提供，你只能通过BuildTools手动构建)</span>
+<span>      3. 使用第三方下载站下载已经构建好的CraftBukkit（如GetBukkit:</span><a href='https://getbukkit.org/download/craftbukkit' target='_blank' class='url'>https://getbukkit.org/download/craftbukkit</a><span>）</span></p><p><span>注释:</span></p><p><span>3.Spigot</span>
+<span>  CraftBukkit是挺好，但是他性能和Vanilla一样捉急，甚至装多了插件还可能会更差，人们急切需要一个能够优化服务端处理逻辑，提升服务器性能的服务端，曾经有过多种这样的服务端，有的可能优化了TNT爆炸逻辑，有的可能优化了耕田逻辑，但是活到最后的，是包含了他们之中绝大部分优化功能的</span><strong><span>Spigot</span></strong>
+<span>  Spigot由SpigotMC团队开发，可以说是CraftBukkit的正统续作，他不仅完全兼容BukkitAPI规范，还提供了更多独有的开发API</span><span>[^14]</span><span>，最重要的是，这个服务端优化很好，因此十分稳定</span>
+<span>  Spigot 有以下的属性:</span></p><ul><li><span>基于CraftBukkit</span></li><li><strong><span>可以</span></strong><span> 安装基于BukkitAPI,SpigotAPI的插件</span></li><li><strong><span>不可以</span></strong><span> 安装基于任何API的模组</span></li><li><span>稳定性好</span></li><li><span>性能较好</span></li></ul><p><span>  下载Spigot:</span>
+<span>      1.SpigotMC官方:</span><a href='https://hub.spigotmc.org/jenkins/job/BuildTools/' target='_blank' class='url'>https://hub.spigotmc.org/jenkins/job/BuildTools/</a><span> (Spigot不直接提供，你只能通过BuildTools手动构建)</span>
+<span>      2. 使用第三方下载站下载已经构建好的Spigot（如GetBukkit:</span><a href='https://getbukkit.org/download/spigot' target='_blank' class='url'>https://getbukkit.org/download/spigot</a><span>）</span></p><p><span>注释:</span>
+<span>    </span><span>[^14]</span><span>:Spigot提供的独有API被称作SpigotAPI，其独立于CraftBukkit原生的BukkitAPI(虽然CraftBukkit现在由SpigotMC同时维护，但依然把一些API分开了)，后面要提的Paper服务端也同样提供了PaperAPI，同SpigotAPI和BukkitAPI隔离了起来。这也是服主们开服时某些插件在不同的服务端有不同的运行情况(有的能用有的不能了)的原因。此处独有也是指在当时，现在只要基于Spigot的核心都应支持SpigotAPI</span></p><p><strong><span>4.Paper(曾用名PaperSpigot，有时被称为PaperClip</span><sup class='md-footnote'><a href='#dfref-footnote-14' name='ref-footnote-14'>14</a></sup><span>)</span></strong>
+<span>  一方面是认为Spigot更新太慢了，又一方面是认为Spigot的BuildTools太麻烦了，还一方面是因为Spigot的优化还 不 够 劲，因此，一群人创建了Paper。</span>
+<span>  Paper 有以下的属性:</span></p><ul><li><span>基于Spigot</span></li><li><strong><span>可以</span></strong><span> 安装基于BukkitAPI,SpigotAPI,PaperAPI的插件</span></li><li><strong><span>不可以</span></strong><span> 安装基于任何API的模组</span></li><li><em><span>部分</span></em><span>自带原生GUI控制台窗口</span><sup class='md-footnote'><a href='#dfref-footnote-15' name='ref-footnote-15'>15</a></sup></li><li><span>稳定性较好</span></li><li><span>性能好</span></li><li><span>更新迅速</span></li><li><span>提供了更多的优化和服务端个性化选项</span><sup class='md-footnote'><a href='#dfref-footnote-16' name='ref-footnote-16'>16</a></sup><span> </span><sup class='md-footnote'><a href='#dfref-footnote-17' name='ref-footnote-17'>17</a></sup></li><li><span>构建、使用方便</span></li><li><span>搭载了较为先进的Aikar&#39;s Timings®性能分析系统</span><sup class='md-footnote'><a href='#dfref-footnote-18' name='ref-footnote-18'>18</a></sup></li></ul><p><em><span>为什么推荐?:Paper是一个兼具稳定，性能，拓展的服务端核心，不仅提供了很多有效的优化，更有很多自定义选项供服主选择，几乎100%兼容BukkitAPI插件也是人们选择Paper的主要原因</span></em></p><p><span>  下载Paper:</span>
+<span>    1.PaperMC官方: </span><a href='https://papermc.io/downloads' target='_blank' class='url'>https://papermc.io/downloads</a><span> (对于旧版本核心，你可以前往页末的</span><code>LEGACY</code><span>标签下载不受支持的旧版的Paper核心</span></p><p><span>注释:</span></p><p><span>5.Tuinity</span>
+<span>  众所周知，Paper是开源的，那么这意味着，所有人都可以通过Paper所在的代码托管网站</span><em><span>Github</span></em><span>向PaperMC团队提交各种各样的漏洞修复/性能优化代码，而PaperMC团队也可以选择性的将这些代码合并到自己的项目中，完成一次协作。前往Paper的Github的 </span><a href='https://github.com/PaperMC/Paper/pulls'><span>Pull Request</span></a><span> 界面，你可以看到这里依然还有超过60个的代码合并请求尚在活跃状态但未被PaperMC团队合并。这些提交中可能包含着诸如视距优化这样的刚需，也包含对开发者有益的API更新。</span>
+<span>  但Paper就是不合并，你也没办法。</span>
+<span>  因此，一名叫做</span><em><span>Spottedleaf</span></em><span>的大佬站了出来，Fork</span><sup class='md-footnote'><a href='#dfref-footnote-19' name='ref-footnote-19'>19</a></sup><span>了Paper的仓库，然后把那一堆PR</span><sup class='md-footnote'><a href='#dfref-footnote-20' name='ref-footnote-20'>20</a></sup><span>全合并了，又作了一些改动，最后，Tuinity横空出世了</span>
+<span>  曾经一段时间内，Tuinity仅支持JRE11</span><sup class='md-footnote'><a href='#dfref-footnote-21' name='ref-footnote-21'>21</a></sup><span>作为其运行环境 但现在Tuinity只需JRE8+即可运行</span>
+<span>  启动Tuinity会生成tuinity.yml，在其中可设置单玩家怪物生成，分离视距等高级参数。即使你不会设置这些参数，Tuinity自身自带的一个个优化也足以你的服务器使用。</span>
+<span>  Tuinity 有以下的属性:</span></p><ul><li><span>基于Paper</span></li><li><strong><span>可以</span></strong><span> 安装基于BukkitAPI,SpigotAPI,PaperAPI,TuinityAPI的插件 </span></li><li><strong><span>不可以</span></strong><span> 安装基于任何API的模组</span></li><li><span>性能极佳</span></li><li><span>更新较快</span></li><li><span>较为稳定</span></li></ul><p><span>  下载Tuinity:</span>
+<span>    1.:CodeMC自动构建站: </span><a href='https://ci.codemc.io/job/Spottedleaf/job/Tuinity/' target='_blank' class='url'>https://ci.codemc.io/job/Spottedleaf/job/Tuinity/</a></p><p><span>注释:</span></p><p><span>6.Akarin/Torch</span><sup class='md-footnote'><a href='#dfref-footnote-22' name='ref-footnote-22'>22</a></sup>
+<span>  用</span><em><span>Akarin Project</span></em><span>开发者们的原话来说，Akarin是一个 </span><strong><span>&quot;来自新纬度的服务端&quot;</span></strong><span> </span><em><span>(A server software from the &#39;new dimension&#39;.)</span></em><span>，其本质原因是Akarin以 </span><strong><span>多线程</span></strong><span> </span><em><span>(Multi-Threaded)</span></em><span>著称。</span>
+<span>  那么在此之前，我们需要了解什么是多线程。简单的来说，人一般情况下只能专心干一件事情，那么我们可以把这种行为叫做单线程;如果你能一下干多个事情，那么这就是所谓多线程——从软件或者硬件上实现多个线程并发执行的技术。</span>
+<span>  在Akarin之前，绝大多数的服务端的核心任务都是由主线程这一条线程完成的，如果同时有很多事情要做，那么他得做完了一个再做另外一个，这就会引起卡顿，如果做的这件事情无线重复，或是要花费太长时间以至于连服务器的基本运行事件都给挡住了，那么就会引起</span><strong><span>堵塞</span></strong><span>，导致服务器瞬卡甚至崩溃。</span>
+<span>  通过使用Akarin，我们可以将主线程本应完成的动作转移到其他子线程同时执行，极大的减缓了服务器压力。</span>
+<span>  当然，因为这是一个新技术，同时让一个本不兼容多线程的东西兼容多线程是一个很难的工程，因此总会有不稳定因素。</span>
+<span>Akarin 有如下的属性:</span></p><ul><li><span>基于Paper/Tuinity</span><sup class='md-footnote'><a href='#dfref-footnote-23' name='ref-footnote-23'>23</a></sup></li><li><strong><span>可以</span></strong><span> 安装基于BukkitAPI,SpigotAPI,PaperAPI，</span><strong><span>可能可以</span></strong><span>安装基于TuinityAPI的插件</span></li><li><strong><span>不可以</span></strong><span> 安装基于任何API的模组</span></li><li><span>性能极佳</span></li><li><span>支持多线程</span></li><li><span>更新不快</span></li><li><span>不太稳定</span></li></ul><p><span>  下载Akarin:</span>
+<span>    1.Github Actions: </span><a href='https://github.com/Akarin-project/Akarin/actions' target='_blank' class='url'>https://github.com/Akarin-project/Akarin/actions</a>
+<span>    2.JosephWorks Jenkins: </span><a href='http://josephworks.ddns.net:8080/job/Akarin-project/' target='_blank' class='url'>http://josephworks.ddns.net:8080/job/Akarin-project/</a></p><p><span>注释:</span></p><p><span>如果你看到了这里，那么恭喜你，你已经结束了所有</span><strong><span>主流</span></strong><span>BukkitAPI系服务端的介绍，接下来是一些搭载ForgeAPI或FabricAPI的模组服务端，两个基于SpongeAPI的服务端和两个魔怔猎奇基于其他API的服务端介绍，如果你不需要了解这些，请直接跳到下一节。</span></p><p><span>7.VanillaForge</span>
+<span>  让我们把视线调转回刚开始的Vanilla，如果说Bukkit让修改服务端变成了可能，那么就一定有一个技术能够让修改客户端变为可能，那么这个可能就是Forge。</span>
+<span>  VanillaForge则是一个Vanilla+ForgeAPI的服务端，他允许你像服务端安装ForgeMod，处理自定义物品，自定义方块，自定义实体操作。</span>
+<span>  VanillaForge 有如下的属性:</span></p><ul><li><p><span>基于Vanilla</span></p><ul><li><p><strong><span>不可以</span></strong><span> 安装基于任何API的插件</span></p><ul><li><strong><span>可以</span></strong><span> 安装基于ForgeAPI的模组</span></li><li><span>稳定性较好</span></li><li><span>性能较差</span></li><li><span>可插拔性强，易于更新</span><sup class='md-footnote'><a href='#dfref-footnote-24' name='ref-footnote-24'>24</a></sup></li></ul></li></ul></li></ul><p><span>  下载VanillaForge:</span>
+<span>    1.前往Forge官网下载Forge Installer，并选择install server模式，将安装目录指向运行过一次的Vanilla服务端: </span><a href='http://files.minecraftforge.net/' target='_blank' class='url'>http://files.minecraftforge.net/</a></p><p><span>注释:</span></p><p><em><span>8.Cauldron/MCPC+</span></em>
+<span>  “但是老弟你看，你这个逻辑有问题啊，我是可以加Forge模组了，但我还想加Bukkit插件啊，你那个VanillaForge什么的搞不了插件啊”</span>
+<span>      —— 选自 刘慈欣《三体》 我也不知道在哪反正我就是想学大史说话 页</span>
+<span>    不管大史究竟有没有说过这话，但是这确实是一个问题——那么究竟有没有能同时兼容BukkitAPI和ForgeAPI的服务端呢?</span>
+<span>    答案是当然，最初搞出来这个玩意的服务端叫做MCPC+，自1.7.10起改名为Cauldron。</span>
+<span>    但是很遗憾，因为糅合代码是个技术活，而且你也看到了，“糅合”，这是不符合Mojang EULA和DMCA规定的，因此Cauldron自1.7.10起停更，不再支持后面的版本。</span>
+<span>    同时你也将看到，由于“糅合”的复杂性和难以维护性，因此每一个BukkitAPI+ForgeAPI服务端几乎都只维护一个主流版本，这也是此类服务端遍地开花的一个主要原因。</span>
+<span>    Cauldron 有如下的属性:</span>
+<span>      - 已停更</span>
+<span>      - 基于Spigot</span>
+<span>      - </span><strong><span>可以</span></strong><span> 安装基于BukkitAPI,SpigotAPI的插件</span>
+<span>      - </span><strong><span>可以</span></strong><span> 安装基于ForgeAPI的模组</span>
+<span>      - ==支持至最高1.7.10==</span></p><p><em><span>为什么不推荐?:同CraftBukkit一样，Cauldron也已然成为了一个时代的奠基人和里程碑，其原始的完整代码仓库现在甚至无法被找到，我们也只能在各式各样的第三方构建站看到他的身影。只闻其声，不闻其形。</span></em></p><p><span>  下载Cauldron:</span>
+<span>    1.前往第三方构建站下载</span></p><p><span>9.KCauldron</span>
+<span>  KCauldron是Cauldron的优化版/继承。</span>
+<span>  KCauldron 有如下的属性: </span><br/><span>    - 已停更</span>
+<span>    - 基于Cauldron</span>
+<span>    - </span><strong><span>可以</span></strong><span> 安装基于BukkitAPI,SpigotAPI的插件</span>
+<span>    - </span><strong><span>可以</span></strong><span> 安装基于ForgeAPI的模组</span>
+<span>    - ==仅支持1.7.10==</span></p><p><span>  下载KCauldron:</span>
+<span>    1.前往第三方构建站下载</span></p><p><span>10.Thermos</span>
+<span>  Thermos是KCauldron的优化版。</span>
+<span>  Thermos 有如下的属性:</span>
+<span>    - 已停更</span>
+<span>    - 基于KCauldron</span>
+<span>    - </span><strong><span>可以</span></strong><span> 安装基于BukkitAPI,SpigotAPI的插件</span>
+<span>    - </span><strong><span>可以</span></strong><span> 安装基于ForgeAPI的模组</span>
+<span>    - ==仅支持1.7.10==</span></p><p><span>  下载Thermos:</span>
+<span>    1.Github Releases: </span><a href='https://github.com/CyberdyneCC/Thermos/releases' target='_blank' class='url'>https://github.com/CyberdyneCC/Thermos/releases</a></p><p><span>11.Contigo</span>
+<span>  Contigo是Thermos的优化版/继承。</span>
+<span>  Contigo 有如下的属性:</span>
+<span>    - 已停更</span>
+<span>    - 基于Thermos</span>
+<span>    - </span><strong><span>可以</span></strong><span> 安装基于BukkitAPI,SpigotAPI的插件</span>
+<span>    - </span><strong><span>可以</span></strong><span> 安装基于ForgeAPI的模组</span>
+<span>    - ==仅支持1.7.10==</span></p><p><span>  下载Contigo:</span>
+<span>    1.Github Releases: </span><a href='https://github.com/djoveryde/Contigo/releases' target='_blank' class='url'>https://github.com/djoveryde/Contigo/releases</a></p><p><span>12.Uranium</span>
+<span>  Uranium是一款基于KCauldron的BukkitAPI+ForgeAPI服务端，其整合了部分Thermos对服务端的修复，同时进行了一些输入书与笔虚体问题的BUG修复。其最大的特点</span><sup class='md-footnote'><a href='#dfref-footnote-25' name='ref-footnote-25'>25</a></sup><span>是强制使用UTF-8编码作为配置文件编码</span><sup class='md-footnote'><a href='#dfref-footnote-26' name='ref-footnote-26'>26</a></sup><span>和通过UraniumPlus Mod令1.7.10客户端支持Title和Actionbar</span><sup class='md-footnote'><a href='#dfref-footnote-27' name='ref-footnote-27'>27</a></sup><span>。</span>
+<span>  Uranium 有如下的属性:</span>
+<span>        - 基于KCauldron</span>
+<span>        - </span><strong><span>可以</span></strong><span> 安装基于BukkitAPI,SpigotAPI的插件</span>
+<span>        - </span><strong><span>可以</span></strong><span> 安装基于ForgeAPI的模组</span>
+<span>        - ==仅支持1.7.10==</span></p><p><span>  下载Uranium:</span>
+<span>    1.Jenkins CI: </span><a href='https://ci.uraniummc.cc/job/Uranium-dev/' target='_blank' class='url'>https://ci.uraniummc.cc/job/Uranium-dev/</a></p><p><span>注释:</span></p><p><strong><span>13.CatServer</span></strong>
+<span>  此时聪明的网友已经发现了一个问题:怎么上面的BukkitAPI+ForgeAPI服务端都只支持1.7.10啊，有没有支持高版本的?</span>
+<span>  答案很显然是肯定的，CatServer就是在那样的大环境下诞生的服务端，他支持1.12.2的BukkitAPI+ForgeAPI，发展至今已十分稳定，同时也拥有独特的优化和BUG修复。</span>
+<span>  CatServer 有如下的属性:</span>
+<span>        - 基于Spigot</span>
+<span>        - </span><strong><span>可以</span></strong><span> 安装基于BukkitAPI,SpigotAPI的插件</span>
+<span>        - </span><strong><span>可以</span></strong><span> 安装基于ForgeAPI的模组</span>
+<span>        - 稳定性好</span>
+<span>        - 性能较好</span>
+<span>        - 更新较快</span>
+<span>        - ==仅支持1.12.2==</span></p><p><em><span>为什么推荐?:CatServer历经多年的打磨，其已经非常稳定，同时因为1.12.2版本从技术上讲依然是一个稳定的年轻版本，因此使用CatServer开Mod服或许是你的不二之选</span></em>
+<em><span>又一个题外话:如果你刚入服主圈，那么你可能不知道，由于作为第一个支持高版本的BukkitAPI+ForgeAPI服务端，CatServer有过一段艰苦，黑暗的发展历史，从“抄袭风波”到收购风波，从付费风波再到“后门风波”，CatServer曾有过一段饱受诟病的日子，甚至还和下面某些服务端作者产生过争执......笔者作为那段时代的亲历者，只能用一句话来形容那时:</span>
+<span>  “黑，真他妈的黑啊”</span></em></p><p><span>  下载CatServer:</span>
+<span>    1.Github Releases: </span><a href='https://github.com/Luohuayu/CatServer/releases' target='_blank' class='url'>https://github.com/Luohuayu/CatServer/releases</a>
+<span>  下载CatServer-Async</span><sup class='md-footnote'><a href='#dfref-footnote-28' name='ref-footnote-28'>28</a></sup><span>:</span>
+<span>    1.Github Releases: </span><a href='https://github.com/Luohuayu/CatServer/releases/tag/Async-final' target='_blank' class='url'>https://github.com/Luohuayu/CatServer/releases/tag/Async-final</a></p><p><span>注释:</span></p><p><span>14.Mohist(曾用名PFCraft)</span>
+<span>  Mohist和下面的Magma一样，都有一点“另类”，他们本体基于Paper，而不是Spigot，这意味着这两个服务端不仅可以享受Paper带来的漏洞修复和优化，还可以让你轻松使用基于PaperAPI开发的插件。</span>
+<span>  但这还没完，Mohist还支持控制台信息国际化</span><sup class='md-footnote'><a href='#dfref-footnote-29' name='ref-footnote-29'>29</a></sup><span>，可选择服务端Mod语言</span><sup class='md-footnote'><a href='#dfref-footnote-30' name='ref-footnote-30'>30</a></sup><span>，内置插件管理器</span><sup class='md-footnote'><a href='#dfref-footnote-31' name='ref-footnote-31'>31</a></sup><span>，NMS向下兼容</span><sup class='md-footnote'><a href='#dfref-footnote-32' name='ref-footnote-32'>32</a></sup><span>等等非常实用的功能！同时，其开发者正在开发的Mohist-BungeeCord可以让你在跨服使用Mohist时减少各种问题</span><sup class='md-footnote'><a href='#dfref-footnote-33' name='ref-footnote-33'>33</a></sup><span>。</span>
+<span>  但是很遗憾，由于Mohist本身工程量大难以维护，也由于Mohist开发组重组，近几个月内的Mohist稳定性并不是很好。</span>
+<span>  Mohist 有如下的属性:</span>
+<span>        - 基于Paper</span>
+<span>        - </span><strong><span>可以</span></strong><span> 安装基于BukkitAPI,SpigotAPI,PaperAPI的插件</span>
+<span>        - </span><strong><span>可以</span></strong><span> 安装基于ForgeAPI的模组</span>
+<span>        - 稳定性较差</span>
+<span>        - 性能较好</span>
+<span>        - 更新较快</span>
+<span>        - 控制台/模组本地化支持</span>
+<span>        - 内置插件管理器</span>
+<span>        - NMS向下兼容</span>
+<span>        - ==支持1.12.2,1.15.2==</span><sup class='md-footnote'><a href='#dfref-footnote-34' name='ref-footnote-34'>34</a></sup></p><p><em><span>说个题外话:笔者曾有幸参与了Mohist控制台信息的简体中文、繁体中文本地化工作，并亲眼见证了Mohist从使用高峰到现在的开发过程。Mohist的原开发者Mgazul是个好人，而且能在家庭条件十分有限的情况下，开发出Mohist并开源供大家使用，可以说是我们这个圈子的幸运。</span></em></p><p><span>  下载Mohist-1.12.2:</span>
+<span>    1.CodeMC Jenkins CI: </span><a href='https://ci.codemc.io/job/Mohist-Community/job/Mohist-1.12.2/' target='_blank' class='url'>https://ci.codemc.io/job/Mohist-Community/job/Mohist-1.12.2/</a>
+<span>  下载Mohist-1.15.2:</span>
+<span>    1.CodeMC Jenkins CI: </span><a href='https://ci.codemc.io/job/Mohist-Community/job/Mohist-1.15.2/' target='_blank' class='url'>https://ci.codemc.io/job/Mohist-Community/job/Mohist-1.15.2/</a></p><p><span>注释:</span></p><p><img src="https://i.loli.net/2019/05/25/5ce8f8ca8abef72303.png" referrerpolicy="no-referrer" alt="Mohist-控制台本地化"></p><p><span>15.Magma</span>
+<span>  Magma同样是一个基于Paper</span><sup class='md-footnote'><a href='#dfref-footnote-35' name='ref-footnote-35'>35</a></sup><span>的BukkitAPI+ForgeAPI服务端。</span>
+<span>  Magma 有如下的属性:</span>
+<span>        - 基于Paper</span>
+<span>        - </span><strong><span>可以</span></strong><span> 安装基于BukkitAPI,SpigotAPI,PaperAPI</span><sup class='md-footnote'><a href='#dfref-footnote-35-1' name='ref-footnote-35-1'>35</a></sup><span>的插件</span>
+<span>        - </span><strong><span>可以</span></strong><span> 安装基于ForgeAPI的模组</span>
+<span>        - 稳定性较好</span>
+<span>        - 性能较好</span>
+<span>        - 更新较快</span>
+<span>        - ==支持1.12.2,1.15.2==</span><sup class='md-footnote'><a href='#dfref-footnote-36' name='ref-footnote-36'>36</a></sup></p><p><span>  下载Magma-1.12.2:</span>
+<span>    1.Github Releases: </span><a href='https://github.com/magmafoundation/Magma/releases' target='_blank' class='url'>https://github.com/magmafoundation/Magma/releases</a><span> (稳定版，请下载-server结尾的版本，-installer结尾的版本暂无法使用)</span>
+<span>    2.Jenkins CI: </span><a href='https://ci.hexeption.dev/job/Magma%20Foundation/job/Magma/job/master/' target='_blank' class='url'>https://ci.hexeption.dev/job/Magma%20Foundation/job/Magma/job/master/</a><span> (开发版)</span>
+<span>  下载Magma-1.12.2-全Paper特性支持版:</span>
+<span>    1.Jenkins CI: </span><a href='https://ci.hexeption.dev/job/Magma%20Foundation/job/Magma/job/feature%252Ffull-paper-support/' target='_blank' class='url'>https://ci.hexeption.dev/job/Magma%20Foundation/job/Magma/job/feature%252Ffull-paper-support/</a><span> (开发版)</span>
+<span>  下载Magma-1.15.2:</span>
+<span>    1.Jenkins CI: </span><a href='https://ci.hexeption.dev/job/Magma%20Foundation/job/Magma-1.15.x/job/1.15.x/lastSuccessfulBuild/' target='_blank' class='url'>https://ci.hexeption.dev/job/Magma%20Foundation/job/Magma-1.15.x/job/1.15.x/lastSuccessfulBuild/</a><span> (开发版)</span></p><p><span>注释:</span></p><p><span>16.Arclight</span>
+<span>  Arclight是一款由 @海螺螺 开发的“在 Forge 上使用 Mixin 实现的 Bukkit 服务端”，提供了1.14.4和1.15.2两个高版本的BukkitAPI+ForgeAPI支持</span>
+<span>  Arclight 有如下的属性:</span>
+<span>        - 基于Spigot</span>
+<span>        - </span><strong><span>可以</span></strong><span> 安装基于BukkitAPI,SpigotAPI的插件</span>
+<span>        - </span><strong><span>可以</span></strong><span> 安装基于ForgeAPI的模组</span>
+<span>        - 稳定性相对较好</span>
+<span>        - 性能较好</span>
+<span>        - 更新较快</span>
+<span>        - ==支持1.14.4,1.15.2==</span></p><p><span>  下载Arclight(1.14.4,1.15.2):</span>
+<span>    1.Github Releases: </span><a href='https://github.com/IzzelAliz/Arclight/releases' target='_blank' class='url'>https://github.com/IzzelAliz/Arclight/releases</a>
+<span>    2.AppVeyor CI: </span><a href='https://ci.appveyor.com/project/IzzelAliz/arclight/build/artifacts' target='_blank' class='url'>https://ci.appveyor.com/project/IzzelAliz/arclight/build/artifacts</a></p><p><span>如果你看到了这里，那么恭喜你已经结束了所有</span><strong><span>主流</span></strong><span>BukkitAPI+ForgeAPI服务端的学习，接下来是一些搭载FabricAPI的模组服务端，两个基于SpongeAPI的服务端和两个魔怔猎奇基于其他API的服务端介绍，如果你不需要了解这些，请直接跳到下一节。</span></p><p><span>17.SpongeVanilla&amp;SpongeForge</span>
+<span>  让我们再将目光转回CraftBukkit时期。一群人做出BukkitAPI以后，发现这个东西实在是太垃圾了:对Mod兼容性差，没有开发文档，代码规范随意，这不是他们想要的那个API。于是，一群人离开了Bukkit开发团队，转而开始制作他们心目中的那个完美的API框架——幸运的是，他们做出来了，这就是SpongeAPI和他的服务端实现:Sponge</span>
+<span>  Sponge分为SpongeVanilla和SpongeForge两个版本:前者需要与Vanilla一起使用，他通过注入</span><sup class='md-footnote'><a href='#dfref-footnote-37' name='ref-footnote-37'>37</a></sup><span>的方式，允许你在Vanilla服务端上安装基于SpongeAPI的插件；后者实现在Forge上，允许你在VanillaForge上安装基于SpongeAPI的插件（同时享受安装基于ForgeAPI的模组），需要提到的是，在SpongeForge中，其其实是作为一个</span><strong><span>ForgeMod</span></strong><span>来使用（即将其放入</span><code>.\mods</code><span>中并启动服务端），而非作为一个完整的服务端运行核心文件。</span>
+<span>  很遗憾的是，由于生不逢时，Sponge并没有得到大多数开发者的支持，因此基于SpongeAPI开发的插件少之甚少，主流BukkitAPI插件迁移至SpongeAPI的更是屈指可数，因此对于普通服主来说，使用Sponge会导致在插件支持上落后于Bukkit使用者。</span>
+<span>  同时，由于自1.13起，由于Minecraft源代码的大幅度改动导致ForgeAPI大幅度改动其代码，致使Sponge始终难以兼容1.13+版本，直到最近才发布了对</span><em><span>1.14.4</span></em><span>版本的支持</span>
+<span>  SpongeVanilla 有如下属性:</span></p><ul><li><strong><span>可以</span></strong><span> 安装基于Sponge的插件</span></li><li><strong><span>不可以</span></strong><span> 安装基于任何API的模组</span></li><li><span>性能相对很好</span></li><li><span>更新较快</span></li><li><span>稳定性很好</span></li><li><span>社区支持友好</span></li><li><span>插件生态较差</span></li><li><span>==支持至最高1.14.4==</span>
+<span>SpongeForge 有如下属性:</span></li><li><span>基于ForgeAPI</span></li><li><strong><span>可以</span></strong><span> 安装基于SpongeAPI的插件</span></li><li><strong><span>可以</span></strong><span> 安装基于ForgeAPI的模组  </span></li><li><span>性能相对很好</span></li><li><span>更新较快</span></li><li><span>稳定性很好</span></li><li><span>社区支持友好</span></li><li><span>插件生态较差</span></li><li><span>对模组兼容性极佳</span></li><li><span>==支持至最高1.14.4==</span></li></ul><p><span>  下载SpongeVanilla:</span>
+<span>    1.SpongePowered官方: </span><a href='https://www.spongepowered.org/downloads/spongevanilla/stable/' target='_blank' class='url'>https://www.spongepowered.org/downloads/spongevanilla/stable/</a>
+<span>  下载SpongeForge: </span>
+<span>    1.SpongePowered官方: </span><a href='https://www.spongepowered.org/downloads/spongeforge/stable/' target='_blank' class='url'>https://www.spongepowered.org/downloads/spongeforge/stable/</a>
+<span>  </span><br/><em><span>题外话:曾经有一段时间，Sponge是市面上唯一一个支持1.8+高版本插件+模组的服务端，当Bukkit阵营始终停留在1.7.10时，已经支持之1.12.2的Sponge收到了大部分神奇宝贝服服主的欢迎——直到CatServer的发布</span></em></p><p><span>注释:</span></p><p><span>18.VanillaFabric</span>
+<span>  前面我们提到了</span><code>由于自1.13起，Minecraft源代码的大幅度改动</code><span>，这导致了CraftBukkit/Spigot，Sponge，Forge等项目分别出现了时常不同的窗口期，这段时间内这些项目都没有发布对新版本的支持。Sponge最为严重，直至今日还未发布对1.13版本的支持，其次是Forge，直至Minecraft发布1.14版本Forge都没有发布甚至是一个预览版本的Forge1.13，且当后来Forge1.13(.2)终于发布后，直至今日，Forge1.13(.2)都未发布一个稳定版。</span>
+<span>  回归原题，在这段长达半年的窗口期中，涌现了几个新的ModAPI，抛去因为夹带私货和停止支持的RiftAPI，便只剩下了在当时乃至现在最流行的新生代ModAPI——Fabric</span><sup class='md-footnote'><a href='#dfref-footnote-38' name='ref-footnote-38'>38</a></sup>
+<span>  Fabric和Rift不同，他不是在那段窗口期诞生的替代产品，他早自1.12时代就已出现，只不过和Sponge一样同样生不逢时，虽然设计先进，但大多数开发者当时依然只依赖于Forge开发模组而不是Fabric，知道窗口期的来临，Fabric才得以重获新生，得到了一部分开发者的支持</span><sup class='md-footnote'><a href='#dfref-footnote-39' name='ref-footnote-39'>39</a></sup><span>。</span>
+<span>  Fabric是</span><strong><span>模块化</span></strong><sup class='md-footnote'><a href='#dfref-footnote-40' name='ref-footnote-40'>40</a></sup><span>的，这意味着他不想高耦合的Forge，每次Minecraft源代码更新就要折腾一阵子推倒重来，他完全可以拆出不兼容的模块，并更换上兼容新版本的模块以快速发布更新，这也是Fabric甚至有针对每一个Minecraft预览版(Snapshot)的支持的原因。</span>
+<span>  VanillaFabric则和VanillaForge类似，是基于Vanilla的实现了FabricAPI支持的服务端，他允许你安装FabricMod。</span>
+<span>  Fabric 有如下属性:</span>
+<span>    - 基于Vanilla</span>
+<span>    - </span><strong><span>不可以</span></strong><span> 安装基于任何API的插件</span>
+<span>    - </span><strong><span>可以</span></strong><span> 安装基于FabricAPI的模组</span>
+<span>    - 稳定性较好</span>
+<span>    - 性能相对较好</span>
+<span>    - 可插拔性强，易于更新</span></p><p><span>  下载VanillaFabric:</span>
+<span>    1.前往Fabric官网下载Fabric Installer，并选择install server模式，将安装目录指向运行过一次的Vanilla服务端: </span><a href='https://fabricmc.net/use/' target='_blank' class='url'>https://fabricmc.net/use/</a></p><p><span>注释:</span></p><p><em><span>19.Fukkit</span></em>
+<span>  Fukkit是一款实现了BukkitAPI+FabricAPI支持的服务端，现已停更归档，因此不多赘述，也不提供下载地址。</span></p><p><em><span>为什么不推荐?:已归档，不稳定</span></em></p><p><span>如果你看到了这里，那么恭喜你已经结束了所有</span><strong><span>主流</span></strong><span>服务端的介绍，接下来是两个</span><em><span>看看就好</span></em><span>的魔怔服务端的介绍，如果你不需要了解这些，请直接跳到下一节。</span></p><p><em><span>20.Glowstone</span></em>
+<span>  如果你是个聪明人，你会发现上面的所有服务端都基于Mojang提供的官方服务端Vanilla，那么有没有不依赖于Vanilla的服务端呢，答案是有，这就是Glowstone。</span>
+<span>  Glowstone完全不依赖任何Mojang的源码，因此他非常的自由，不会受到Mojang EULA和DMCA的管控。</span>
+<span>  Glowstone 有如下属性:</span></p><ul><li><span>少更新</span></li><li><strong><span>可以</span></strong><span> 安装基于BukkitAPI,SpigotAPI,PaperAPI,GlowstoneAPI的插件</span></li><li><strong><span>不可以</span></strong><span> 安装基于任何API的模组</span></li><li><span>稳定性不好 </span></li><li><span>性能较好</span></li><li><span>缺少很多原版内容</span></li><li><span>缺少NMS支持</span></li><li><span>==仅支持1.12.2==</span></li></ul><p><em><span>为什么不推荐?:由于Glowstone不基于Vanilla，所有Vanilla负责的游戏行为都由其自行处理，因此Vanilla提供的一些功能（比如NMS，一些游戏逻辑）未在Glowstone中提供，同时他也不支持OBC</span><sup class='md-footnote'><a href='#dfref-footnote-41' name='ref-footnote-41'>41</a></sup><span>，这会导致一些基于NMS的插件无法在Glowstone运行，因此对于绝大多数服主都不友好，故不推荐使用</span></em></p><p><span>  下载Glowstone:</span>
+<span>    1.Glowstone官方: </span><a href='https://glowstone.net/#downloads' target='_blank' class='url'>https://glowstone.net/#downloads</a></p><p><span>注释:</span></p><p><em><span>21.Cuberite</span></em>
+<span>  如果你还是个聪明人，你会发现上面所有的服务端都基于Java开发，那么有没有不基于Java的服务端呢，答案是依然有，这就是Cuberite。</span>
+<span>  Cuberite同样完全不依赖任何Mojang的源码，因此他非常的自由，不会受到Mojang EULA和DMCA的管控。</span>
+<span>  而且，Cuberite支持跨版本运行，1.8-1.12.2的客户端均能加入到你的Cuberite服务器中</span>
+<span>  说起来你可能不信，Cuberite甚至还能在Android™️上运行。</span></p><p><span>  Cuberite 有如下属性:</span></p><ul><li><span>少更新</span></li><li><span>Android™️跨平台支持</span></li><li><strong><span>可以</span></strong><span> 安装基于CuberiteAPI的插件</span></li><li><strong><span>不可以</span></strong><span> 安装基于任何API的模组</span></li><li><span>稳定性不好 </span></li><li><span>性能较好</span></li><li><span>缺少很多原版内容</span></li><li><span>缺少NMS支持</span></li><li><span>==同时支持1.8-1.12.2==</span><sup class='md-footnote'><a href='#dfref-footnote-42' name='ref-footnote-42'>42</a></sup></li></ul><p><em><span>为什么不推荐?:一个由C++制作的服务端虽然可以通过内存管理在理论上无限调优性能，但他不基于Vanilla，甚至不基于Minecraft的开发语言——Java，这导致了一系列兼容问题，因此不推荐使用</span></em></p><p><span>  下载Cuberite:</span>
+<span>    1.Cuberite官方: </span><a href='https://cuberite.org/' target='_blank' class='url'>https://cuberite.org/</a></p><p><span>注释:</span></p><p><span>最后，以上服务端的迭代关系大致如下:</span>
+<img src="https://s1.ax1x.com/2020/07/30/anMron.png" referrerpolicy="no-referrer" alt="anMron.png"></p><p><span>至此，你已经完成第一节的所有学习，并基本了解了所有主流服务端以及其迭代关系</span></p><h1><a name="二服务端核心的安装与使用" class="md-header-anchor"></a><span>二.服务端核心的安装与使用</span></h1><p><span>==由于篇幅原因，本节仅介绍上文中</span><strong><span>非不推荐</span></strong><span>核心的安装和使用方式==，其他服务端的安装方式请自行查阅文档或自行探索</span></p><h2><a name="安装java" class="md-header-anchor"></a><span>安装Java</span></h2><h3><a name="确定操作系统架构" class="md-header-anchor"></a><span>确定操作系统架构</span></h3><p><span>  对于新手来说，下载了不适合与自己服务器/计算机的操作系统的Java是非常难过的，为了最大化利用计算机性能，一般情况下服主们都会为服务端设置最大内存，但因为支持x86架构（32位系统）的Java最大只能为服务端分配1024MB的内存，超出这个数值会导致无法开服。只有支持x86_64架构（64位系统）的Java才能支持更大的最大内存。</span>
+<span>  对于Windows操作系统（家用操作系统），请右击您桌面上的</span><code>计算机/此电脑</code><span>(Win7,Win8,Win8.1,Win10)图标，选择</span><code>属性</code><span>，查看操作系统为32位还是64位;如果您没有看到以上图标，而是看到了</span><code>我的电脑</code><span>(WinXP)，那么您的操作系统一般应为32位。</span>
+<span>  对于Windows操作系统（服务器），您可通过服务器管理器或是通过其他方式查看您的操作系统架构</span></p><h3><a name="下载并安装java8" class="md-header-anchor"></a><span>下载并安装Java8</span></h3><p><span>  对于1.8+服务端，他们均需要Java8或以上版本</span><sup class='md-footnote'><a href='#dfref-footnote-43' name='ref-footnote-43'>43</a></sup><span>以运行，因此您可前往</span><a href='https://www.java.com/zh_TW/download/manual.jsp'><span>Java官方网站的下载页</span></a><sup class='md-footnote'><a href='#dfref-footnote-44' name='ref-footnote-44'>44</a></sup><span>下载Java8的运行环境（JRE8）以支持启动您的服务端</span>
+<span>  如果您是32位的Windows操作系统，请选择</span><code>Windows</code><span>栏目下的</span><code>Windows 離線</code><span>安装包;如果您是64位的Windows操作系统，请选择</span><code>Windows</code><span>栏目下的</span><code>Windows 離線（64位元）</code><span>;对于Mac OS X和Linux系统，请自行按照各自的档案类型下载对应的安装包。</span>
+<span>  下载完成后，请自行打开文件进行安装操作。</span></p><h3><a name="下载并安装java7" class="md-header-anchor"></a><span>下载并安装Java7</span></h3><p><span>  对于1.7.10或更低版本的服务端，您可能需要下载已不受支持的Java7以运行。您需要前往</span><a href='https://www.oracle.com/java/technologies/javase/javase7-archive-downloads.html'><span>Oracle官网</span></a><span>下载已被归档的Java7。</span>
+<span>  您需要前往该网站下方的</span><code>Java SE Runtime Environment 7u80</code><span>下载Java运行环境，而非下载上方的</span><code>Java SE Development Kit 7u80</code><span>Java开发工具包。</span>
+<span>  如果您是32位的Windows操作系统，请选择</span><code>Windows x86</code><span>安装包;如果您是64位的Windows操作系统，请选择</span><code>Windows x64</code><span>;对于Mac OS X和Linux系统，请自行按照各自的档案类型下载对应的安装包。</span>
+<span>  您可能需要注册并登录Oracle账号以下载Java7。</span>
+<span>  下载完成后，请自行打开文件进行安装操作。</span></p><h3><a name="关于openj9" class="md-header-anchor"></a><span>关于OpenJ9</span></h3><p><span>  有一种非官方的JVM</span><sup class='md-footnote'><a href='#dfref-footnote-45' name='ref-footnote-45'>45</a></sup><span>实现，他的名字叫做OpenJ9，其以</span><code>高性能，可拓展</code><span>著称，此处我们不介绍OpenJ9的详细安装方式，但有需要的服主可前往</span><a href='https://adoptopenjdk.net/'><span>AdoptOpenJDK</span></a><span>网站了解并下载OpenJ9 JVM</span></p><p><span>注释:</span></p><h2><a name="安装服务端" class="md-header-anchor"></a><span>安装服务端</span></h2><p><span>==此处我们已假设您已正确安装Java运行环境（JRE）并已完成您所需要的服务端核心的下载==</span>
+<span>==为了方便和美观起见，您应当创建一个新的文件夹，并放入您的服务端核心，以此文件夹作为根目录开始您的开服旅程==</span></p><h3><a name="适用于vanillacraftbukkitspigot的安装和使用教程" class="md-header-anchor"></a><span>适用于Vanilla,CraftBukkit,Spigot的安装和使用教程</span></h3><p><span>  1.对于Windows用户，您可通过直接双击</span><code>minecraft_server_1.x.x.jar</code><span>运行服务端，当服务器完全就绪</span><sup class='md-footnote'><a href='#dfref-footnote-46' name='ref-footnote-46'>46</a></sup><span>后即可通过默认的连接地址</span><sup class='md-footnote'><a href='#dfref-footnote-47' name='ref-footnote-47'>47</a></sup><span>连接到服务器。</span>
+<span>  2.对于希望使用CMD控制台的Windows用户来说，您可通过</span><code>Shift+右键</code><span>在服务端根目录启动命令行，或是直接创建一个以.bat结尾的批处理文件，并写入:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="cmd"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="cmd"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-2">@echo</span> <span class="cm-identifier">off</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-identifier">java</span> <span class="cm-operator">-</span><span class="cm-identifier">Xmx1024M</span> <span class="cm-operator">-</span><span class="cm-identifier">jar</span> <span class="cm-identifier">minecraft_server_1</span><span class="cm-punctuation">.</span><span class="cm-identifier">x</span><span class="cm-punctuation">.</span><span class="cm-identifier">x</span><span class="cm-punctuation">.</span><span class="cm-identifier">jar</span> <span class="cm-operator">-</span><span class="cm-identifier">nogui</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-builtin">pause</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 69px;"></div><div class="CodeMirror-gutters" style="display: none; height: 69px;"></div></div></div></pre><p><span>  其中的</span><code>-Xmx1024M</code><span>用于指定最大内存，您可将</span><code>1024M</code><span>更换为您需要指定的最大内存，例如</span><code>-Xmx2048M</code><span>，</span><code>-Xmx4G</code><span>。</span>
+<span>  核心名称中的1.x.x代表你的服务器版本</span>
+<span>  3.对于Linux用户，您可通过</span><code>cd</code><span>指令进入服务端根目录，或是直接在服务端根目录创建一个以.sh结尾的Linux shell文件，并写入</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="shell"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="shell"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">java <span class="cm-attribute">-Xmx1024M</span> <span class="cm-attribute">-jar</span> .\minecraft_server_1.x.x.jar <span class="cm-attribute">-nogui</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="display: none; height: 23px;"></div></div></div></pre><p><span>  其中，你应将</span><code>java</code><span>替换为</span><code>&quot;您的Java JRE存放位置\bin\java.exe&quot;</code>
+<span>  自1.8起，当你第一次启动服务端时，服务器会先在根目录生成一个</span><code>eula.txt</code><span>，随后服务器会自动关闭。</span>
+<span>  请打开</span><code>eula.txt</code><span>，届时您会看到这样的文字：</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="yaml"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="yaml"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">#By changing the setting below to TRUE you are indicating your agreement to our EULA (https://account.mojang.com/documents/minecraft_eula).</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">#Fri Jul 31 12:26:16 CST 2020</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">eula=false</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 92px;"></div><div class="CodeMirror-gutters" style="display: none; height: 92px;"></div></div></div></pre><p><span>请将其中的</span><code>eula=false</code><span>修改为</span><code>eula=true</code><sup class='md-footnote'><a href='#dfref-footnote-48' name='ref-footnote-48'>48</a></sup><span>，然后重新启动服务器，服务器才会正式启动。</span>
+<span>  最后，您可通过在控制台</span><sup class='md-footnote'><a href='#dfref-footnote-49' name='ref-footnote-49'>49</a></sup><span>内输入stop或在游戏内输入/stop关闭服务器。</span></p><p><span>注释:</span></p><h3><a name="适用于papertuinityakarin的安装和使用教程" class="md-header-anchor"></a><span>适用于Paper,Tuinity,Akarin的安装和使用教程</span></h3><p><span>  基本同上，只需将核心名称替换为你的核心名称即可。但请注意，</span><code>Paper,Tuinity,Akarin</code><span>等衍生于Paper的核心第一次启动都需要下Vanilla文件以完成打补丁操作，对于某些网络不稳定的地方，你可能会一直卡在</span><code>Downloading cache</code><span>上。对于这种问题，你可以通过上方提供的或其他渠道先下载对应版本的Vanilla，然后将核心改名为</span><code>mojang_1.x.x.jar</code><span>(1.x.x代表你的服务器版本)，放入</span><code>·\cache</code><span>文件夹内，开启服务器即可开始打补丁操作</span></p><h3><a name="适用于vanillaforgevanillafabric的安装和使用教程" class="md-header-anchor"></a><span>适用于VanillaForge,VanillaFabric的安装和使用教程</span></h3><p><span>  请先按照第一则教程安装并完全启动一次Vanilla，随后关闭服务端。</span>
+<span>  打开Forge或Fabric的安装器，选择</span><code>install server</code><span>，并将目录选择至服务器根目录，点击</span><code>安装(install)</code><span>，在自动下载libraries(需保持网络畅通，不然可能会导致下载失败)完成后，ForgeVanilla或FabricVanilla的核心便会出现在根目录上，此时将启动参数的jar指向新的核心，即可开始开服。</span></p><h3><a name="适用于spongevanilla的安装和使用教程" class="md-header-anchor"></a><span>适用于SpongeVanilla的安装和使用教程</span></h3><p><span>  与第一则教程相同，只需将核心名称替换为你的核心名称即可。请注意Forge的版本必须于SpongeVanilla下载页上标注的Forge版本相同，否则可能会引发兼容性问题。</span></p><h3><a name="适用于spongeforge的安装和使用教程" class="md-header-anchor"></a><span>适用于SpongeForge的安装和使用教程</span></h3><p><span>  请先按照第三则教程安装并完全启动一次与SpongeForge下载页上标注的Forge版本相同的VanillaForge，随后关闭服务端。</span>
+<span>  将SpongeForge的jar文件</span><strong><span>直接拖入</span></strong><code>.\mods</code><span>文件夹，之后启动服务器即可开服</span><sup class='md-footnote'><a href='#dfref-footnote-50' name='ref-footnote-50'>50</a></sup><span>。</span></p><p><span>注释:</span></p><h3><a name="适用于thermoscontigo的安装和使用教程" class="md-header-anchor"></a><span>适用于Thermos,Contigo的安装和使用教程</span></h3><p><span>  请在下载这两种服务端核心时注意需要同时下载</span><code>libraries.zip</code><sup class='md-footnote'><a href='#dfref-footnote-51' name='ref-footnote-51'>51</a></sup><span>。</span>
+<span>  将您下载到的</span><code>libraries.zip</code><span>内的</span><code>libraries</code><span>文件夹(包括文件夹)解压至服务端根目录，然后按照第一则教程的启动方式启动服务器。</span></p><p><span>注释:</span></p><h3><a name="适用于uranium的安装和使用教程" class="md-header-anchor"></a><span>适用于Uranium的安装和使用教程</span></h3><p><span>  基本同上一则教程，前往下载核心时请下载结尾为</span><code>-server</code><span>的jar，下载libraries时请下载</span><a href='https://ci.uraniummc.cc/job/Uranium-dev/271/artifact/build/distributions/Uranium-1710-dev-5-B271-31d6587-libraries.zip'><span>#271构建打包的libraries</span></a><span>。</span>
+<span>  对于使用显示Title和Actionbar的功能，请自行前往</span><a href='https://github.com/UraniumMC/UraniumPlus/releases/tag/v1.1'><span>此处</span></a><span>下载UraniumPlus，并将其作为mod安装至客户端(</span><code>.minecraft\mods</code><span>)和服务端(</span><code>.\mods</code><span>)。</span></p><h3><a name="适用于catservermohistmagmaarclight的安装和使用教程" class="md-header-anchor"></a><span>适用于CatServer/Mohist/Magma/Arclight的安装和使用教程</span></h3><p><span>   基本同第一则教程。运行所需的Libraries应当会自动被下载。</span></p><p><span>至此，你已经完成第二节的所有学习，并应已经启动过一次服务器并通过</span><code>stop</code><span>指令安全的关闭服务器。</span></p><h1><a name="三服务端核心的配置" class="md-header-anchor"></a><span>三.服务端核心的配置</span></h1><p><span>==由于篇幅原因，本节仅介绍</span><strong><span>Spigot</span></strong><span>核心的</span><strong><span>主要</span></strong><span>配置文件的</span><strong><span>主要</span></strong><span>配置项==</span></p><p><span>==本配置对应的服务器版本为</span><code>1.16.1</code><span>==</span></p><h2><a name="on-serverproperties" class="md-header-anchor"></a><span>on </span><code>server.properties</code></h2><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="properties" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="properties"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">#Minecraft server properties</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment">#Fri Jul 31 12:30:46 CST 2020</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">spawn-protection</span>=<span class="cm-quote">16</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">max-tick-time</span>=<span class="cm-quote">60000</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">query.port</span>=<span class="cm-quote">25565</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">generator-settings</span>=</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">sync-chunk-writes</span>=<span class="cm-quote">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">force-gamemode</span>=<span class="cm-quote">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">allow-nether</span>=<span class="cm-quote">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">enforce-whitelist</span>=<span class="cm-quote">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">gamemode</span>=<span class="cm-quote">survival</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">broadcast-console-to-ops</span>=<span class="cm-quote">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">enable-query</span>=<span class="cm-quote">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">player-idle-timeout</span>=<span class="cm-quote">0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">difficulty</span>=<span class="cm-quote">easy</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">spawn-monsters</span>=<span class="cm-quote">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">broadcast-rcon-to-ops</span>=<span class="cm-quote">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">op-permission-level</span>=<span class="cm-quote">4</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">pvp</span>=<span class="cm-quote">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">entity-broadcast-range-percentage</span>=<span class="cm-quote">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">snooper-enabled</span>=<span class="cm-quote">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">level-type</span>=<span class="cm-quote">default</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">hardcore</span>=<span class="cm-quote">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">enable-status</span>=<span class="cm-quote">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">enable-command-block</span>=<span class="cm-quote">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">max-players</span>=<span class="cm-quote">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">network-compression-threshold</span>=<span class="cm-quote">256</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">resource-pack-sha1</span>=</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">max-world-size</span>=<span class="cm-quote">29999984</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">function-permission-level</span>=<span class="cm-quote">2</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">rcon.port</span>=<span class="cm-quote">25575</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">server-port</span>=<span class="cm-quote">25565</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">debug</span>=<span class="cm-quote">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">server-ip</span>=</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">spawn-npcs</span>=<span class="cm-quote">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">allow-flight</span>=<span class="cm-quote">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">level-name</span>=<span class="cm-quote">world</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">view-distance</span>=<span class="cm-quote">10</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">resource-pack</span>=</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">spawn-animals</span>=<span class="cm-quote">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">white-list</span>=<span class="cm-quote">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">rcon.password</span>=</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">generate-structures</span>=<span class="cm-quote">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">max-build-height</span>=<span class="cm-quote">256</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">online-mode</span>=<span class="cm-quote">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">level-seed</span>=</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">use-native-transport</span>=<span class="cm-quote">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">prevent-proxy-connections</span>=<span class="cm-quote">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">enable-jmx-monitoring</span>=<span class="cm-quote">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">enable-rcon</span>=<span class="cm-quote">false</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-def">motd</span>=<span class="cm-quote">A Minecraft Server</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 1173px;"></div><div class="CodeMirror-gutters" style="display: none; height: 1173px;"></div></div></div></pre><p><code>online-mode=true</code><span> 表示是否启用正版验证，默认值为开启。设置为开启即</span><strong><span>代表只有Minecraft正版玩家才能连接到您的服务器</span></strong><span>，一般的“盗版服”均需要将此处设置为关闭</span></p><p><code>spawn-protection=16</code><span> 表示出生点保护边长</span><sup class='md-footnote'><a href='#dfref-footnote-53' name='ref-footnote-53'>53</a></sup><span>，默认值为</span><code>16</code><span>。</span><strong><span>在该范围内的所有方块将会被禁止交互（如破坏，放置，触发插件监听</span><sup class='md-footnote'><a href='#dfref-footnote-52' name='ref-footnote-52'>52</a></sup><span>）</span></strong><span>。设置为0即代表关闭出生点保护</span></p><p><code>sync-chunk-writes=false</code><span> 自1.16加入，表示是否开启</span><strong><span>同步</span></strong><span>区块读写，默认为关闭</span><sup class='md-footnote'><a href='#dfref-footnote-54' name='ref-footnote-54'>54</a></sup><span>。将此项目关闭即代表开启异步区块读写，可以加快区块加载速度，但有很大几率导致区块数据损坏</span><sup class='md-footnote'><a href='#dfref-footnote-55' name='ref-footnote-55'>55</a></sup><span>。</span></p><p><code>force-gamemode=false</code><span> 表示是否强制游戏模式，默认为关闭。开启后每当玩家重新加入服务器都会自动将玩家的游戏模式设置为默认的游戏模式。</span></p><p><code>allow-nether=true</code><span> 表示是否生成地狱，默认为开启。关闭后地狱世界将不会被生成和加载，玩家也不能进入地狱。</span></p><p><code>gamemode=survival</code><span> 表示默认游戏模式，默认为</span><code>survival</code><span>（生存模式）。玩家第一次进入服务器的时候便会被设置成此游戏模式。可选的游戏模式还有</span><code>creative</code><span>（创造模式），</span><code>adventure</code><span>（冒险模式），</span><code>spectator</code><span>（观察模式）</span><sup class='md-footnote'><a href='#dfref-footnote-56' name='ref-footnote-56'>56</a></sup></p><p><code>player-idle-timeout=0</code><span> 表示玩家AFK踢出时间，单位为分钟，默认为0，代表关闭。设置为非0自然数即代表当玩家超过X分钟没有进行任何活动时，他将会被自动踢出服务器</span></p><p><code>difficulty=easy</code><span>表示游戏难度，默认为</span><code>easy</code><span>（简单）。可选的游戏难度还有</span><code>peaceful</code><span>（和平），</span><code>normal</code><span>（简单），</span><code>hard</code><span>（困难）</span><sup class='md-footnote'><a href='#dfref-footnote-57' name='ref-footnote-57'>57</a></sup></p><p><code>spawn-npcs=true</code><span> 表示是否生成NPC，默认为开启。关闭后将不会自然生成诸如村民这样的NPC生物</span></p><p><code>spawn-animals=true</code><span> 表示是否生成动物，默认为开启。关闭后将不会自然生成动物</span></p><p><code>spawn-monsters=true</code><span> 表示是否生成怪物，默认为开启。关闭后将不会自然生成怪物</span></p><p><code>generate-structures=true</code><span> 表示是否生成结构，默认为开器。关闭后将不会在地图中生成诸如沙漠神庙，废弃矿道这样的结构</span></p><p><code>op-permission-level=4</code><span> 表示默认OP权限，默认为4。代表了当你使用</span><code>/op</code><span>命令时OP的默认权限等级</span><sup class='md-footnote'><a href='#dfref-footnote-58' name='ref-footnote-58'>58</a></sup><span>。设置为1即代表OP仅能绕过出生点保护限制；设置为2即代表OP可以使用单人模式作弊指令（比如</span><code>/execute</code><span>）；设置为3即代表OP可以使用多人游戏作弊指令（比如</span><code>/ban</code><span>）；设置为4即代表OP可以使用所有指令，包括</span><code>/stop</code><span>,</span><code>/save-all</code><span>,</span><code>/save-on</code><span>,</span><code>/save-off</code></p><p><code>pvp=true</code><span> 表示是否允许PVP，默认为开启。设置为关闭玩家与玩家便无法相互攻击</span></p><p><code>level-type=default</code><span> 表示主世界类型，默认为默认。设置为</span><code>flat</code><span>即代表超平坦</span></p><p><code>hardcore=false</code><span> 表示是否开启极限模式，默认为关闭。开启后当玩家死亡便会被服务器自动封禁</span></p><p><code>enable-status=true</code><span>  自1.16加入，表示是否在服务器列表中显示为在线，默认为开启。关闭后客户端的服务器列表中将将此服务器显示为</span><strong><span>离线</span></strong><span>，但玩家仍可连接到服务器</span></p><p><code>enable-command-block=false</code><span> 表示是否启用命令方块，默认为关闭。开启后才可以使用命令方块</span></p><p><code>max-players=20</code><span> 表示最大玩家数，默认为20。表示了该服务器能够容纳的同时在线玩家数</span></p><p><code>resource-pack=</code><span> 表示资源包地址，默认为空。在此处填写直链</span><sup class='md-footnote'><a href='#dfref-footnote-59' name='ref-footnote-59'>59</a></sup><span>后玩家进服便可以选择是否安装资源包</span></p><p><code>server-port=25565</code><span> 表示服务器端口号，默认为25565</span></p><p><code>allow-flight=false</code><span> 表示是否允许玩家飞行，默认为关闭。开启后服务端自带的反作弊系统将不会拦截并踢出使用飞行作弊的玩家</span><sup class='md-footnote'><a href='#dfref-footnote-60' name='ref-footnote-60'>60</a></sup></p><p><code>view-distance=10</code><span> 表示服务器最大视距，默认为10，允许的值为3-32。</span></p><p><code>level-seed=</code><span> 表示地图种子号，默认为空</span></p><p><code>prevent-proxy-connections=false</code><span> 表示是否阻止代理连接，默认为关闭。开启后服务端将会尽可能的禁止被判定为使用代理的连接</span></p><p><code>motd=A Minecraft Server</code><span> 表示服务器标语，默认为</span><code>A Minecraft Server</code><span>。代表了玩家在多人游戏列表上看到的服务器标语，您可以使用</span><code>\u00A7</code><span>表示分节符表示创建颜色代码，使用\n表示换行</span></p><p><code>white-list=false</code><span> 表示是否启用白名单，默认为关闭。开启后只有在服务器白名单内的玩家才能进入服务器，您可通过</span><code>/whitelist</code><span>指令管理您的白名单</span></p><p><code>enforce-whitelist=false</code><span> 表示是否强制踢出非白名单玩家，默认为关闭。开启后当你在服务器运行中通过</span><code>/whitelist on</code><span>指令手动开启白名单后，未处于白名单内的在线玩家将会被踢出</span></p><p>&nbsp;</p><p><span>有关server.properties的更多信息请见</span><a href='https://minecraft.gamepedia.com/Server.properties' target='_blank' class='url'>https://minecraft.gamepedia.com/Server.properties</a></p><p><span>注释:</span></p><h2><a name="on-bukkityml63" class="md-header-anchor"></a><span>on </span><code>bukkit.yml</code><sup class='md-footnote'><a href='#dfref-footnote-61' name='ref-footnote-61'>61</a></sup></h2><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="yaml" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="yaml"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># This is the main configuration file for Bukkit.</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># As you can see, there's actually not that much to configure without any plugins.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># For a reference for any variable inside this file, check out the Bukkit Wiki at</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># https://www.spigotmc.org/go/bukkit-yml</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># </span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># If you need help on this file, feel free to join us on irc or leave a message</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># on the forums asking for advice.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># </span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># IRC: #spigot @ irc.spi.gt</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># &nbsp;  (If this means nothing to you, just go to https://www.spigotmc.org/go/irc )</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># Forums: https://www.spigotmc.org/</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># Bug tracker: https://www.spigotmc.org/go/bugs</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">settings</span><span class="cm-meta">:</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  allow-end</span><span class="cm-meta">: </span><span class="cm-keyword">true</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  warn-on-overload</span><span class="cm-meta">: </span><span class="cm-keyword">true</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  permissions-file</span><span class="cm-meta">: </span>permissions.yml</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  update-folder</span><span class="cm-meta">: </span>update</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  plugin-profiling</span><span class="cm-meta">: </span><span class="cm-keyword">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  connection-throttle</span><span class="cm-meta">: </span><span class="cm-number">4000</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  query-plugins</span><span class="cm-meta">: </span><span class="cm-keyword">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  deprecated-verbose</span><span class="cm-meta">: </span>default</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  shutdown-message</span><span class="cm-meta">: </span>Server closed</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  minimum-api</span><span class="cm-meta">: </span>none</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">spawn-limits</span><span class="cm-meta">:</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  monsters</span><span class="cm-meta">: </span><span class="cm-number">70</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  animals</span><span class="cm-meta">: </span><span class="cm-number">10</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  water-animals</span><span class="cm-meta">: </span><span class="cm-number">15</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  water-ambient</span><span class="cm-meta">: </span><span class="cm-number">20</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  ambient</span><span class="cm-meta">: </span><span class="cm-number">15</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">chunk-gc</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  period-in-ticks</span><span class="cm-meta">: </span><span class="cm-number">600</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">ticks-per</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  animal-spawns</span><span class="cm-meta">: </span><span class="cm-number">400</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  monster-spawns</span><span class="cm-meta">: </span><span class="cm-number">1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  water-spawns</span><span class="cm-meta">: </span><span class="cm-number">1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  water-ambient-spawns</span><span class="cm-meta">: </span><span class="cm-number">1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  ambient-spawns</span><span class="cm-meta">: </span><span class="cm-number">1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  autosave</span><span class="cm-meta">: </span><span class="cm-number">6000</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">aliases</span><span class="cm-meta">: </span>now-in-commands.yml</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 966px;"></div><div class="CodeMirror-gutters" style="display: none; height: 966px;"></div></div></div></pre><p><code>allow-end: true</code><span> 表示是否生成末地，默认为开启。关闭后末地世界将不会被生成和加载，玩家也不能进入末地。</span></p><p><code>warn-on-overload: true</code><span> 表示是否提示服务器过载，默认为开启</span></p><p><code>spawn-limits:</code><span> 表示每个世界能够生成的最大生物多少。下方分别表示了怪物，动物，水生动物，水生环境生物和环境生物的最大自然生成数</span></p><p><code>ticks-per:</code><span> 表示每多少Tick</span><sup class='md-footnote'><a href='#dfref-footnote-62' name='ref-footnote-62'>62</a></sup><span>能够生成一个生物。除和上方相同的项目外，</span><code>autosave</code><span>代表了地图自动保存的时间</span></p><p>&nbsp;</p><p><span>有关bukkit.yml的更多信息请见</span><a href='https://bukkit.gamepedia.com/Bukkit.yml' target='_blank' class='url'>https://bukkit.gamepedia.com/Bukkit.yml</a><sup class='md-footnote'><a href='#dfref-footnote-63' name='ref-footnote-63'>63</a></sup></p><p><span>注释:</span></p><h2><a name="on-spigotyml" class="md-header-anchor"></a><span>on </span><code>spigot.yml</code></h2><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="yaml" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="yaml"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># This is the main configuration file for Spigot.</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># As you can see, there's tons to configure. Some options may impact gameplay, so use</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># with caution, and make sure you know what each option does before configuring.</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># For a reference for any variable inside this file, check out the Spigot wiki at</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># http://www.spigotmc.org/wiki/spigot-configuration/</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># </span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># If you need help with the configuration or have any questions related to Spigot,</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># join us at the IRC or drop by our forums and leave a post.</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># </span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># IRC: #spigot @ irc.spi.gt ( http://www.spigotmc.org/pages/irc/ )</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># Forums: http://www.spigotmc.org/</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">config-version</span><span class="cm-meta">: </span><span class="cm-number">12</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">settings</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  debug</span><span class="cm-meta">: </span><span class="cm-keyword">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  save-user-cache-on-stop-only</span><span class="cm-meta">: </span><span class="cm-keyword">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  moved-wrongly-threshold</span><span class="cm-meta">: </span><span class="cm-number">0.0625</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  log-villager-deaths</span><span class="cm-meta">: </span><span class="cm-keyword">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  bungeecord</span><span class="cm-meta">: </span><span class="cm-keyword">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  timeout-time</span><span class="cm-meta">: </span><span class="cm-number">60</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  restart-on-crash</span><span class="cm-meta">: </span><span class="cm-keyword">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  restart-script</span><span class="cm-meta">: </span>./start.sh</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  moved-too-quickly-multiplier</span><span class="cm-meta">: </span><span class="cm-number">10.0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  sample-count</span><span class="cm-meta">: </span><span class="cm-number">12</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  player-shuffle</span><span class="cm-meta">: </span><span class="cm-number">0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  user-cache-size</span><span class="cm-meta">: </span><span class="cm-number">1000</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  netty-threads</span><span class="cm-meta">: </span><span class="cm-number">4</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  attribute</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  maxHealth</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  max</span><span class="cm-meta">: </span><span class="cm-number">2048.0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  movementSpeed</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  max</span><span class="cm-meta">: </span><span class="cm-number">2048.0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  attackDamage</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  max</span><span class="cm-meta">: </span><span class="cm-number">2048.0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">messages</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  whitelist</span><span class="cm-meta">: </span>You are not whitelisted on this server!</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  unknown-command</span><span class="cm-meta">: </span>Unknown command. Type <span class="cm-string">"/help"</span> for help.</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  server-full</span><span class="cm-meta">: </span>The server is full!</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  outdated-client</span><span class="cm-meta">: </span>Outdated client! Please use <span class="cm-meta">{</span>0<span class="cm-meta">}</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  outdated-server</span><span class="cm-meta">: </span>Outdated server! I<span class="cm-string">'m still on {0}</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  restart</span><span class="cm-meta">: </span>Server is restarting</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">commands</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  silent-commandblock-console</span><span class="cm-meta">: </span><span class="cm-keyword">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  log</span><span class="cm-meta">: </span><span class="cm-keyword">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  tab-complete</span><span class="cm-meta">: </span><span class="cm-number">0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  send-namespaced</span><span class="cm-meta">: </span><span class="cm-keyword">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  spam-exclusions</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">  - </span>/skill</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  replace-commands</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">  - </span>setblock</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">  - </span>summon</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">  - </span>testforblock</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">  - </span>tellraw</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">advancements</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  disable-saving</span><span class="cm-meta">: </span><span class="cm-keyword">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  disabled</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">  - </span>minecraft:story/disabled</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">stats</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  disable-saving</span><span class="cm-meta">: </span><span class="cm-keyword">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  forced-stats</span><span class="cm-meta">: {}</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">world-settings</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">  default</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  verbose</span><span class="cm-meta">: </span><span class="cm-keyword">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  enable-zombie-pigmen-portal-spawns</span><span class="cm-meta">: </span><span class="cm-keyword">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  item-despawn-rate</span><span class="cm-meta">: </span><span class="cm-number">6000</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  view-distance</span><span class="cm-meta">: </span>default</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  wither-spawn-sound-radius</span><span class="cm-meta">: </span><span class="cm-number">0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  hanging-tick-frequency</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  end-portal-sound-radius</span><span class="cm-meta">: </span><span class="cm-number">0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  arrow-despawn-rate</span><span class="cm-meta">: </span><span class="cm-number">1200</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  trident-despawn-rate</span><span class="cm-meta">: </span><span class="cm-number">1200</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  zombie-aggressive-towards-villager</span><span class="cm-meta">: </span><span class="cm-keyword">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  nerf-spawner-mobs</span><span class="cm-meta">: </span><span class="cm-keyword">false</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  dragon-death-sound-radius</span><span class="cm-meta">: </span><span class="cm-number">0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-village</span><span class="cm-meta">: </span><span class="cm-number">10387312</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-desert</span><span class="cm-meta">: </span><span class="cm-number">14357617</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-igloo</span><span class="cm-meta">: </span><span class="cm-number">14357618</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-jungle</span><span class="cm-meta">: </span><span class="cm-number">14357619</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-swamp</span><span class="cm-meta">: </span><span class="cm-number">14357620</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-monument</span><span class="cm-meta">: </span><span class="cm-number">10387313</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-shipwreck</span><span class="cm-meta">: </span><span class="cm-number">165745295</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-ocean</span><span class="cm-meta">: </span><span class="cm-number">14357621</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-outpost</span><span class="cm-meta">: </span><span class="cm-number">165745296</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-endcity</span><span class="cm-meta">: </span><span class="cm-number">10387313</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-slime</span><span class="cm-meta">: </span><span class="cm-number">987234911</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-bastion</span><span class="cm-meta">: </span><span class="cm-number">30084232</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-fortress</span><span class="cm-meta">: </span><span class="cm-number">30084232</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-mansion</span><span class="cm-meta">: </span><span class="cm-number">10387319</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-fossil</span><span class="cm-meta">: </span><span class="cm-number">14357921</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  seed-portal</span><span class="cm-meta">: </span><span class="cm-number">34222645</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  mob-spawn-range</span><span class="cm-meta">: </span><span class="cm-number">6</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  max-tnt-per-tick</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  hopper-amount</span><span class="cm-meta">: </span><span class="cm-number">1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  entity-tracking-range</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  players</span><span class="cm-meta">: </span><span class="cm-number">48</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  animals</span><span class="cm-meta">: </span><span class="cm-number">48</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  monsters</span><span class="cm-meta">: </span><span class="cm-number">48</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  misc</span><span class="cm-meta">: </span><span class="cm-number">32</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  other</span><span class="cm-meta">: </span><span class="cm-number">64</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  merge-radius</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  item</span><span class="cm-meta">: </span><span class="cm-number">2.5</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  exp</span><span class="cm-meta">: </span><span class="cm-number">3.0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  growth</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  cactus-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  cane-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  melon-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  mushroom-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  pumpkin-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  sapling-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  beetroot-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  carrot-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  potato-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  wheat-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  netherwart-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  vine-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  cocoa-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  bamboo-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  sweetberry-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  kelp-modifier</span><span class="cm-meta">: </span><span class="cm-number">100</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  entity-activation-range</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  animals</span><span class="cm-meta">: </span><span class="cm-number">32</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  monsters</span><span class="cm-meta">: </span><span class="cm-number">32</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  raiders</span><span class="cm-meta">: </span><span class="cm-number">48</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  misc</span><span class="cm-meta">: </span><span class="cm-number">16</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  tick-inactive-villagers</span><span class="cm-meta">: </span><span class="cm-keyword">true</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  hunger</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  jump-walk-exhaustion</span><span class="cm-meta">: </span><span class="cm-number">0.05</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  jump-sprint-exhaustion</span><span class="cm-meta">: </span><span class="cm-number">0.2</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  combat-exhaustion</span><span class="cm-meta">: </span><span class="cm-number">0.1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  regen-exhaustion</span><span class="cm-meta">: </span><span class="cm-number">6.0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  swim-multiplier</span><span class="cm-meta">: </span><span class="cm-number">0.01</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  sprint-multiplier</span><span class="cm-meta">: </span><span class="cm-number">0.1</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  other-multiplier</span><span class="cm-meta">: </span><span class="cm-number">0.0</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  max-tick-time</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  tile</span><span class="cm-meta">: </span><span class="cm-number">50</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  entity</span><span class="cm-meta">: </span><span class="cm-number">50</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  squid-spawn-range</span><span class="cm-meta">:</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  min</span><span class="cm-meta">: </span><span class="cm-number">45.0</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp;  ticks-per</span><span class="cm-meta">:</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  hopper-transfer</span><span class="cm-meta">: </span><span class="cm-number">8</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom"> &nbsp; &nbsp;  hopper-check</span><span class="cm-meta">: </span><span class="cm-number">1</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 3266px;"></div><div class="CodeMirror-gutters" style="display: none; height: 3266px;"></div></div></div></pre><p><code>spigot.yml</code><span>中与</span><code>bukkit.yml</code><span>可能会有部分选项有所冲突，此时请以spigot.yml为准</span></p><p><span>有关spigot.yml的更多信息请见</span><a href='https://www.spigotmc.org/wiki/spigot-configuration/' target='_blank' class='url'>https://www.spigotmc.org/wiki/spigot-configuration/</a></p><h2><a name="for-sponge" class="md-header-anchor"></a><span>For Sponge</span></h2><p><span>  SpongePowered团队为Sponge提供了非常详细的入门教程和配置文件示意，且文档支持简体中文，您可以直接前往SpongePowered的</span><a href='https://docs.spongepowered.org/stable/zh-CN/'><span>SpongeDocumentation</span></a><span>了解更多Sponge的入门知识</span></p><p><span>至此，你已经完成第三节的所有学习，并应已掌握部分服务端的配置。</span></p><h1><a name="四插件和模组的下载与使用" class="md-header-anchor"></a><span>四.插件和模组的下载与使用</span></h1><h2><a name="对于bukkit系服务端" class="md-header-anchor"></a><span>对于Bukkit系服务端</span></h2><h3><a name="下载插件" class="md-header-anchor"></a><span>下载插件</span></h3><p><span>  您可前往以下网站获取兼容Bukkit系服务端的插件</span></p><ol><li><a href='https://dev.bukkit.org/bukkit-plugins'><span>BukkitDev</span></a><span>（英文） ——Bukkit论坛下属的一个插件发布平台，很多老牌Bukkit插件都在此处发布</span></li></ol><ol start='2' ><li><a href='https://www.spigotmc.org/resources/'><span>SpigotMC Forum</span></a><span>（英文）——SpigotMC团队管理的论坛，现在大部分Bukkit插件都在此处发布</span></li><li><a href='https://papermc.io/forums/c/plugin-releases/paper'><span>PaperMC Forum</span></a><span>（英文）——PaperMC团队管理的论坛，一小部分只兼容PaperAPI的插件会在此处发布</span></li></ol><ol start='3' ><li><a href='https://www.mcbbs.net/forum-servermod-1.html'><span>MCBBS</span></a><span>（中文）——国内著名MC交流论坛，拥有一部分优秀的国人原创插件和搬运自国外的插件</span></li></ol><h3><a name="安装插件" class="md-header-anchor"></a><span>安装插件</span></h3><p><span>  将您下载到的以</span><code>.jar</code><span>结尾的插件放入</span><code>.\plugins</code><span>文件夹，重启服务器后即可加载。届时，您可通过输入</span><code>/plugins</code><span>指令查看插件安装状态。您可前往</span><code>.\plugins\插件名称</code><span>文件夹查看插件提供的配置文件（如果有）。</span></p><h2><a name="对于sponge系服务端" class="md-header-anchor"></a><span>对于Sponge系服务端</span></h2><h3><a name="下载插件-n1049" class="md-header-anchor"></a><span>下载插件</span></h3><p><span>  您可前往以下网站获取兼容Sponge系服务端的插件</span></p><ol><li><a href='https://ore.spongepowered.org/'><span>SpongePowered Ore</span></a><span>（英文）——SpongePowered团队管理的一个插件发布平台，几乎所有的Sponge插件都会在此平台发布</span></li></ol><ol start='2' ><li><a href='https://www.mcbbs.net/forum-servermod-1.html'><span>MCBBS</span></a><span>（中文）——国内著名MC交流论坛，拥有一部分优秀的国人原创插件和搬运自国外的插件。对于Sponge，您可在服务端插件版中部的筛选栏中仅选择</span><code>Sponge</code><span>以过滤掉其他类型的插件</span></li></ol><h3><a name="安装插件-n1035" class="md-header-anchor"></a><span>安装插件</span></h3><p><span>  Sponge对插件兼容有严格的要求，请务必确保您的Sponge插件兼容您的Sponge服务端兼容的插件API版本（这些版本会在SpongePowered Ore上有显著声明，如</span><code>API7</code><span>，请在下载Sponge服务端时注意该服务端支持的API版本）</span></p><p><span>  将您下载到的以</span><code>.jar</code><span>结尾的插件放入</span><code>.\mods文件夹，重启服务器后即可加载。届时，您可通过输入</code><span>/sponge plugins</span><code>指令查看插件安装状态。您可前往</code><span>.\config\插件名称`文件夹查看插件提供的配置文件（如果有）。</span></p><h2><a name="对于搭载了forgeapi或是fabricapi的模组服务端" class="md-header-anchor"></a><span>对于搭载了ForgeAPI或是FabricAPI的模组服务端</span></h2><h3><a name="下载模组" class="md-header-anchor"></a><span>下载模组</span></h3><p><span>  您可前往以下网站获取兼容ForgeAPI或是FabricAPI的Mod</span></p><ol><li><a href='https://www.curseforge.com/minecraft/modpacks'><span>CurseForge</span></a><span>（英文）——国外著名游戏Mods和Addons发布平台，几乎所有模组都会在此平台发布</span></li><li><a href='https://www.mcmod.cn'><span>MC百科</span></a><span>（中文）——国内著名Mod百科，包含了详细的Mod介绍</span></li></ol><h3><a name="安装模组" class="md-header-anchor"></a><span>安装模组</span></h3><p><span>  将您下载到的以</span><code>.jar</code><span>结尾的插件放入</span><code>.\mods文件夹，重启服务器后即可加载。您可前往</code><span>.\config`文件夹查看模组提供的配置文件（如果有）。</span></p><p><span>至此，你已经完成第四节的所有学习，并应已学会安装插件或模组</span></p><h1><a name="x一个真正的服主应该怎样定位错误" class="md-header-anchor"></a><span>X.一个真正的服主应该怎样定位错误</span></h1><p><span>请记住一句话：</span><strong><span>有报错看报错没报错先二分法确定问题</span></strong></p><p><span>待更新</span></p><div class='footnotes-area'  ><hr/>
+<div class='footnote-line'><span class='md-fn-count'>1</span> <span>指通过某些方式，将已经编译成计算机能够识别并运行的Java字节码文件(.class)还原回Java源代码(.java)的行为</span> <a name='dfref-footnote-1' href='#ref-footnote-1' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>2</span> <span>与反编译相反，是指将Java源代码处理为字节码文件的行为</span> <a name='dfref-footnote-2' href='#ref-footnote-2' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>3</span> <span>指编译时需要准备的前置软件，此处指</span><code>Git</code> <a name='dfref-footnote-3' href='#ref-footnote-3' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>4</span> <span>有关原版服务端的内容请见下文对</span><code>Vanilla</code><span>服务端核心的介绍</span> <a name='dfref-footnote-4' href='#ref-footnote-4' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>5</span> <span>指服务端核心所在的那一层文件夹，下文可能会以</span><code>.\</code><span>标识，如</span><code>.\cache</code><span>即指服务端根目录下的cache文件夹目录</span> <a name='dfref-footnote-5' href='#ref-footnote-5' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>6</span> <span>即开放源代码，指向所有人开放软件的源代码并在一定程度上供人们修改</span> <a name='dfref-footnote-6' href='#ref-footnote-6' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>7</span> <span>事实上，不存在Linux操作系统，Linux只是一个内核，因此你用的Linux其实是Linux的发行版，他们基于Linux内核，并实现了不同的功能供你使用(如Ubuntu,CentOS,Debian等)</span> <a name='dfref-footnote-7' href='#ref-footnote-7' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>8</span> <span>此处指基于ForgeAPI，LiteLoaderAPI，RiftAPI，FabricAPI等API开发的模组(Mod)。如果你无法理解，或是从未使用过该服务端所兼容的ModAPI，那么我建议你不要使用此服务端开服</span> <a name='dfref-footnote-8' href='#ref-footnote-8' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>9</span> <span>此处指基于BukkitAPI，SpongeAPI或是其他API开发的插件(Plugin)。如果你无法理解，或是从未使用过该服务端所兼容的PluginAPI，那么也没关系，船到桥头自然直，毕竟我们讲的就是这个</span> <a name='dfref-footnote-9' href='#ref-footnote-9' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>10</span> <span>把CraftBukkit称作Bukkit其实是不负责任的，Bukkit其实是一个规范，他仅包含接口，不包含实现，我们不应将两者划等号</span> <a name='dfref-footnote-10' href='#ref-footnote-10' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>11</span> <span>本指原始代码，此处指从代码层面修改游戏内容</span> <a name='dfref-footnote-11' href='#ref-footnote-11' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>12</span> <span>这里是指在当时，不是指现在</span> <a name='dfref-footnote-12' href='#ref-footnote-12' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>13</span> <span>为什么说是</span><code>基本</code><span>呢?因为其实在1.6时代有一个叫做PlayerAPI的玩意允许你配合CraftBukkit玩一些类似于灵活动作的玩意，不过现在早已销声匿迹了</span> <a name='dfref-footnote-13' href='#ref-footnote-13' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>14</span> <span>此处PaperClip应当指的是Paper的</span><strong><span>补丁安装器</span></strong><span>，不含Paper核心本体，但因为用补丁安装器安装补丁并启动服务器基本感觉是一气呵成的所以大家总是把PaperClip当做Paper本体</span> <a name='dfref-footnote-14' href='#ref-footnote-14' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>15</span> <span>之所以说部分支持，是因为大部分版本Spigot是把这个丑到爆炸的控制台删掉了的(即只能使用CMD或Linux Shell开服)，但自某个高于1.15的版本起，Paper又恢复了这个控制台以防你手贱双击打开了JAR但没有办法操控服务器，但这会导致在你不指定</span><code>nogui</code><span>参数时用命令行开服依然会把那个控制台给召唤出来</span> <a name='dfref-footnote-15' href='#ref-footnote-15' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>16</span> <span>位于</span><code>.\paper.yml</code><span>。其实Spigot也是有这样的文件的，位于</span><code>.\spigot.yml</code><span>，同理，CraftBukkit也有，位于</span><code>.\bukkit.yml</code><span>，下游服务端是同时拥有上游服务端的这些文件的，因此新的服务端定义的新的文件提供了上游服务端所没有的新特性供服主们设定，而不是相互挤兑冲突。</span> <a name='dfref-footnote-16' href='#ref-footnote-16' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>17</span> <span>Hey，也许你是一个生电玩家转生的新手服主，希望开一个生电服，如果如此，请切记</span><strong><span>不要</span></strong><span>使用Paper，Paper内含对包括0tick等Minecraft原版&quot;特性&quot;的修复，可能会导致你和你的玩家感到疑惑，因此，你应当使用</span><strong><span>Spigot</span></strong> <a name='dfref-footnote-17' href='#ref-footnote-17' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>18</span> <span>Timings是一种自Spigot开始自带的性能分析器，允许你通过一个网页查看一段时间内服务器的总耗能情况，据此推断出哪些插件，或是哪些世界，或是哪些生物卡服。Spigot也有Timings，但是是旧版的，一般称作Spigot Timings，虽也是由Aikar设计但是网页界面观感和功能都相差甚远。Aikar&#39;s Timings同时也搭载在Sponge核心中</span> <a name='dfref-footnote-18' href='#ref-footnote-18' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>19</span> <span>指使用Git克隆(拷贝)别人的代码仓库到自己的名下的行为</span> <a name='dfref-footnote-19' href='#ref-footnote-19' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>20</span> <span>即Pull Request，拉取请求，就是上面说的那些希望合并的代码</span> <a name='dfref-footnote-20' href='#ref-footnote-20' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>21</span> <span>即Java Runtime Environment(Version 11)，Java11的运行环境。同理，后文中JRE8+也指Java8以上的运行环境</span> <a name='dfref-footnote-21' href='#ref-footnote-21' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>22</span> <span>Torch，前称TorchSpigot，是一个支持1.8.8的优化核心，是Akarin服务端的前身。由于在部分代码和统计系统上，Akarin仍使用</span><em><span>&quot;Torch&quot;</span></em><span>表示Akarin服务端，因此这里同时将Torch写上</span> <a name='dfref-footnote-22' href='#ref-footnote-22' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>23</span> <span>自1.14开始，Akarin开始使用</span><em><span>Tuinity</span></em><span>作为其项目前置，而不是原来的</span><em><span>Paper</span></em><span>，同时因此该服务端对不同API的插件兼容性需注意使用的服务端版本</span> <a name='dfref-footnote-23' href='#ref-footnote-23' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>24</span> <span>为什么要可以强调“可插拔性强，易于更新”呢，因为后面你将会看到，所有BukkitAPI+ForgeAPI的服务端（甚至Sponge系服务端)都需要糅合自己的API和ForgeAPI的代码，这导致Forge的部分代码和库是强制写死在服务端上的，你不能手动更新Forge版本。但VanillaForge只支持ForgeAPI，因此没有这个问题</span> <a name='dfref-footnote-24' href='#ref-footnote-24' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>25</span> <span>仅代表个人观点</span> <a name='dfref-footnote-25' href='#ref-footnote-25' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>26</span> <span>事实上，我们看到的所有文本，其内容都是经过编码存储在计算机上的，对于Minecraft服务端来说，在1.7.10-版本，Windows使用ANSI编码，而Linux使用UTF-8编码，这引起了诸多不便，因此Uranium强制在所有操作系统上运行该服务端，文件编码均为UTF-8，简化了使用流程</span> <a name='dfref-footnote-26' href='#ref-footnote-26' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>27</span> <span>Title是自1.8引入的，在客户端上显示大标题和副标题的功能;Actionbar是自1.8引入的，在客户端物品栏上方显示字幕的功能</span> <a name='dfref-footnote-27' href='#ref-footnote-27' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>28</span> <span>即CatServer的多线程版本，用开发者的话来说，“由于多线程版存在过多兼容性问题无法修复, 不再提供更新, 也不推荐使用.”，该版本最后停更于</span><code>Mar 19,2020</code><span>。本文笔者也不推荐使用此版本</span> <a name='dfref-footnote-28' href='#ref-footnote-28' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>29</span> <span>该功能会自动本地化控制台信息，为你展示你能看得懂文字(Mohist现支持简体中文和繁体中文的控制台本地化)，效果大约如下:</span> <a name='dfref-footnote-29' href='#ref-footnote-29' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>30</span> <span>在一般服务端下，在服务端安装的Mod仅能限制默认的美式英文(en_US)本地化语言文本，这导致客户端无法按照本地语言显示文本，即使有汉化也没法看。但Mohist通过这项功能解决了这个问题</span> <a name='dfref-footnote-30' href='#ref-footnote-30' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>31</span> <span>一般来说，服务端插件在服务器启动以后便不能，安装、卸载、更新，要想那么做，得先关闭服务器，这很耗时，插件管理器允许你通过执行指令，在服务器开启的情况下热配置插件。著名的插件管理器PlugMan和Yum两个插件，而Mohist自带了他们的部分功能</span> <a name='dfref-footnote-31' href='#ref-footnote-31' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>32</span> <span>NMS是指net.minecraft.server包，是Minecraft服务器底层的代码实现，在BukkitAPI没有包装对应方法的情况下，开发者需要调用NMS来实现内容。由于不同版本服务器的NMS包的包名也不同，因此一般开发者开发的这类插件只能兼容一个版本。Mohist可以使部分原仅兼容1.8-1.12间版本的此类插件兼容Mohist</span> <a name='dfref-footnote-32' href='#ref-footnote-32' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>33</span> <span>有关BungeeCord等跨服代理的内容超出了本文的范围，故不多赘述</span> <a name='dfref-footnote-33' href='#ref-footnote-33' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>34</span> <span>有消息称Mohist开发组正在研发/测试1.16.x版本的Mohist，且Mohist代码仓库中确实存在标签为&quot;1.16.x&quot;的代码分支(空仓库)</span> <a name='dfref-footnote-34' href='#ref-footnote-34' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>35</span> <span>Magma的主要发行版本并未应用所有PaperAPI和Paper的补丁，这可能会带来一些问题</span> <a name='dfref-footnote-35' href='#ref-footnote-35' title='回到文档' class='reversefootnote' >↩</a> <a name='dfref-footnote-35-1' href='#ref-footnote-35-1' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>36</span> <span>根据Magma项目说明，Magma尚在积极开发对1.16版本的支持，同时，Magma-1.15.2目前仅处于Beta测试版阶段，可能尚不稳定</span> <a name='dfref-footnote-36' href='#ref-footnote-36' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>37</span> <span>是一种将自定义代码导入到已有的计算机程序内，从而改变原程序的行为的行为</span> <a name='dfref-footnote-37' href='#ref-footnote-37' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>38</span> <span>此处很显然不严谨，Fabric本体是一个模组加载器（Mod Loader），不是一个ModAPI，Fabric的ModAPI是FabricAPI，但因为Fabric的模块化设计，FabricAPI作为FabricMod与Fabric本体（Fabric Loader）分离，不默认提供，因此FabricAPI又不能代表Fabric，故如此表示</span> <a name='dfref-footnote-38' href='#ref-footnote-38' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>39</span> <span>虽然设计确实先进，但随着Forge发布对新版本的支持，Fabric又逐渐趋向没落，只留下来了一些或是小型的，或是客户端向模组的青睐，比如ReplayMod</span> <a name='dfref-footnote-39' href='#ref-footnote-39' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>40</span> <span>是指将一整个代码项目设计成由多个互不相关又互相联系的模块，方便维护的代码设计模式</span> <a name='dfref-footnote-40' href='#ref-footnote-40' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>41</span> <span>（谁起的怪名字根本没听过）即</span><code>org.bukkit.craftbukkit</code><span>包，某些Bukkit插件需要使用该包内提供的代码具体实现</span> <a name='dfref-footnote-41' href='#ref-footnote-41' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>42</span> <span>来自其官网说明，但根据其开源项目提交日志，Cuberite应已支持1.14版本的连接，并正在尝试对1.15的特性进行兼容</span> <a name='dfref-footnote-42' href='#ref-footnote-42' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>43</span> <span>Minecraft使用的开发环境也是Java8，且截止目前，Java8仍然是Oracle公司指定的长期支持版本，因此使用Java8十分稳定</span> <a name='dfref-footnote-43' href='#ref-footnote-43' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>44</span> <span>此处提供了繁体中文版的</span><code>下載適用於所有作業系統的 Java</code><span>界面，简体中文版的界面因)为不明原因长期无法连接</span> <a name='dfref-footnote-44' href='#ref-footnote-44' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>45</span> <span>指Java虚拟机，运行Java应用程序的中间人</span> <a name='dfref-footnote-45' href='#ref-footnote-45' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>46</span> <span>一般来说，服务端完全就绪的标志是一段以</span><code>Done!</code><span>开头的句子，但是有的服务端插件可能因为完全就绪后要发送检查更新报告等信息，这段话很容易被忽略，因此您可尝试通过试探性的输入一段存在或不存在的指令，如果控制台反馈了该指令的帮助或是提示类似于</span><code>Unknown Command. Type /help or ? for help.</code><span>的未知指令信息，那么大致可认定为服务端已就绪</span> <a name='dfref-footnote-46' href='#ref-footnote-46' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>47</span> <span>默认连接地址为</span><code>你的IP地址:25565</code><span>，通过本地连接可使用</span><code>localhost:25565</code><span>，如果您的服务商为您设置了指定端口访问或您只是想单纯不用</span><code>25565</code><span>这个端口，那么您可参见下一节设置服务端端口</span> <a name='dfref-footnote-47' href='#ref-footnote-47' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>48</span> <code>false</code><span>和</span><code>true</code><span>是布尔值，他们分别代表</span><code>假</code><span>(否)和</span><code>真</code><span>(是)。设置</span><code>eula=true</code><span>即代表您同意Minecraft的最终用户许可协议(EULA)和Minecraft商业化使用条例，您可在</span><a href='https://account.mojang.com/documents/minecraft_eula'><span>这里</span></a><span>详细阅读Minecraft EULA</span> <a name='dfref-footnote-48' href='#ref-footnote-48' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>49</span> <span>我们把那个能够执行指令，输出服务器后台信息的窗口叫作控制台</span> <a name='dfref-footnote-49' href='#ref-footnote-49' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>50</span> <span>您可通过在控制台输入</span><code>/sponge plugins</code><span>查看是否有反馈以确认Sponge是否正常安装至VanillaForge</span> <a name='dfref-footnote-50' href='#ref-footnote-50' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>51</span> <span>需要注意的是，Thermos提供了两个版本的核心，分别对应着包含了稳定版本(文件名中包含</span><code>-1558</code><span>，代表</span><code>Forge1.7.10 - 10.13.4.1558</code><span>)和最新版本(文件名中包含</span><code>-1614</code><span>，代表</span><code>Forge1.7.10 - 10.13.4.1614</code><span>)的Forge1.7.10。对于现在来说，我们只需直接选择使用</span><code>Forge1.7.10 - 10.13.4.1614</code><span>的最新版本即可。</span> <a name='dfref-footnote-51' href='#ref-footnote-51' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>52</span> <span>某些插件可能会通过让你右键/左键某个方块触发特定的行为，比如右键木牌加入起床战争小游戏，当这样的方块位于出生点保护半径内时，行为将不会被触发</span> <a name='dfref-footnote-52' href='#ref-footnote-52' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>53</span> <span>边长的计算公式为2x+1，如设置为1则代表将会以出生点为中心3x3边长的出生点</span> <a name='dfref-footnote-53' href='#ref-footnote-53' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>54</span> <span>此项目在Windows操作系统上默认为开启</span> <a name='dfref-footnote-54' href='#ref-footnote-54' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>55</span> <span>Mojang代码力太弱了就是调不好异步区块读写</span> <a name='dfref-footnote-55' href='#ref-footnote-55' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>56</span> <span>在1.12.2-版本中，这项设置的默认值为0，代表生存模式。而</span><code>1</code><span>，</span><code>2</code><span>，</span><code>3</code><span>分别代表创造模式，冒险模式，观察模式</span> <a name='dfref-footnote-56' href='#ref-footnote-56' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>57</span> <span>在1.12.2-版本中，这项设置的默认值为1，代表简单，而0，2，3分别嗲表和平，简单，困难</span> <a name='dfref-footnote-57' href='#ref-footnote-57' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>58</span> <span>您可以前往ops.json手动指定这些OP的权限等级</span> <a name='dfref-footnote-58' href='#ref-footnote-58' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>59</span> <span>指一个直接指向资源包文件，能够直接下载的网络地址，例如</span><code>https://www.excample.com/resourcepack.zip</code> <a name='dfref-footnote-59' href='#ref-footnote-59' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>60</span> <span>笔者建议服主们开启这一项，因为这个自带的反飞行在笔者的服务器中从来没有拦截过一次开飞行作弊的人，倒是用飞行背包的几个玩家被服务端认定为飞行给踢出去了</span> <a name='dfref-footnote-60' href='#ref-footnote-60' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>61</span> <span>此处使用了一种和上面的</span><code>server.properties</code><span>完全不同的文件格式，名为</span><code>YAML</code><span>，文件名一般以</span><code>.yml</code><span>结尾。在Bukkit系服务端中，我们会经常见到此种文件格式，因此，您需要熟悉这种文件格式以编辑更多的文件</span> <a name='dfref-footnote-61' href='#ref-footnote-61' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>62</span> <span>Minecraft以滴答(tick)为服务器计时，一般情况下，1tick等于1/20秒，当服务器TPS下降时，这一秒数将可能变大</span> <a name='dfref-footnote-62' href='#ref-footnote-62' title='回到文档' class='reversefootnote' >↩</a></div>
+<div class='footnote-line'><span class='md-fn-count'>63</span> <span>此处的信息可能极度滞后，请辨别查看</span> <a name='dfref-footnote-63' href='#ref-footnote-63' title='回到文档' class='reversefootnote' >↩</a></div></div></div>
+</body>
+</html>
