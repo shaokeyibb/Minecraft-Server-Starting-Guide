@@ -14,8 +14,6 @@
 ==本文 不讨论如何进行端口映射，端口转发等工作==
 ==本文 已假设您的操作系统环境均已显示文件拓展名，且改名要求均包含拓展名==
 
-
-
 # 一.服务端核心介绍
 
   所谓`服务端核心`(简称核心，有时也被叫做服务端)是指开服时需要使用的服务端运行核心文件或是补丁安装器，他们一般以.jar后缀结尾，一般情况下，我们可以使用CMD(文件以.bat为结尾)或是Linux Shell(文件以.sh为结尾)运行这样的jar以管理服务器
@@ -29,7 +27,6 @@
     大家可能已经发现了BuildTools的弊端:麻烦，为了开个服我既要准备编译环境[^3]，又要花差不多半个小时编译一遍核心，慢死了。因此，后来的PaperMC团队使用了一种更灵活的方式糅合服务端核心:`打补丁(patch)`。
     其实很容易理解所谓的打补丁，PaperMC团队会把每一次Paper的更新制作成一个个补丁文件的形式，然后我们可以在Paper官网下载到包含这些补丁的补丁安装器，然后运行补丁安装器，下载原版服务端[^4]文件，安装补丁，生成已打补丁文件并运行（如果你用过，或是即将使用Paper核心，那么可以留心paper服务端运行后会在根目录[^5]的cache文件夹内生成一个mojang_X.X.X.jar和patched.X.X.X.jar，他们便是原版服务端文件和已打补丁文件(已打补丁文件便是包含Minecraft代码的`服务端运行核心文件`)）
     
-注释:
 
 [^1]: 指通过某些方式，将已经编译成计算机能够识别并运行的Java字节码文件(.class)还原回Java源代码(.java)的行为
 [^2]: 与反编译相反，是指将Java源代码处理为字节码文件的行为
@@ -46,7 +43,7 @@
   那么为什么我们要使用这些东西来开服，直接双击jar运行服务端核心不行吗?
   答案是因为有时行，有时不行，而且行的那个也不是很彳亍:对于一部分服务端，当你双击运行服务端核心时，会弹出一个Minecraft官方服务端提供的原生的控制台窗口，但有些服务端是不提供的，直接双击会导致服务端运行但看不到运行状态，也不能向执行命令(而且那个原生的控制台窗口不支持显示颜色)。
 
-注释:
+
 
 [^6]: 即开放源代码，指向所有人开放软件的源代码并在一定程度上供人们修改
 [^7]: 事实上，不存在Linux操作系统，Linux只是一个内核，因此你用的Linux其实是Linux的发行版，他们基于Linux内核，并实现了不同的功能供你使用(如Ubuntu,CentOS,Debian等)
@@ -74,7 +71,7 @@
       1. 前往正版启动器手动选择版本下载
       2. 前往第三方下载站下载（如GetBukkit:https://getbukkit.org/download/vanilla）
 
-注释:
+
 
 [^8]: 此处指基于ForgeAPI，LiteLoaderAPI，RiftAPI，FabricAPI等API开发的模组(Mod)。如果你无法理解，或是从未使用过该服务端所兼容的ModAPI，那么我建议你不要使用此服务端开服
 [^9]: 此处指基于BukkitAPI，SpongeAPI或是其他API开发的插件(Plugin)。如果你无法理解，或是从未使用过该服务端所兼容的PluginAPI，那么也没关系，船到桥头自然直，毕竟我们讲的就是这个
@@ -97,7 +94,7 @@
       2. SpigotMC官方:https://hub.spigotmc.org/jenkins/job/BuildTools/ (CraftBukkit不直接提供，你只能通过BuildTools手动构建)
       3. 使用第三方下载站下载已经构建好的CraftBukkit（如GetBukkit:https://getbukkit.org/download/craftbukkit）
 
-注释:
+
 
 [^10]: 把CraftBukkit称作Bukkit其实是不负责任的，Bukkit其实是一个规范，他仅包含接口，不包含实现，我们不应将两者划等号
 [^11]: 本指原始代码，此处指从代码层面修改游戏内容
@@ -119,7 +116,7 @@
       1.SpigotMC官方:https://hub.spigotmc.org/jenkins/job/BuildTools/ (Spigot不直接提供，你只能通过BuildTools手动构建)
       2. 使用第三方下载站下载已经构建好的Spigot（如GetBukkit:https://getbukkit.org/download/spigot）
 
-注释:
+
     [^14]:Spigot提供的独有API被称作SpigotAPI，其独立于CraftBukkit原生的BukkitAPI(虽然CraftBukkit现在由SpigotMC同时维护，但依然把一些API分开了)，后面要提的Paper服务端也同样提供了PaperAPI，同SpigotAPI和BukkitAPI隔离了起来。这也是服主们开服时某些插件在不同的服务端有不同的运行情况(有的能用有的不能了)的原因。此处独有也是指在当时，现在只要基于Spigot的核心都应支持SpigotAPI
 
 **4.Paper(曾用名PaperSpigot，有时被称为PaperClip[^15])**
@@ -142,7 +139,7 @@
   下载Paper:
     1.PaperMC官方: https://papermc.io/downloads (对于旧版本核心，你可以前往页末的`LEGACY`标签下载不受支持的旧版的Paper核心
 
-注释:
+
 
 [^15]: 此处PaperClip应当指的是Paper的**补丁安装器**，不含Paper核心本体，但因为用补丁安装器安装补丁并启动服务器基本感觉是一气呵成的所以大家总是把PaperClip当做Paper本体
 [^16]: 之所以说部分支持，是因为大部分版本Spigot是把这个丑到爆炸的控制台删掉了的(即只能使用CMD或Linux Shell开服)，但自某个高于1.15的版本起，Paper又恢复了这个控制台以防你手贱双击打开了JAR但没有办法操控服务器，但这会导致在你不指定`nogui`参数时用命令行开服依然会把那个控制台给召唤出来
@@ -168,7 +165,7 @@
   下载Tuinity:
     1.:CodeMC自动构建站: https://ci.codemc.io/job/Spottedleaf/job/Tuinity/
 
-注释:
+
 
 [^20]: 指使用Git克隆(拷贝)别人的代码仓库到自己的名下的行为
 [^21]: 即Pull Request，拉取请求，就是上面说的那些希望合并的代码
@@ -194,7 +191,7 @@ Akarin 有如下的属性:
     1.Github Actions: https://github.com/Akarin-project/Akarin/actions
     2.JosephWorks Jenkins: http://josephworks.ddns.net:8080/job/Akarin-project/
 
-注释:
+
 
 [^23]: Torch，前称TorchSpigot，是一个支持1.8.8的优化核心，是Akarin服务端的前身。由于在部分代码和统计系统上，Akarin仍使用*"Torch"*表示Akarin服务端，因此这里同时将Torch写上
 [^24]: 自1.14开始，Akarin开始使用*Tuinity*作为其项目前置，而不是原来的*Paper*，同时因此该服务端对不同API的插件兼容性需注意使用的服务端版本
@@ -205,17 +202,18 @@ Akarin 有如下的属性:
   让我们把视线调转回刚开始的Vanilla，如果说Bukkit让修改服务端变成了可能，那么就一定有一个技术能够让修改客户端变为可能，那么这个可能就是Forge。
   VanillaForge则是一个Vanilla+ForgeAPI的服务端，他允许你像服务端安装ForgeMod，处理自定义物品，自定义方块，自定义实体操作。
   VanillaForge 有如下的属性:
-    - 基于Vanilla
-    - **不可以** 安装基于任何API的插件
-    - **可以** 安装基于ForgeAPI的模组
-    - 稳定性较好
-    - 性能较差
-    - 可插拔性强，易于更新[^25]
+
+   - 基于Vanilla
+     - **不可以** 安装基于任何API的插件
+       - **可以** 安装基于ForgeAPI的模组
+       - 稳定性较好
+       - 性能较差
+       - 可插拔性强，易于更新[^25]
 
   下载VanillaForge:
     1.前往Forge官网下载Forge Installer，并选择install server模式，将安装目录指向运行过一次的Vanilla服务端: http://files.minecraftforge.net/
 
-注释:
+
 
 [^25]: 为什么要可以强调“可插拔性强，易于更新”呢，因为后面你将会看到，所有BukkitAPI+ForgeAPI的服务端（甚至Sponge系服务端)都需要糅合自己的API和ForgeAPI的代码，这导致Forge的部分代码和库是强制写死在服务端上的，你不能手动更新Forge版本。但VanillaForge只支持ForgeAPI，因此没有这个问题
 
@@ -241,11 +239,12 @@ Akarin 有如下的属性:
 9.KCauldron
   KCauldron是Cauldron的优化版/继承。
   KCauldron 有如下的属性:   
-    - 已停更
-    - 基于Cauldron
-    - **可以** 安装基于BukkitAPI,SpigotAPI的插件
-    - **可以** 安装基于ForgeAPI的模组
-    - ==仅支持1.7.10==
+
+   - 已停更
+     - 基于Cauldron
+       - **可以** 安装基于BukkitAPI,SpigotAPI的插件
+       - **可以** 安装基于ForgeAPI的模组
+       - ==仅支持1.7.10==
 
   下载KCauldron:
     1.前往第三方构建站下载
@@ -285,7 +284,7 @@ Akarin 有如下的属性:
   下载Uranium:
     1.Jenkins CI: https://ci.uraniummc.cc/job/Uranium-dev/
 
-注释:
+
 
 [^26]: 仅代表个人观点
 [^27]: 事实上，我们看到的所有文本，其内容都是经过编码存储在计算机上的，对于Minecraft服务端来说，在1.7.10-版本，Windows使用ANSI编码，而Linux使用UTF-8编码，这引起了诸多不便，因此Uranium强制在所有操作系统上运行该服务端，文件编码均为UTF-8，简化了使用流程
@@ -312,7 +311,7 @@ Akarin 有如下的属性:
   下载CatServer-Async[^29]:
     1.Github Releases: https://github.com/Luohuayu/CatServer/releases/tag/Async-final
 
-注释:
+
 
 [^29]: 即CatServer的多线程版本，用开发者的话来说，“由于多线程版存在过多兼容性问题无法修复, 不再提供更新, 也不推荐使用.”，该版本最后停更于`Mar 19,2020`。本文笔者也不推荐使用此版本
 
@@ -339,7 +338,7 @@ Akarin 有如下的属性:
   下载Mohist-1.15.2:
     1.CodeMC Jenkins CI: https://ci.codemc.io/job/Mohist-Community/job/Mohist-1.15.2/
 
-注释:
+
 
 [^30]: 该功能会自动本地化控制台信息，为你展示你能看得懂文字(Mohist现支持简体中文和繁体中文的控制台本地化)，效果大约如下:
 
@@ -370,7 +369,7 @@ Akarin 有如下的属性:
   下载Magma-1.15.2:
     1.Jenkins CI: https://ci.hexeption.dev/job/Magma%20Foundation/job/Magma-1.15.x/job/1.15.x/lastSuccessfulBuild/ (开发版)
 
-注释:
+
 
 [^36]: Magma的主要发行版本并未应用所有PaperAPI和Paper的补丁，这可能会带来一些问题
 [^37]: 根据Magma项目说明，Magma尚在积极开发对1.16版本的支持，同时，Magma-1.15.2目前仅处于Beta测试版阶段，可能尚不稳定
@@ -426,7 +425,7 @@ Akarin 有如下的属性:
     
 *题外话:曾经有一段时间，Sponge是市面上唯一一个支持1.8+高版本插件+模组的服务端，当Bukkit阵营始终停留在1.7.10时，已经支持之1.12.2的Sponge收到了大部分神奇宝贝服服主的欢迎——直到CatServer的发布*
 
-注释:
+
 
 [^38]: 是一种将自定义代码导入到已有的计算机程序内，从而改变原程序的行为的行为
 
@@ -447,7 +446,7 @@ Akarin 有如下的属性:
   下载VanillaFabric:
     1.前往Fabric官网下载Fabric Installer，并选择install server模式，将安装目录指向运行过一次的Vanilla服务端: https://fabricmc.net/use/
 
-注释:
+
 
 [^39]: 此处很显然不严谨，Fabric本体是一个模组加载器（Mod Loader），不是一个ModAPI，Fabric的ModAPI是FabricAPI，但因为Fabric的模块化设计，FabricAPI作为FabricMod与Fabric本体（Fabric Loader）分离，不默认提供，因此FabricAPI又不能代表Fabric，故如此表示
 [^40]: 虽然设计确实先进，但随着Forge发布对新版本的支持，Fabric又逐渐趋向没落，只留下来了一些或是小型的，或是客户端向模组的青睐，比如ReplayMod
@@ -479,7 +478,7 @@ Akarin 有如下的属性:
   下载Glowstone:
     1.Glowstone官方: https://glowstone.net/#downloads
 
-注释:
+
 
 [^42]: （谁起的怪名字根本没听过）即`org.bukkit.craftbukkit`包，某些Bukkit插件需要使用该包内提供的代码具体实现
 
@@ -506,7 +505,7 @@ Akarin 有如下的属性:
   下载Cuberite:
     1.Cuberite官方: https://cuberite.org/
 
-注释:
+
 
 [^43]: 来自其官网说明，但根据其开源项目提交日志，Cuberite应已支持1.14版本的连接，并正在尝试对1.15的特性进行兼容
 
@@ -545,7 +544,7 @@ Akarin 有如下的属性:
 
   有一种非官方的JVM[^46]实现，他的名字叫做OpenJ9，其以`高性能，可拓展`著称，此处我们不介绍OpenJ9的详细安装方式，但有需要的服主可前往[AdoptOpenJDK](https://adoptopenjdk.net/)网站了解并下载OpenJ9 JVM
 
-注释:
+
 
 [^44]: Minecraft使用的开发环境也是Java8，且截止目前，Java8仍然是Oracle公司指定的长期支持版本，因此使用Java8十分稳定
 [^45]: 此处提供了繁体中文版的`下載適用於所有作業系統的 Java`界面，简体中文版的界面因)为不明原因长期无法连接
@@ -588,7 +587,7 @@ eula=false
 请将其中的`eula=false`修改为`eula=true`[^49]，然后重新启动服务器，服务器才会正式启动。
   最后，您可通过在控制台[^50]内输入stop或在游戏内输入/stop关闭服务器。
 
-注释:
+
 
 [^47]: 一般来说，服务端完全就绪的标志是一段以`Done!`开头的句子，但是有的服务端插件可能因为完全就绪后要发送检查更新报告等信息，这段话很容易被忽略，因此您可尝试通过试探性的输入一段存在或不存在的指令，如果控制台反馈了该指令的帮助或是提示类似于`Unknown Command. Type /help or ? for help.`的未知指令信息，那么大致可认定为服务端已就绪
 [^48]: 默认连接地址为`你的IP地址:25565`，通过本地连接可使用`localhost:25565`，如果您的服务商为您设置了指定端口访问或您只是想单纯不用`25565`这个端口，那么您可参见下一节设置服务端端口
@@ -613,7 +612,7 @@ eula=false
   请先按照第三则教程安装并完全启动一次与SpongeForge下载页上标注的Forge版本相同的VanillaForge，随后关闭服务端。
   将SpongeForge的jar文件**直接拖入**`.\mods`文件夹，之后启动服务器即可开服[^51]。
 
-注释:
+
 
 [^51]: 您可通过在控制台输入`/sponge plugins`查看是否有反馈以确认Sponge是否正常安装至VanillaForge
 
@@ -623,7 +622,7 @@ eula=false
   将您下载到的`libraries.zip`内的`libraries`文件夹(包括文件夹)解压至服务端根目录，然后按照第一则教程的启动方式启动服务器。
 
 
-注释:
+
 
 [^52]: 需要注意的是，Thermos提供了两个版本的核心，分别对应着包含了稳定版本(文件名中包含`-1558`，代表`Forge1.7.10 - 10.13.4.1558`)和最新版本(文件名中包含`-1614`，代表`Forge1.7.10 - 10.13.4.1614`)的Forge1.7.10。对于现在来说，我们只需直接选择使用`Forge1.7.10 - 10.13.4.1614`的最新版本即可。
 
@@ -760,7 +759,7 @@ motd=A Minecraft Server
 
 有关server.properties的更多信息请见https://minecraft.gamepedia.com/Server.properties
 
-注释:
+
 
 [^53]: 边长的计算公式为2x+1，如设置为1则代表将会以出生点为中心3x3边长的出生点
 [^54]: 某些插件可能会通过让你右键/左键某个方块触发特定的行为，比如右键木牌加入起床战争小游戏，当这样的方块位于出生点保护半径内时，行为将不会被触发
@@ -832,7 +831,7 @@ aliases: now-in-commands.yml
 
 有关bukkit.yml的更多信息请见https://bukkit.gamepedia.com/Bukkit.yml[^65]
 
-注释:
+
 
 [^63]: 此处使用了一种和上面的`server.properties`完全不同的文件格式，名为`YAML`，文件名一般以`.yml`结尾。在Bukkit系服务端中，我们会经常见到此种文件格式，因此，您需要熟悉这种文件格式以编辑更多的文件
 [^64]: Minecraft以滴答(tick)为服务器计时，一般情况下，1tick等于1/20秒，当服务器TPS下降时，这一秒数将可能变大
