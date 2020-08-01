@@ -11,7 +11,7 @@
     其实很容易理解所谓的打补丁，PaperMC 团队会把每一次 Paper 的更新制作成一个个补丁文件的形式，然后我们可以在 Paper 官网下载到包含这些补丁的补丁安装器，然后运行补丁安装器，下载原版服务端[^4]文件，安装补丁，生成已打补丁文件并运行（如果你用过，或是即将使用 Paper 核心，那么可以留心 paper 服务端运行后会在根目录[^5]的 cache 文件夹内生成一个 mojang_X.X.X.jar 和 patched.X.X.X.jar，他们便是原版服务端文件和已打补丁文件(已打补丁文件便是包含Minecraft代码的`服务端运行核心文件`))
 
 ::: details 注释 1
-[^1]: 指通过某些方式，将已经编译成计算机能够识别并运行的 Java 字节码文件(.class)还原回Java源代码(.java)的行为。   
+[^1]: 指通过某些方式，将已经编译成计算机能够识别并运行的 Java 字节码文件(.class)还原回 Java 源代码(.java)的行为。   
 [^2]: 与反编译相反，是指将 Java 源代码处理为字节码文件的行为。   
 [^3]: 指编译时需要准备的前置软件，此处指`Git`。   
 [^4]: 有关原版服务端的内容请见下文对 `Vanilla` 服务端核心的介绍。   
@@ -22,7 +22,7 @@
 ## 什么是 CMD，什么又是 Linux Shell?为什么我们不能直接双击 jar 运行服务端核心?
 
   Hey，你知道吗，这个世界上有三种主流的计算机操作系统，他们分别是`Microsoft Windows`, `macOS` 和 `Linux`，在这里我们只谈论 `Windows` 和 `Linux`。   
-  大部分人都使用的是 Windows 操作系统，他以易用和图形化著称，其缺点是系统性能消耗相对较高，且极度依赖图形界面;而 Linux，以高性能和开放性著称，他是开源[^6]的，因此高度可定制，同时不依赖与图形界面，很适合服务器操作系统，缺点是对于服务器版Linux发行版[^7]操作系统，一般没有图形化界面，只有黑白的代码界面，因此需要一定 Linux 系统知识才能使用。   
+  大部分人都使用的是 Windows 操作系统，他以易用和图形化著称，其缺点是系统性能消耗相对较高，且极度依赖图形界面;而 Linux，以高性能和开放性著称，他是开源[^6]的，因此高度可定制，同时不依赖与图形界面，很适合服务器操作系统，缺点是对于服务器版 Linux 发行版[^7]操作系统，一般没有图形化界面，只有黑白的代码界面，因此需要一定 Linux 系统知识才能使用。   
   对于新手来说，除非你有一定运维知识，否则我推荐你使用 Windows 操作系统(比如你正在用的这台)来开服。   
   CMD 是 Windows 操作系统的命令提示符，我们可以使用 CMD 的 .bat 批处理文件在 Windows 上批量完成某些任务; Linux Shell 则用途相同，是 Linux 上用于批量执行任务的东西。   
   那么为什么我们要使用这些东西来开服，直接双击jar运行服务端核心不行吗?   
@@ -30,7 +30,7 @@
 
 ::: details 注释 2
 [^6]: 即开放源代码，指向所有人开放软件的源代码并在一定程度上供人们修改。   
-[^7]: 事实上，不存在Linux操作系统，Linux 只是一个内核，因此你用的 Linux 其实是 Linux 的发行版，他们基于 Linux 内核，并实现了不同的功能供你使用(如 Ubuntu,CentOS,Debian 等)。
+[^7]: 事实上，不存在 Linux 操作系统，Linux 只是一个内核，因此你用的 Linux 其实是 Linux 的发行版，他们基于 Linux 内核，并实现了不同的功能供你使用(如 Ubuntu,CentOS,Debian 等)。
 :::
 
 
@@ -45,8 +45,8 @@
 
   Vanilla 有以下的属性
 
-  - **不能** 安装基于任何API的模组[^8]
-  - **不能** 安装基于任何API的插件[^9]
+  - **不能** 安装基于任何 API 的模组[^8]
+  - **不能** 安装基于任何 API 的插件[^9]
   - 原生兼容好(如命令方块，MCFunction)
   - 自带原生 GUI 控制台窗口
   - 即开即用
@@ -67,12 +67,12 @@
 :::
 
 *2.CraftBukkit(有时被称为Bukkit[^10])*
-  这可不太好，因为仅用Vanilla我们无法快速，高效的从底层[^11]拓展游戏内容，因此，我们急需一个"窗口"，能够让有开发能力的服主通过这个窗口深入Minecraft，拓展MC内容。于是，CraftBukkit带着BukkitAPI出现在了我们的面前。
+  这可不太好，因为仅用 Vanilla 我们无法快速，高效的从底层[^11]拓展游戏内容，因此，我们急需一个"窗口"，能够让有开发能力的服主通过这个窗口深入 Minecraft，拓展 MC 内容。于是，CraftBukkit 带着 BukkitAPI 出现在了我们的面前。
   CraftBukkit是一个包含了 BukkitAPI 的服务端，这意味着开发者们可以通过 BukkitAPI 提供的(有限的)内容来拓展服务器逻辑，增强游戏性。不同的开发者们把包含不同额外功能的拓展内容使用 .jar 文件包装起来，以让我们把这些文件放入 CraftBukkit 独有[^12]的插件文件夹(`.\plugins`)加载不同的功能。这些东西就叫做**插件**。
 
   CraftBukkit 有以下的属性:
 
-  - 基于Vanilla
+  - 基于 Vanilla
   - **可以** 安装基于 BukkitAPI 的插件
   - **基本不可以** 安装基于任何 API 的模组[^13]
   - 性能较差
@@ -116,64 +116,64 @@
 [^14]: Spigot提供的独有API被称作SpigotAPI，其独立于CraftBukkit原生的BukkitAPI(虽然CraftBukkit现在由SpigotMC同时维护，但依然把一些API分开了)，后面要提的Paper服务端也同样提供了PaperAPI，同SpigotAPI和BukkitAPI隔离了起来。这也是服主们开服时某些插件在不同的服务端有不同的运行情况(有的能用有的不能了)的原因。此处独有也是指在当时，现在只要基于Spigot的核心都应支持SpigotAPI。
 :::
 
-**4.Paper(曾用名PaperSpigot，有时被称为PaperClip[^15])**
-  一方面是认为Spigot更新太慢了，又一方面是认为Spigot的BuildTools太麻烦了，还一方面是因为Spigot的优化还 不 够 劲，因此，一群人创建了Paper。
+**4.Paper(曾用名 PaperSpigot，有时被称为 PaperClip[^15])**
+  一方面是认为 Spigot 更新太慢了，又一方面是认为 Spigot 的 BuildTools 太麻烦了，还一方面是因为 Spigot 的优化还 不 够 劲，因此，一群人创建了 Paper。
 
   Paper 有以下的属性:
 
-  - 基于Spigot
-  - **可以** 安装基于BukkitAPI,SpigotAPI,PaperAPI的插件
-  - **不可以** 安装基于任何API的模组
-  - *部分*自带原生GUI控制台窗口[^16]
+  - 基于 Spigot
+  - **可以** 安装基于 BukkitAPI,SpigotAPI,PaperAPI 的插件
+  - **不可以** 安装基于任何 API 的模组
+  - *部分*自带原生 GUI 控制台窗口[^16]
   - 稳定性较好
   - 性能好
   - 更新迅速
   - 提供了更多的优化和服务端个性化选项[^17] [^18]
   - 构建、使用方便
-  - 搭载了较为先进的Aikar's Timings®性能分析系统[^19]
+  - 搭载了较为先进的 Aikar's Timings® 性能分析系统[^19]
 
 
-*为什么推荐?:Paper是一个兼具稳定，性能，拓展的服务端核心，不仅提供了很多有效的优化，更有很多自定义选项供服主选择，几乎100%兼容BukkitAPI插件也是人们选择Paper的主要原因*
+*为什么推荐?:Paper 是一个兼具稳定，性能，拓展的服务端核心，不仅提供了很多有效的优化，更有很多自定义选项供服主选择，几乎 100% 兼容 BukkitAPI 插件也是人们选择 Paper的主要原因*
 
 
-  下载Paper:
+  下载 Paper:
 
-    1. PaperMC官方: https://papermc.io/downloads (对于旧版本核心，你可以前往页末的`LEGACY`标签下载不受支持的旧版的Paper核心
+    1. PaperMC 官方: https://papermc.io/downloads (对于旧版本核心，你可以前往页末的`LEGACY`标签下载不受支持的旧版的 Paper 核心
 
 ::: details 注释 6
-[^15]: 此处PaperClip应当指的是Paper的**补丁安装器**，不含Paper核心本体，但因为用补丁安装器安装补丁并启动服务器基本感觉是一气呵成的所以大家总是把PaperClip当做Paper本体。   
-[^16]: 之所以说部分支持，是因为大部分版本Spigot是把这个丑到爆炸的控制台删掉了的(即只能使用CMD或Linux Shell开服)，但自某个高于1.15的版本起，Paper又恢复了这个控制台以防你手贱双击打开了JAR但没有办法操控服务器，但这会导致在你不指定`nogui`参数时用命令行开服依然会把那个控制台给召唤出来。   
-[^17]: 位于`.\paper.yml`。其实Spigot也是有这样的文件的，位于`.\spigot.yml`，同理，CraftBukkit也有，位于`.\bukkit.yml`，下游服务端是同时拥有上游服务端的这些文件的，因此新的服务端定义的新的文件提供了上游服务端所没有的新特性供服主们设定，而不是相互挤兑冲突。   
-[^18]: Hey，也许你是一个生电玩家转生的新手服主，希望开一个生电服，如果如此，请切记**不要**使用Paper，Paper内含对包括0tick等Minecraft原版"特性"的修复，可能会导致你和你的玩家感到疑惑，因此，你应当使用**Spigot**。   
-[^19]: Timings是一种自Spigot开始自带的性能分析器，允许你通过一个网页查看一段时间内服务器的总耗能情况，据此推断出哪些插件，或是哪些世界，或是哪些生物卡服。Spigot也有Timings，但是是旧版的，一般称作Spigot Timings，虽也是由Aikar设计但是网页界面观感和功能都相差甚远。Aikar's Timings同时也搭载在Sponge核心中。
+[^15]: 此处 PaperClip 应当指的是 Paper 的**补丁安装器**，不含 Paper 核心本体，但因为用补丁安装器安装补丁并启动服务器基本感觉是一气呵成的所以大家总是把 PaperClip 当做 Paper 本体。   
+[^16]: 之所以说部分支持，是因为大部分版本Spigot是把这个丑到爆炸的控制台删掉了的(即只能使用 CMD 或 Linux Shell 开服)，但自某个高于 1.15 的版本起，Paper 又恢复了这个控制台以防你手贱双击打开了JAR但没有办法操控服务器，但这会导致在你不指定`nogui`参数时用命令行开服依然会把那个控制台给召唤出来。   
+[^17]: 位于`.\paper.yml`。其实Spigot也是有这样的文件的，位于`.\spigot.yml`，同理，CraftBukkit 也有，位于`.\bukkit.yml`，下游服务端是同时拥有上游服务端的这些文件的，因此新的服务端定义的新的文件提供了上游服务端所没有的新特性供服主们设定，而不是相互挤兑冲突。   
+[^18]: Hey，也许你是一个生电玩家转生的新手服主，希望开一个生电服，如果如此，请切记**不要**使用 Paper，Paper 内含对包括 0tick 等 Minecraft 原版"特性"的修复，可能会导致你和你的玩家感到疑惑，因此，你应当使用 **Spigot**。   
+[^19]: Timings 是一种自 Spigot 开始自带的性能分析器，允许你通过一个网页查看一段时间内服务器的总耗能情况，据此推断出哪些插件，或是哪些世界，或是哪些生物卡服。Spigot 也有 Timings，但是是旧版的，一般称作 Spigot Timings，虽也是由 Aikar 设计但是网页界面观感和功能都相差甚远。Aikar's Timings 同时也搭载在 Sponge 核心中。
 :::
 
 
 5.Tuinity
-  众所周知，Paper是开源的，那么这意味着，所有人都可以通过Paper所在的代码托管网站*Github*向PaperMC团队提交各种各样的漏洞修复/性能优化代码，而PaperMC团队也可以选择性的将这些代码合并到自己的项目中，完成一次协作。前往Paper的Github的 [Pull Request](https://github.com/PaperMC/Paper/pulls) 界面，你可以看到这里依然还有超过60个的代码合并请求尚在活跃状态但未被PaperMC团队合并。这些提交中可能包含着诸如视距优化这样的刚需，也包含对开发者有益的API更新。
+  众所周知，Paper 是开源的，那么这意味着，所有人都可以通过Paper所在的代码托管网站 *Github* 向 PaperMC 团队提交各种各样的漏洞修复/性能优化代码，而 PaperMC 团队也可以选择性的将这些代码合并到自己的项目中，完成一次协作。前往 Paper 的 Github 的 [Pull Request](https://github.com/PaperMC/Paper/pulls) 界面，你可以看到这里依然还有超过 60 个的代码合并请求尚在活跃状态但未被 PaperMC 团队合并。这些提交中可能包含着诸如视距优化这样的刚需，也包含对开发者有益的API更新。
   但Paper就是不合并，你也没办法。
-  因此，一名叫做*Spottedleaf*的大佬站了出来，Fork[^20]了Paper的仓库，然后把那一堆PR[^21]全合并了，又作了一些改动，最后，Tuinity横空出世了
-  曾经一段时间内，Tuinity仅支持JRE11[^22]作为其运行环境 但现在Tuinity只需JRE8+即可运行
-  启动Tuinity会生成tuinity.yml，在其中可设置单玩家怪物生成，分离视距等高级参数。即使你不会设置这些参数，Tuinity自身自带的一个个优化也足以你的服务器使用。
+  因此，一名叫做 *Spottedleaf* 的大佬站了出来，Fork[^20]了 Paper 的仓库，然后把那一堆PR[^21]全合并了，又作了一些改动，最后，Tuinity 横空出世了
+  曾经一段时间内，Tuinity 仅支持JRE11[^22]作为其运行环境 但现在 Tuinity 只需 JRE8+ 即可运行
+  启动 Tuinity 会生成 tuinity.yml，在其中可设置单玩家怪物生成，分离视距等高级参数。即使你不会设置这些参数，Tuinity 自身自带的一个个优化也足以你的服务器使用。
 
   Tuinity 有以下的属性:
 
-  - 基于Paper
-  - **可以** 安装基于BukkitAPI,SpigotAPI,PaperAPI,TuinityAPI的插件 
-  - **不可以** 安装基于任何API的模组
+  - 基于 Paper
+  - **可以** 安装基于 BukkitAPI,SpigotAPI,PaperAPI,TuinityAPI 的插件 
+  - **不可以** 安装基于任何 API 的模组
   - 性能极佳
   - 更新较快
   - 较为稳定
 
 
-  下载Tuinity:
+  下载 Tuinity:
 
-    1. CodeMC自动构建站: https://ci.codemc.io/job/Spottedleaf/job/Tuinity/
+    1. CodeMC 自动构建站: https://ci.codemc.io/job/Spottedleaf/job/Tuinity/
 
 ::: details 注释 7
-[^20]: 指使用Git克隆(拷贝)别人的代码仓库到自己的名下的行为
-[^21]: 即Pull Request，拉取请求，就是上面说的那些希望合并的代码
-[^22]: 即Java Runtime Environment(Version 11)，Java11的运行环境。同理，后文中JRE8+也指Java8以上的运行环境
+[^20]: 指使用 Git 克隆(拷贝)别人的代码仓库到自己的名下的行为
+[^21]: 即 Pull Request，拉取请求，就是上面说的那些希望合并的代码
+[^22]: 即 Java Runtime Environment(Version 11)，Java11 的运行环境。同理，后文中 JRE8+ 也指 Java8 以上的运行环境
 :::
 
 6.Akarin/Torch[^23]
