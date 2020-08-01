@@ -116,8 +116,6 @@
 [^14]: Spigot提供的独有API被称作SpigotAPI，其独立于CraftBukkit原生的BukkitAPI(虽然CraftBukkit现在由SpigotMC同时维护，但依然把一些API分开了)，后面要提的Paper服务端也同样提供了PaperAPI，同SpigotAPI和BukkitAPI隔离了起来。这也是服主们开服时某些插件在不同的服务端有不同的运行情况(有的能用有的不能了)的原因。此处独有也是指在当时，现在只要基于Spigot的核心都应支持SpigotAPI。
 :::
 
-// TO DO 
-
 **4.Paper(曾用名PaperSpigot，有时被称为PaperClip[^15])**
   一方面是认为Spigot更新太慢了，又一方面是认为Spigot的BuildTools太麻烦了，还一方面是因为Spigot的优化还 不 够 劲，因此，一群人创建了Paper。
 
