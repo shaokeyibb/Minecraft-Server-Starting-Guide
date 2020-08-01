@@ -4,6 +4,7 @@
   "description": "The starting guide for newbies who are interested in minecraft server",
   "main": "index.js",
   "dependencies": {
+    "vuepress-plugin-auto-sidebar": "^1.5.0",
     "markdown-it-footnote": "^3.0.2",
     "markdown-it-sub": "^1.0.0",
     "markdown-it-sup": "^1.0.0"
