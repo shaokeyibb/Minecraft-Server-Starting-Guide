@@ -60,7 +60,7 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
 要注意的是，不只是通过命令行添加参数，某些「开服器」也可以，后面将会提到。
 
-# 主流服务端核心列表
+## 主流服务端核心列表
 
   那么说完上面的，那么现在究竟有哪些核心，他们有什么区别呢?   
 注意: 为了方便查阅，我们将会用**粗体**表示推荐使用的服务端核心，使用*斜体*表示另类，冷门，不推荐使用的服务端核心。   
@@ -73,6 +73,8 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
 
 1. Vanilla  
+
+
    对于 Java 版来说，绝大多数服务端的始祖便是 Mojang 提供的官方服务端了，按照习惯，我们把官服叫做 Vanilla(香草，代指纯净[纯净服务端有歧义])  
 
    其实他本身的名字应该是 Minecraft_Server(但是大多数情况下我们不会用这个名字)
@@ -94,6 +96,8 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
     2. 前往第三方下载站下载（如GetBukkit:https://getbukkit.org/download/vanilla）
 
 2. CraftBukkit(有时被称为 Bukkit[^10])*
+
+
    仅用 Vanilla 我们无法快速，高效地通过编程拓展游戏内容。因此，CraftBukkit 诞生。
      CraftBukkit 是一个实现了 BukkitAPI 的服务端，这意味着开发者们可以通过 BukkitAPI 提供的(有限的)内容来拓展服务器逻辑，增强趣味性。
 
@@ -122,6 +126,8 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 :::
 
 3. Spigot
+
+
    CraftBukkit 是挺好，但是他性能和 Vanilla 一样捉急，甚至装多了插件还可能会更差，人们急切需要一个能够优化服务端处理逻辑，提升服务器性能的服务端，曾经有过多种这样的服务端，有的可能优化了TNT爆炸逻辑，有的可能优化了耕田逻辑，但是活到最后的，是包含了他们之中绝大部分优化功能的 **Spigot**。   
    Spigot 由 SpigotMC 团队开发，可以说是 CraftBukkit 的正统续作，他不仅完全兼容 BukkitAPI 规范，还提供了更多独有的开发API[^14]，最重要的是，这个服务端优化很好，因此十分稳定。(spigot yyds   
 
@@ -145,6 +151,8 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 :::
 
 4. **Paper**(曾用名 PaperSpigot，有时被称为 PaperClip[^15])
+
+
    一方面是认为 Spigot 更新太慢了，又一方面是认为 Spigot 的 BuildTools 太麻烦了，还一方面是因为 Spigot 的优化还 不 够 劲，因此，一群人创建了 Paper。
 
   Paper 有以下的属性:
@@ -178,11 +186,22 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 :::
 
 5. Tuinity
+
+
    众所周知，Paper 是开源的，那么这意味着，所有人都可以通过Paper所在的代码托管网站 *Github* 向 PaperMC 团队提交各种各样的漏洞修复/性能优化代码，而 PaperMC 团队也可以选择性的将这些代码合并到自己的项目中，完成一次协作。前往 Paper 的 Github 的 [Pull Request](https://github.com/PaperMC/Paper/pulls) 界面，你可以看到这里依然还有超过 60 个的代码合并请求尚在活跃状态但未被 PaperMC 团队合并。这些提交中可能包含着诸如视距优化这样的刚需，也包含对开发者有益的API更新。
+   
+   
    但Paper就是不合并，你也没办法。
+   
+   
    因此，一名叫做 *Spottedleaf* 的大佬站了出来，Fork[^20]了 Paper 的仓库，然后把那一堆PR[^21]全合并了，又作了一些改动，最后，Tuinity 横空出世了
+   
+   
    曾经一段时间内，Tuinity 仅支持JRE11[^22]作为其运行环境 但现在 Tuinity 只需 JRE8+ 即可运行
+   
+   
    启动 Tuinity 会生成 tuinity.yml，在其中可设置单玩家怪物生成，分离视距等高级参数。即使你不会设置这些参数，Tuinity 自身自带的一个个优化也足以你的服务器使用。
+   
 
   Tuinity 有以下的属性:
 
@@ -207,12 +226,23 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 :::
 
 6. Akarin/Torch[^23]
+
+
    用 *Akarin Project* 开发者们的原话来说，Akarin 是一个 **「来自新纬度的服务端」** *(A server software from the 'new dimension'.)*，其本质原因是 Akarin 以 **多线程** *(Multi-Threaded)*著称。
+   
+   
    那么在此之前，我们需要了解什么是多线程。简单的来说，人一般情况下只能专心干一件事情，那么我们可以把这种行为叫做单线程;如果你能一下干多个事情，那么这就是所谓多线程——从软件或者硬件上实现多个线程并发执行的技术。
+   
+   
    在 Akarin 之前，绝大多数的服务端的核心任务都是由主线程这一条线程完成的，如果同时有很多事情要做，那么他得做完了一个再做另外一个，这就有可能引起卡顿。
 
+
 如果做的这件事情无线重复，或是要花费太长时间以至于连服务器的基本运行事件都给挡住了，那么就会引起**堵塞**，导致服务器瞬卡甚至崩溃。
+
+
   通过使用 Akarin，我们可以将主线程本应完成的动作转移到其他子线程同时执行，极大的减缓了服务器压力。
+  
+  
   当然，因为这是一个新技术，同时让一个本不兼容多线程的东西兼容多线程是一个很难的工程，因此总会有不稳定因素。
 
   Akarin 有如下的属性:
@@ -243,6 +273,8 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 如果你看到了这里，那么恭喜你，你已经结束了所有**主流** BukkitAPI 系服务端的介绍，接下来是一些搭载 ForgeAPI 或 FabricAPI 的模组服务端，两个基于 SpongeAPI 的服务端和两个魔怔猎奇基于其他API的服务端介绍，如果你不需要了解这些，请直接跳到下一节。
 
 7. VanillaForge
+
+
    让我们把视线调转回刚开始的 Vanilla，如果说 Bukkit 让修改服务端变成了可能，那么就一定有一个东西能够让修改客户端变为可能，而Forge就是。
    VanillaForge 则是一个 Vanilla+ForgeAPI 的服务端，他允许你安装 ForgeMod，处理自定义物品，自定义方块，自定义实体操作。
 
@@ -267,6 +299,7 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
 8. Cauldron/MCPC+
 
+
 那么究竟有没有能同时兼容 BukkitAPI 和 ForgeAPI 的服务端呢?
     答案是当然，最初搞出来这个玩意的服务端叫做 MCPC+，自1.7.10 起改名为 Cauldron，随后停更。
     同时你也将看到，由于「糅合」的复杂性和难以维护性，因此每一个 BukkitAPI+ForgeAPI 服务端几乎都只维护一个主流版本，这也是此类服务端遍地开花的一个主要原因。
@@ -285,6 +318,8 @@ Cauldron 有如下的属性:
     1. 前往第三方构建站下载
 
 9. KCauldron
+
+
    KCauldron 是 Cauldron 的优化版/继承。
 
   KCauldron 有如下的属性:   
@@ -299,6 +334,8 @@ Cauldron 有如下的属性:
     1.前往第三方构建站下载
 
 10. Thermos
+
+
       Thermos 是 KCauldron 的优化版。
 
   Thermos 有如下的属性:
@@ -315,6 +352,8 @@ Cauldron 有如下的属性:
     1. Github Releases: https://github.com/CyberdyneCC/Thermos/releases
 
 11. Contigo
+
+
       Contigo 是 Thermos 的优化版/继承。
 
   Contigo 有如下的属性:
@@ -331,6 +370,8 @@ Cauldron 有如下的属性:
     1. Github Releases: https://github.com/djoveryde/Contigo/releases
 
 12. Uranium
+
+
       Uranium 是一款基于 KCauldron 的 BukkitAPI+ForgeAPI 服务端，其整合了部分Thermos对服务端的修复，同时进行了一些输入书与笔虚体问题的BUG修复。其最大的特点[^26]是强制使用 UTF-8 编码作为配置文件编码[^27]和通过 UraniumPlus Mod 令 1.7.10 客户端支持 Title 和 Actionbar[^28]。
 
   Uranium 有如下的属性:
@@ -354,6 +395,8 @@ Cauldron 有如下的属性:
 :::
 
 **13. CatServer**
+
+
   不同于 Cauldron 系，CatServer 支持 1.12.2 的 BukkitAPI+ForgeAPI，发展至今已十分稳定，同时也拥有独特的优化和 BUG 修复。
 
   CatServer 有如下的属性:
@@ -386,8 +429,14 @@ Cauldron 有如下的属性:
 :::
 
 14. Mohist(曾用名 PFCraft)
+
+
     Mohist 和下面的 Magma 一样，都有一点「另类」，他们本体基于 Paper，而不是 Spigot，这意味着这两个服务端不仅可以享受 Paper 带来的漏洞修复和优化，还可以让你轻松使用基于 PaperAPI 开发的插件。
+    
+    
     Mohist 还支持控制台信息国际化[^30]，可选择服务端 Mod 语言[^31]，内置插件管理器[^32]等等非常实用的功能。
+    
+    
     但是很遗憾，由于 Mohist 本身工程量大难以维护，也由于 Mohist 开发组重组，近几个月内的 Mohist 稳定性并不是很好。
 
   Mohist 有如下的属性:
@@ -427,6 +476,8 @@ Cauldron 有如下的属性:
 :::
 
 15. Magma
+
+
     Magma 同样是一个基于 Paper[^36]的 BukkitAPI+ForgeAPI 服务端。
 
   Magma 有如下的属性:
@@ -461,6 +512,8 @@ Cauldron 有如下的属性:
 :::
 
 16. Arclight
+
+
     Arclight 是一款「在 Forge 上使用 Mixin 实现的 Bukkit 服务端」，提供了 1.14.4 和 1.15.2 两个高版本的 BukkitAPI+ForgeAPI 支持
 
   Arclight 有如下的属性:
@@ -483,9 +536,17 @@ Cauldron 有如下的属性:
 如果你看到了这里，那么恭喜你已经结束了所有**主流 **BukkitAPI+ForgeAPI 服务端的了解，接下来是一些搭载 FabricAPI 的模组服务端，两个基于 SpongeAPI 的服务端和两个基于其他 API 的服务端介绍，如果你不需要了解这些，请直接跳到下一节。
 
 17. SpongeVanilla&SpongeForge
+
+
     让我们再将目光转回 CraftBukkit 时期。一群人做出 BukkitAPI 以后，发现这个东西实在是太垃圾了:对 Mod 兼容性差，没有开发文档，代码规范随意，这不是他们想要的那个 API。于是，一群人离开了 Bukkit 开发团队，转而开始制作他们心目中的那个完美的 API 框架——幸运的是，他们做出来了，这就是 SpongeAPI 和他的服务端实现:Sponge
+    
+    
     Sponge 分为 SpongeVanilla 和 SpongeForge 两个版本:前者需要与 Vanilla 一起使用，他通过注入[^38]的方式，允许你在 Vanilla 服务端上安装基于 SpongeAPI 的插件；后者实现在 Forge 上，允许你在 VanillaForge 上安装基于 SpongeAPI 的插件（同时享受安装基于 ForgeAPI 的模组），需要提到的是，在 SpongeForge 中，其其实是作为一个 **ForgeMod** 来使用（即将其放入`.\mods`中并启动服务端），而非作为一个完整的服务端运行核心文件。
+    
+    
     很遗憾的是，由于生不逢时，Sponge 并没有得到大多数开发者的支持，因此基于 SpongeAPI 开发的插件少之甚少，主流 BukkitAPI 插件迁移至 SpongeAPI 的更是屈指可数，因此对于普通服主来说，使用 Sponge 会导致在插件支持上落后于 Bukkit 使用者。
+    
+    
     同时，由于自 1.13 起，由于 Minecraft 源代码的大幅度改动导致ForgeAPI大幅度改动其代码，致使 Sponge 始终难以兼容 1.13 及以上版本，直到最近才发布了对 1.14.4版本的支持
 
   SpongeVanilla 有如下属性:
@@ -530,10 +591,18 @@ Cauldron 有如下的属性:
 :::
 
 18. VanillaFabric
+
+
       前面我们提到了`由于自1.13起，Minecraft源代码的大幅度改动`，这导致了 CraftBukkit/Spigot，Sponge，Forge 等项目分别出现了时常不同的窗口期，这段时间内这些项目都没有发布对新版本的支持。
     在这段长达半年的窗口期中，涌现了几个新的 ModAPI，抛去因为夹带私货和停止支持的 RiftAPI，便只剩下了在当时乃至现在最流行的新生代 API——Fabric[^39]
+    
+    
       Fabric 和 Rift 不同，他不是在那段窗口期诞生的替代产品，他早自 1.12 时代就已出现，只不过和 Sponge 一样同样生不逢时，虽然设计先进，但大多数开发者当时依然只依赖于 Forge 开发模组而不是 Fabric，知道窗口期的来临，Fabric 才得以重获新生，得到了一部分开发者的支持[^40]。
+      
+      
       Fabric 是**模块化**[^41]的，这意味着他不想高耦合的 Forge，每次 Minecraft 源代码更新就要折腾一阵子推倒重来，他完全可以拆出不兼容的模块，并更换上兼容新版本的模块以快速发布更新，这也是 Fabric 甚至有针对每一个 Minecraft 预览版(Snapshot)的支持的原因。
+      
+      
       VanillaFabric 则和 VanillaForge 类似，是基于 Vanilla 的实现了 FabricAPI 支持的服务端，他允许你安装 FabricMod。
 
   VanillaFabric 有以下属性:
@@ -558,6 +627,8 @@ Cauldron 有如下的属性:
 :::
 
 *19.Fukkit*
+
+
   Fukkit是一款实现了 BukkitAPI+FabricAPI 支持的服务端，现已停更归档，因此不多赘述，也不提供下载地址。
 
 
@@ -567,7 +638,11 @@ Cauldron 有如下的属性:
 如果你看到了这里，那么恭喜你已经结束了所有**主流**服务端的介绍，接下来是两个*看看就好*的服务端的介绍，如果你不需要了解这些，请直接跳到下一节。
 
 *20.Glowstone*
+
+
   如果你是个聪明人，你会发现上面的所有服务端都基于 Mojang 提供的官方服务端 Vanilla，那么有没有不依赖于 Vanilla 的服务端呢，答案是有，这就是 Glowstone。
+  
+  
   Glowstone 完全不依赖任何 Mojang 的源码，因此他非常的自由，不会受到 Mojang EULA 和 DMCA 的管控。
 
   Glowstone 有如下属性:
@@ -587,8 +662,14 @@ Cauldron 有如下的属性:
     1. Glowstone 官方: https://glowstone.net/#downloads
 
 21. Cuberite
+
+
     Cuberite 同样完全不依赖任何 Mojang 的源码，因此他非常的自由，不会受到 Mojang EULA 和 DMCA 的管控。
+    
+    
     而且，Cuberite 支持跨版本运行，1.8-1.12.2 的客户端均能加入到你的 Cuberite 服务器中
+    
+    
     说起来你可能不信，Cuberite 甚至还能在 Android™️ 上运行。
 
   Cuberite 有如下属性:
