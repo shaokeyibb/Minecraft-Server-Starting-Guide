@@ -72,7 +72,7 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
 
 
-1. Vanilla
+1. Vanilla  
    对于 Java 版来说，绝大多数服务端的始祖便是 Mojang 提供的官方服务端了，按照习惯，我们把官服叫做 Vanilla(香草，代指纯净[纯净服务端有歧义])  
 
    其实他本身的名字应该是 Minecraft_Server(但是大多数情况下我们不会用这个名字)
