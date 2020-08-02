@@ -7,13 +7,13 @@
 
   一般情况下，一个服务器的大部分运行代码都存在那一个小小的罐子(指`核心`)里，且这些核心通常直接修改Minecraft的代码来分发。  
   但是某些服务端核心里，用于运行服务器核心代码完全不在这个文件里，为什么呢？  
-  这是因为 [Mojang 的最终用户许可协议 (EULA)](https://account.mojang.com/documents/minecraft_eula)规定，未经授权的任何人都**不能二次分发 Minecraft 二进制文件**，以及作为End User的我们**您不得分发我们的游戏或软件的任何 Mod 化版本**(摘自Mojang Eula)  
+  这是因为 [Mojang 的最终用户许可协议 (EULA)](https://account.mojang.com/documents/minecraft_eula)规定，未经授权的任何人都**不能二次分发 Minecraft 二进制文件**，以及作为 End User 的我们**您不得分发我们的游戏或软件的任何 Mod 化版本**(摘自Mojang Eula)  
 
    > 或许有读者会好奇: `那么，如果我就是这样干了，又怎么样？`  
    > 那么你应该看看`CraftBukkit`的下场。  
    > CraftBukkit 服务端因为本体直接包含 Minecraft 代码，违反了  Mojang EULA 和千禧年数字版权法 (DMCA)，面临被起诉的风险，最终被迫停止开发。   
 
-   有趣的是，仍然会有「直接」启动的核心存在。像是Spigot，Paper..那么他们为什么没有被起诉？
+   有趣的是，仍然会有「直接」启动的核心存在。像是 Spigot，Paper..那么他们为什么没有被起诉？
 
 
 ## BuildTools
@@ -30,7 +30,7 @@
 
 PaperMC(一种服务端核心的团队) 会把每一次的更新制作成一个个补丁文件的形式。
 
-用户下载到的文件将会是一个补丁安装器，该核心安装器*从Mojang下载未经过修改的Minecraft*后，现场给你打补丁。
+用户下载到的文件将会是一个补丁安装器，该核心安装器*从 Mojang 下载未经过修改的 Minecraft* 后，现场给你打补丁。
 
 ~~paperclip: (人家本质也是 BuildTools 啦..)~~
 
@@ -38,13 +38,13 @@ PaperMC(一种服务端核心的团队) 会把每一次的更新制作成一个�
 
 TL;DR
 
-你当然可以这样启动服务器，但是你没法设置Java进程参数。
+你当然可以这样启动服务器，但是你没法设置 Java 进程参数。
 
 ### CMD 是什么?
 
 CMD/Command，本教程中泛指`Microsoft Windows`的`命令提示符`。
 
-> 如果你是 Windows 用户，按下Win+R，输入`cmd`后回车，弹出的窗口就是 CMD
+> 如果你是 Windows 用户，按下 Win+R，输入`cmd`后回车，弹出的窗口就是 CMD
 
 在 CMD 中，你可以运行程序，设定命令行参数。
 
@@ -79,8 +79,8 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
   Vanilla 有以下的属性
 
-  - 不支持除了原生Minecraft外的任何特性内容
-  - Mojang官方支持
+  - 不支持除了原生 Minecraft 外的任何特性内容
+  - Mojang 官方支持
   - 自带原生 GUI 控制台窗口
   - 相对比其他服务端来说，性能较差
 
@@ -93,7 +93,7 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
     1. 前往正版启动器手动选择版本下载
     2. 前往第三方下载站下载（如GetBukkit:https://getbukkit.org/download/vanilla）
 
-2. CraftBukkit(有时被称为Bukkit[^10])*
+2. CraftBukkit(有时被称为 Bukkit[^10])*
    仅用 Vanilla 我们无法快速，高效地通过编程拓展游戏内容。因此，CraftBukkit 诞生。
      CraftBukkit是一个实现了 BukkitAPI 的服务端，这意味着开发者们可以通过 BukkitAPI 提供的(有限的)内容来拓展服务器逻辑，增强趣味性。
 
