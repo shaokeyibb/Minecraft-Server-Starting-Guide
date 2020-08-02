@@ -95,7 +95,7 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
     1. 前往正版启动器手动选择版本下载
     2. 前往第三方下载站下载（如GetBukkit:https://getbukkit.org/download/vanilla）
 
-2. CraftBukkit(有时被称为 Bukkit[^10])*
+2. CraftBukkit(有时被称为 Bukkit[10])
 
 
    仅用 Vanilla 我们无法快速，高效地通过编程拓展游戏内容。因此，CraftBukkit 诞生。
@@ -121,7 +121,7 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
 ::: details 注释 4
 
-[^10]: 把 CraftBukkit 称作 Bukkit 其实是不负责任的，Bukkit 其实是一个规范，他仅包含接口，不包含实现，我们不应将两者划等号。   
+[10]: 把 CraftBukkit 称作 Bukkit 其实是不负责任的，Bukkit 其实是一个规范，他仅包含接口，不包含实现，我们不应将两者划等号。   
 
 :::
 
@@ -129,7 +129,7 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
 
    CraftBukkit 是挺好，但是他性能和 Vanilla 一样捉急，甚至装多了插件还可能会更差，人们急切需要一个能够优化服务端处理逻辑，提升服务器性能的服务端，曾经有过多种这样的服务端，有的可能优化了TNT爆炸逻辑，有的可能优化了耕田逻辑，但是活到最后的，是包含了他们之中绝大部分优化功能的 **Spigot**。   
-   Spigot 由 SpigotMC 团队开发，可以说是 CraftBukkit 的正统续作，他不仅完全兼容 BukkitAPI 规范，还提供了更多独有的开发API[^14]，最重要的是，这个服务端优化很好，因此十分稳定。(spigot yyds   
+   Spigot 由 SpigotMC 团队开发，可以说是 CraftBukkit 的正统续作，他不仅完全兼容 BukkitAPI 规范，还提供了更多独有的开发API[14]，最重要的是，这个服务端优化很好，因此十分稳定。(spigot yyds   
 
   Spigot 有以下的属性:
 
@@ -146,11 +146,11 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
 ::: details 注释 5
 
-[^14]: Spigot提供的独有API被称作SpigotAPI，其独立于CraftBukkit原生的BukkitAPI(虽然CraftBukkit现在由SpigotMC同时维护，但依然把一些API分开了)，后面要提的Paper服务端也同样提供了PaperAPI，同SpigotAPI和BukkitAPI隔离了起来。这也是服主们开服时某些插件在不同的服务端有不同的运行情况(有的能用有的不能了)的原因。此处独有也是指在当时，现在只要基于Spigot的核心都应支持SpigotAPI。
+[14]: Spigot提供的独有API被称作SpigotAPI，其独立于CraftBukkit原生的BukkitAPI(虽然CraftBukkit现在由SpigotMC同时维护，但依然把一些API分开了)，后面要提的Paper服务端也同样提供了PaperAPI，同SpigotAPI和BukkitAPI隔离了起来。这也是服主们开服时某些插件在不同的服务端有不同的运行情况(有的能用有的不能了)的原因。此处独有也是指在当时，现在只要基于Spigot的核心都应支持SpigotAPI。
 
 :::
 
-4. **Paper**(曾用名 PaperSpigot，有时被称为 PaperClip[^15])
+4. **Paper**(曾用名 PaperSpigot，有时被称为 PaperClip[15])
 
 
    一方面是认为 Spigot 更新太慢了，又一方面是认为 Spigot 的 BuildTools 太麻烦了，还一方面是因为 Spigot 的优化还 不 够 劲，因此，一群人创建了 Paper。
@@ -159,13 +159,13 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
   - 基于 Spigot
   - **可以** 安装支持 BukkitAPI,SpigotAPI,PaperAPI 的插件
-  - *部分*自带原生 GUI 控制台窗口[^16]
+  - *部分*自带原生 GUI 控制台窗口[16]
   - 稳定性较好
   - 性能好
   - 更新迅速
-  - 提供了更多的优化和服务端个性化选项[^17] [^18]
+  - 提供了更多的优化和服务端个性化选项[17] [18]
   - 构建、使用方便
-  - 搭载了较为先进的 Aikar's Timings® 性能分析系统[^19]
+  - 搭载了较为先进的 Aikar's Timings® 性能分析系统[19]
 
 
 *为什么推荐?:Paper 是一个兼具稳定，性能，拓展的服务端核心，不仅提供了很多有效的优化，更有很多自定义选项供服主选择，几乎 100% 兼容 BukkitAPI 插件也是人们选择 Paper的主要原因*
@@ -177,11 +177,11 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
 ::: details 注释 6
 
-[^15]: 此处 PaperClip 应当指的是 Paper 的**补丁安装器**，不含 Paper 核心本体，但因为用补丁安装器安装补丁并启动服务器基本感觉是一气呵成的所以大家总是把 PaperClip 当做 Paper 本体。   
-[^16]: 之所以说部分支持，是因为大部分版本Spigot是把这个丑到爆炸的控制台删掉了的(即只能使用 CMD 或 Linux Shell 开服)，但自某个高于 1.15 的版本起，Paper 又恢复了这个控制台以防你手贱双击打开了JAR但没有办法操控服务器，但这会导致在你不指定`nogui`参数时用命令行开服依然会把那个控制台给召唤出来。   
-[^17]: 位于`.\paper.yml`。其实Spigot也是有这样的文件的，位于`.\spigot.yml`，同理，CraftBukkit 也有，位于`.\bukkit.yml`，下游服务端是同时拥有上游服务端的这些文件的，因此新的服务端定义的新的文件提供了上游服务端所没有的新特性供服主们设定，而不是相互挤兑冲突。   
-[^18]: Hey，也许你是一个生电玩家转生的新手服主，希望开一个生电服，如果如此，请切记**不要**使用 Paper，Paper 内含对包括 0tick 等 Minecraft 原版「特性」的修复，可能会导致你和你的玩家感到疑惑，因此，你应当使用 **Spigot**。   
-[^19]: Timings 是一种自 Spigot 开始自带的性能分析器，允许你通过一个网页查看一段时间内服务器的总耗能情况，据此推断出哪些插件，或是哪些世界，或是哪些生物卡服。Spigot 也有 Timings，但是是旧版的，一般称作 Spigot Timings，虽也是由 Aikar 设计但是网页界面观感和功能都相差甚远。Aikar's Timings 同时也搭载在 Sponge 核心中。
+[15]: 此处 PaperClip 应当指的是 Paper 的**补丁安装器**，不含 Paper 核心本体，但因为用补丁安装器安装补丁并启动服务器基本感觉是一气呵成的所以大家总是把 PaperClip 当做 Paper 本体。   
+[16]: 之所以说部分支持，是因为大部分版本Spigot是把这个丑到爆炸的控制台删掉了的(即只能使用 CMD 或 Linux Shell 开服)，但自某个高于 1.15 的版本起，Paper 又恢复了这个控制台以防你手贱双击打开了JAR但没有办法操控服务器，但这会导致在你不指定`nogui`参数时用命令行开服依然会把那个控制台给召唤出来。   
+[17]: 位于`.\paper.yml`。其实Spigot也是有这样的文件的，位于`.\spigot.yml`，同理，CraftBukkit 也有，位于`.\bukkit.yml`，下游服务端是同时拥有上游服务端的这些文件的，因此新的服务端定义的新的文件提供了上游服务端所没有的新特性供服主们设定，而不是相互挤兑冲突。   
+[18]: Hey，也许你是一个生电玩家转生的新手服主，希望开一个生电服，如果如此，请切记**不要**使用 Paper，Paper 内含对包括 0tick 等 Minecraft 原版「特性」的修复，可能会导致你和你的玩家感到疑惑，因此，你应当使用 **Spigot**。   
+[19]: Timings 是一种自 Spigot 开始自带的性能分析器，允许你通过一个网页查看一段时间内服务器的总耗能情况，据此推断出哪些插件，或是哪些世界，或是哪些生物卡服。Spigot 也有 Timings，但是是旧版的，一般称作 Spigot Timings，虽也是由 Aikar 设计但是网页界面观感和功能都相差甚远。Aikar's Timings 同时也搭载在 Sponge 核心中。
 
 :::
 
@@ -194,10 +194,10 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
    但Paper就是不合并，你也没办法。
    
    
-   因此，一名叫做 *Spottedleaf* 的大佬站了出来，Fork[^20]了 Paper 的仓库，然后把那一堆PR[^21]全合并了，又作了一些改动，最后，Tuinity 横空出世了
+   因此，一名叫做 *Spottedleaf* 的大佬站了出来，Fork[20]了 Paper 的仓库，然后把那一堆PR[21]全合并了，又作了一些改动，最后，Tuinity 横空出世了
    
    
-   曾经一段时间内，Tuinity 仅支持JRE11[^22]作为其运行环境 但现在 Tuinity 只需 JRE8+ 即可运行
+   曾经一段时间内，Tuinity 仅支持JRE11[22]作为其运行环境 但现在 Tuinity 只需 JRE8+ 即可运行
    
    
    启动 Tuinity 会生成 tuinity.yml，在其中可设置单玩家怪物生成，分离视距等高级参数。即使你不会设置这些参数，Tuinity 自身自带的一个个优化也足以你的服务器使用。
@@ -219,13 +219,13 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
 ::: details 注释 7
 
-[^20]: 指使用 Git 克隆(拷贝)别人的代码仓库到自己的名下的行为
-[^21]: 即 Pull Request，拉取请求，就是上面说的那些希望合并的代码
-[^22]: 即 Java Runtime Environment(Version 11)，Java11 的运行环境。同理，后文中 JRE8+ 也指 Java8 以上的运行环境
+[20]: 指使用 Git 克隆(拷贝)别人的代码仓库到自己的名下的行为
+[21]: 即 Pull Request，拉取请求，就是上面说的那些希望合并的代码
+[22]: 即 Java Runtime Environment(Version 11)，Java11 的运行环境。同理，后文中 JRE8+ 也指 Java8 以上的运行环境
 
 :::
 
-6. Akarin/Torch[^23]
+6. Akarin/Torch[23]
 
 
    用 *Akarin Project* 开发者们的原话来说，Akarin 是一个 **「来自新纬度的服务端」** *(A server software from the 'new dimension'.)*，其本质原因是 Akarin 以 **多线程** *(Multi-Threaded)*著称。
@@ -247,7 +247,7 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
   Akarin 有如下的属性:
 
-  - 基于 Paper/Tuinity[^24]
+  - 基于 Paper/Tuinity[24]
   - **可以** 安装基于 BukkitAPI,SpigotAPI,PaperAPI，**可能可以**安装基于 TuinityAPI 的插件
   - **不可以** 安装基于任何 API 的模组
   - 性能极佳
@@ -263,9 +263,8 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
 ::: details 注释 8
 
-[^23]: Torch，前称 TorchSpigot，是一个支持 1.8.8 的优化核心，是Akarin服务端的前身。由于在部分代码和统计系统上，Akarin 仍使用*「Torch」*表示 Akarin 服务端，因此这里同时将 Torch 写上
-[^24]: 自1.14开始，Akarin 开始使用 *Tuinity* 作为其项目前置，而不是原来的*Paper*，同时因此该服务端对不同API的插件兼容性需注意使用的服务端版本
-[^25]: 在这里说的主线程是一个[大钟！](https://minecraft-zh.gamepedia.com/%E5%88%BB)
+[23]: Torch，前称 TorchSpigot，是一个支持 1.8.8 的优化核心，是Akarin服务端的前身。由于在部分代码和统计系统上，Akarin 仍使用*「Torch」*表示 Akarin 服务端，因此这里同时将 Torch 写上
+[24]: 自1.14开始，Akarin 开始使用 *Tuinity* 作为其项目前置，而不是原来的*Paper*，同时因此该服务端对不同API的插件兼容性需注意使用的服务端版本
 
 :::
 
@@ -284,7 +283,7 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
   - **可以** 安装支持 ForgeAPI 的模组
   - 稳定性较好
   - 性能较差
-  - 可插拔性强，易于更新[^25]
+  - 可插拔性强，易于更新[25]
 
 
   下载 VanillaForge:
@@ -293,7 +292,7 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
 ::: details 注释 9
 
-[^25]: 为什么要可以强调“可插拔性强，易于更新”呢，因为后面你将会看到，所有BukkitAPI+ForgeAPI的服务端（甚至Sponge系服务端)都需要糅合自己的API和ForgeAPI的代码，这导致Forge的部分代码和库是强制写死在服务端上的，你不能手动更新Forge版本。但VanillaForge只支持ForgeAPI，因此没有这个问题
+[25]: 为什么要可以强调“可插拔性强，易于更新”呢，因为后面你将会看到，所有BukkitAPI+ForgeAPI的服务端（甚至Sponge系服务端)都需要糅合自己的API和ForgeAPI的代码，这导致Forge的部分代码和库是强制写死在服务端上的，你不能手动更新Forge版本。但VanillaForge只支持ForgeAPI，因此没有这个问题
 
 :::
 
@@ -372,7 +371,7 @@ Cauldron 有如下的属性:
 12. Uranium
 
 
-      Uranium 是一款基于 KCauldron 的 BukkitAPI+ForgeAPI 服务端，其整合了部分Thermos对服务端的修复，同时进行了一些输入书与笔虚体问题的BUG修复。其最大的特点[^26]是强制使用 UTF-8 编码作为配置文件编码[^27]和通过 UraniumPlus Mod 令 1.7.10 客户端支持 Title 和 Actionbar[^28]。
+      Uranium 是一款基于 KCauldron 的 BukkitAPI+ForgeAPI 服务端，其整合了部分Thermos对服务端的修复，同时进行了一些输入书与笔虚体问题的BUG修复。其最大的特点[26]是强制使用 UTF-8 编码作为配置文件编码[27]和通过 UraniumPlus Mod 令 1.7.10 客户端支持 Title 和 Actionbar[28]。
 
   Uranium 有如下的属性:
 
@@ -388,9 +387,9 @@ Cauldron 有如下的属性:
 
 ::: details 注释 10
 
-[^26]: 仅代表个人观点
-[^27]: 事实上，我们看到的所有文本，其内容都是经过编码存储在计算机上的，对于 Minecraft 服务端来说，在 1.7.10 版本，Windows 使用 ANSI 编码，而 Linux 使用 UTF-8 编码，这引起了诸多不便，因此 Uranium 强制在所有操作系统上运行该服务端，文件编码均为UTF-8，简化了使用流程
-[^28]: Title 是自 1.8 引入的，在客户端上显示大标题和副标题的功能;Actionbar 是自 1.8 引入的，在客户端物品栏上方显示字幕的功能
+[26]: 仅代表个人观点
+[27]: 事实上，我们看到的所有文本，其内容都是经过编码存储在计算机上的，对于 Minecraft 服务端来说，在 1.7.10 版本，Windows 使用 ANSI 编码，而 Linux 使用 UTF-8 编码，这引起了诸多不便，因此 Uranium 强制在所有操作系统上运行该服务端，文件编码均为UTF-8，简化了使用流程
+[28]: Title 是自 1.8 引入的，在客户端上显示大标题和副标题的功能;Actionbar 是自 1.8 引入的，在客户端物品栏上方显示字幕的功能
 
 :::
 
@@ -418,13 +417,13 @@ Cauldron 有如下的属性:
 
     1. Github Releases: https://github.com/Luohuayu/CatServer/releases
 
-  下载 CatServer-Async[^29]:
+  下载 CatServer-Async[29]:
 
     1. Github Releases: https://github.com/Luohuayu/CatServer/releases/tag/Async-final
 
 ::: details 注释 11
 
-[^29]: 即 CatServer 的多线程版本，用开发者的话来说，「由于多线程版存在过多兼容性问题无法修复, 不再提供更新, 也不推荐使用.」，该版本最后停更于`Mar 19,2020`。本文笔者也不推荐使用此版本
+[29]: 即 CatServer 的多线程版本，用开发者的话来说，「由于多线程版存在过多兼容性问题无法修复, 不再提供更新, 也不推荐使用.」，该版本最后停更于`Mar 19,2020`。本文笔者也不推荐使用此版本
 
 :::
 
@@ -434,7 +433,7 @@ Cauldron 有如下的属性:
     Mohist 和下面的 Magma 一样，都有一点「另类」，他们本体基于 Paper，而不是 Spigot，这意味着这两个服务端不仅可以享受 Paper 带来的漏洞修复和优化，还可以让你轻松使用基于 PaperAPI 开发的插件。
     
     
-    Mohist 还支持控制台信息国际化[^30]，可选择服务端 Mod 语言[^31]，内置插件管理器[^32]等等非常实用的功能。
+    Mohist 还支持控制台信息国际化[30]，可选择服务端 Mod 语言[31]，内置插件管理器[32]等等非常实用的功能。
     
     
     但是很遗憾，由于 Mohist 本身工程量大难以维护，也由于 Mohist 开发组重组，近几个月内的 Mohist 稳定性并不是很好。
@@ -449,7 +448,7 @@ Cauldron 有如下的属性:
   - 更新较快
   - 控制台/模组本地化支持
   - 内置插件管理器
-  - 支持 1.12.2,1.15.2[^35]
+  - 支持 1.12.2,1.15.2[35]
 
 *说个题外话:笔者曾有幸参与了 Mohist 控制台信息的简体中文、繁体中文本地化工作，并亲眼见证了 Mohist 从使用高峰到现在的开发过程。Mohist 的原开发者 Mgazul 是个好人，而且能在家庭条件十分有限的情况下，开发出 Mohist 并开源供大家使用，可以说是我们这个圈子的幸运。*
 
@@ -465,20 +464,20 @@ Cauldron 有如下的属性:
 
 ::: details 注释 12
 
-[^30]: 该功能会自动本地化控制台信息，为你展示你能看得懂文字(Mohist 现支持简体中文和繁体中文的控制台本地化)，效果大约如下:
+[30]: 该功能会自动本地化控制台信息，为你展示你能看得懂文字(Mohist 现支持简体中文和繁体中文的控制台本地化)，效果大约如下:
 
 ![Mohist-控制台本地化](https://i.loli.net/2019/05/25/5ce8f8ca8abef72303.png)
 
-[^31]: 在一般服务端下，在服务端安装的 Mod 仅能限制默认的美式英文(en_US)本地化语言文本，这导致客户端无法按照本地语言显示文本，即使有汉化也没法看。但 Mohist 通过这项功能解决了这个问题
-[^32]: 一般来说，服务端插件在服务器启动以后便不能，安装、卸载、更新，要想那么做，得先关闭服务器，这很耗时，插件管理器允许你通过执行指令，在服务器开启的情况下热配置插件。著名的插件管理器 PlugMan 和 Yum 两个插件，而 Mohist 自带了他们的部分功能
-[^35]: 有消息称 Mohist 开发组正在研发/测试 1.16 版本的 Mohist，且 Mohist 代码仓库中确实存在标签为「1.16.x」的代码分支(空仓库)
+[31]: 在一般服务端下，在服务端安装的 Mod 仅能限制默认的美式英文(en_US)本地化语言文本，这导致客户端无法按照本地语言显示文本，即使有汉化也没法看。但 Mohist 通过这项功能解决了这个问题
+[32]: 一般来说，服务端插件在服务器启动以后便不能，安装、卸载、更新，要想那么做，得先关闭服务器，这很耗时，插件管理器允许你通过执行指令，在服务器开启的情况下热配置插件。著名的插件管理器 PlugMan 和 Yum 两个插件，而 Mohist 自带了他们的部分功能
+[35]: 有消息称 Mohist 开发组正在研发/测试 1.16 版本的 Mohist，且 Mohist 代码仓库中确实存在标签为「1.16.x」的代码分支(空仓库)
 
 :::
 
 15. Magma
 
 
-    Magma 同样是一个基于 Paper[^36]的 BukkitAPI+ForgeAPI 服务端。
+    Magma 同样是一个基于 Paper[36]的 BukkitAPI+ForgeAPI 服务端。
 
   Magma 有如下的属性:
 
@@ -488,7 +487,7 @@ Cauldron 有如下的属性:
   - 稳定性较好
   - 性能较好
   - 更新较快
-  - 支持 1.12.2,1.15.2[^37]
+  - 支持 1.12.2,1.15.2[37]
 
 
   下载 Magma-1.12.2:
@@ -506,8 +505,8 @@ Cauldron 有如下的属性:
 
 ::: details 注释 13
 
-[^36]: Magma 的主要发行版本并未应用所有 PaperAPI 和 Paper 的补丁，这可能会带来一些问题
-[^37]: 根据 Magma 项目说明，Magma 尚在积极开发对 1.16 版本的支持，同时，Magma-1.15.2 目前仅处于 Beta 测试版阶段，可能尚不稳定
+[36]: Magma 的主要发行版本并未应用所有 PaperAPI 和 Paper 的补丁，这可能会带来一些问题
+[37]: 根据 Magma 项目说明，Magma 尚在积极开发对 1.16 版本的支持，同时，Magma-1.15.2 目前仅处于 Beta 测试版阶段，可能尚不稳定
 
 :::
 
@@ -541,7 +540,7 @@ Cauldron 有如下的属性:
     让我们再将目光转回 CraftBukkit 时期。一群人做出 BukkitAPI 以后，发现这个东西实在是太垃圾了:对 Mod 兼容性差，没有开发文档，代码规范随意，这不是他们想要的那个 API。于是，一群人离开了 Bukkit 开发团队，转而开始制作他们心目中的那个完美的 API 框架——幸运的是，他们做出来了，这就是 SpongeAPI 和他的服务端实现:Sponge
     
     
-    Sponge 分为 SpongeVanilla 和 SpongeForge 两个版本:前者需要与 Vanilla 一起使用，他通过注入[^38]的方式，允许你在 Vanilla 服务端上安装基于 SpongeAPI 的插件；后者实现在 Forge 上，允许你在 VanillaForge 上安装基于 SpongeAPI 的插件（同时享受安装基于 ForgeAPI 的模组），需要提到的是，在 SpongeForge 中，其其实是作为一个 **ForgeMod** 来使用（即将其放入`.\mods`中并启动服务端），而非作为一个完整的服务端运行核心文件。
+    Sponge 分为 SpongeVanilla 和 SpongeForge 两个版本:前者需要与 Vanilla 一起使用，他通过注入[38]的方式，允许你在 Vanilla 服务端上安装基于 SpongeAPI 的插件；后者实现在 Forge 上，允许你在 VanillaForge 上安装基于 SpongeAPI 的插件（同时享受安装基于 ForgeAPI 的模组），需要提到的是，在 SpongeForge 中，其其实是作为一个 **ForgeMod** 来使用（即将其放入`.\mods`中并启动服务端），而非作为一个完整的服务端运行核心文件。
     
     
     很遗憾的是，由于生不逢时，Sponge 并没有得到大多数开发者的支持，因此基于 SpongeAPI 开发的插件少之甚少，主流 BukkitAPI 插件迁移至 SpongeAPI 的更是屈指可数，因此对于普通服主来说，使用 Sponge 会导致在插件支持上落后于 Bukkit 使用者。
@@ -586,7 +585,7 @@ Cauldron 有如下的属性:
 
 ::: details 注释 14
 
-[^38]: 是一种将自定义代码导入到已有的计算机程序内，从而改变原程序的行为的行为
+[38]: 是一种将自定义代码导入到已有的计算机程序内，从而改变原程序的行为的行为
 
 :::
 
@@ -594,13 +593,13 @@ Cauldron 有如下的属性:
 
 
       前面我们提到了`由于自1.13起，Minecraft源代码的大幅度改动`，这导致了 CraftBukkit/Spigot，Sponge，Forge 等项目分别出现了时常不同的窗口期，这段时间内这些项目都没有发布对新版本的支持。
-    在这段长达半年的窗口期中，涌现了几个新的 ModAPI，抛去因为夹带私货和停止支持的 RiftAPI，便只剩下了在当时乃至现在最流行的新生代 API——Fabric[^39]
+    在这段长达半年的窗口期中，涌现了几个新的 ModAPI，抛去因为夹带私货和停止支持的 RiftAPI，便只剩下了在当时乃至现在最流行的新生代 API——Fabric[39]
     
     
-      Fabric 和 Rift 不同，他不是在那段窗口期诞生的替代产品，他早自 1.12 时代就已出现，只不过和 Sponge 一样同样生不逢时，虽然设计先进，但大多数开发者当时依然只依赖于 Forge 开发模组而不是 Fabric，知道窗口期的来临，Fabric 才得以重获新生，得到了一部分开发者的支持[^40]。
+      Fabric 和 Rift 不同，他不是在那段窗口期诞生的替代产品，他早自 1.12 时代就已出现，只不过和 Sponge 一样同样生不逢时，虽然设计先进，但大多数开发者当时依然只依赖于 Forge 开发模组而不是 Fabric，知道窗口期的来临，Fabric 才得以重获新生，得到了一部分开发者的支持[40]。
       
       
-      Fabric 是**模块化**[^41]的，这意味着他不想高耦合的 Forge，每次 Minecraft 源代码更新就要折腾一阵子推倒重来，他完全可以拆出不兼容的模块，并更换上兼容新版本的模块以快速发布更新，这也是 Fabric 甚至有针对每一个 Minecraft 预览版(Snapshot)的支持的原因。
+      Fabric 是**模块化**[41]的，这意味着他不想高耦合的 Forge，每次 Minecraft 源代码更新就要折腾一阵子推倒重来，他完全可以拆出不兼容的模块，并更换上兼容新版本的模块以快速发布更新，这也是 Fabric 甚至有针对每一个 Minecraft 预览版(Snapshot)的支持的原因。
       
       
       VanillaFabric 则和 VanillaForge 类似，是基于 Vanilla 的实现了 FabricAPI 支持的服务端，他允许你安装 FabricMod。
@@ -620,9 +619,9 @@ Cauldron 有如下的属性:
 
 ::: details 注释 15
 
-[^39]: 此处很显然不严谨，Fabric 本体是一个模组加载器（Mod Loader），不是一个 ModAPI，Fabric 的 ModAPI 是 FabricAPI，但因为 Fabric 的模块化设计，FabricAPI 作为 FabricMod 与 Fabric 本体（Fabric Loader）分离，不默认提供，因此 FabricAPI 又不能代表 Fabric，故如此表示
-[^40]: 虽然设计确实先进，但随着 Forge 发布对新版本的支持，Fabric 又逐渐趋向没落，只留下来了一些或是小型的，或是客户端向模组的青睐，比如 ReplayMod
-[^41]: 是指将一整个代码项目设计成由多个互不相关又互相联系的模块，方便维护的代码设计模式
+[39]: 此处很显然不严谨，Fabric 本体是一个模组加载器（Mod Loader），不是一个 ModAPI，Fabric 的 ModAPI 是 FabricAPI，但因为 Fabric 的模块化设计，FabricAPI 作为 FabricMod 与 Fabric 本体（Fabric Loader）分离，不默认提供，因此 FabricAPI 又不能代表 Fabric，故如此表示
+[40]: 虽然设计确实先进，但随着 Forge 发布对新版本的支持，Fabric 又逐渐趋向没落，只留下来了一些或是小型的，或是客户端向模组的青睐，比如 ReplayMod
+[41]: 是指将一整个代码项目设计成由多个互不相关又互相联系的模块，方便维护的代码设计模式
 
 :::
 
@@ -680,7 +679,7 @@ Cauldron 有如下的属性:
   - 稳定性不好 
   - 性能较好
   - 缺少很多原版内容
-  - 同时支持 1.8-1.12.2[^43]
+  - 同时支持 1.8-1.12.2[43]
 
 *为什么不推荐?:比起GlowStone，他连BukkitAPI都不支持。
 
@@ -689,7 +688,7 @@ Cauldron 有如下的属性:
     1. Cuberite 官方: https://cuberite.org/
 
 
-[^43]: 来自其官网说明，但根据其开源项目提交日志，Cuberite 应已支持 1.14 版本的连接，并正在尝试对 1.15 的特性进行兼容
+[43]: 来自其官网说明，但根据其开源项目提交日志，Cuberite 应已支持 1.14 版本的连接，并正在尝试对 1.15 的特性进行兼容
 
 
 最后，以上服务端的迭代关系大致如下:
