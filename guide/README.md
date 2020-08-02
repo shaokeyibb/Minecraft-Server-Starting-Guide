@@ -95,7 +95,7 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
 2. CraftBukkit(有时被称为 Bukkit[^10])*
    仅用 Vanilla 我们无法快速，高效地通过编程拓展游戏内容。因此，CraftBukkit 诞生。
-     CraftBukkit是一个实现了 BukkitAPI 的服务端，这意味着开发者们可以通过 BukkitAPI 提供的(有限的)内容来拓展服务器逻辑，增强趣味性。
+     CraftBukkit 是一个实现了 BukkitAPI 的服务端，这意味着开发者们可以通过 BukkitAPI 提供的(有限的)内容来拓展服务器逻辑，增强趣味性。
 
    社区开发者们发布`Bukkit插件`，多数情况下我们只需要放到`plugins`文件夹即可使用。
 
@@ -269,13 +269,13 @@ Shell 起到和 Windows 中命令提示符的作用，他可以启动程序，�
 
 那么究竟有没有能同时兼容 BukkitAPI 和 ForgeAPI 的服务端呢?
     答案是当然，最初搞出来这个玩意的服务端叫做 MCPC+，自1.7.10 起改名为 Cauldron，随后停更。
-    同时你也将看到，由于“糅合”的复杂性和难以维护性，因此每一个 BukkitAPI+ForgeAPI 服务端几乎都只维护一个主流版本，这也是此类服务端遍地开花的一个主要原因。
+    同时你也将看到，由于「糅合」的复杂性和难以维护性，因此每一个 BukkitAPI+ForgeAPI 服务端几乎都只维护一个主流版本，这也是此类服务端遍地开花的一个主要原因。
 Cauldron 有如下的属性:
     - 已停更
-    - 基于 Spigot
-    - **可以** 安装支持 BukkitAPI,SpigotAPI 的插件
-    - **可以** 安装支持 ForgeAPI 的模组
-    - 支持至最高 1.7.10
+        - 基于 Spigot
+        - **可以** 安装支持 BukkitAPI,SpigotAPI 的插件
+        - **可以** 安装支持 ForgeAPI 的模组
+        - 支持至最高 1.7.10
 
 *为什么不推荐?:同 CraftBukkit 一样，Cauldron 也已然成为了一个时代的奠基人和里程碑，其原始的完整代码仓库现在甚至无法被找到，我们也只能在各式各样的第三方构建站看到他的身影。只闻其声，不闻其形。*
 
@@ -326,7 +326,7 @@ Cauldron 有如下的属性:
   - 仅支持 1.7.10
 
 
-  下载Contigo:
+  下载 Contigo:
 
     1. Github Releases: https://github.com/djoveryde/Contigo/releases
 
@@ -354,7 +354,7 @@ Cauldron 有如下的属性:
 :::
 
 **13. CatServer**
-  不同于Cauldron系，CatServer 支持 1.12.2 的 BukkitAPI+ForgeAPI，发展至今已十分稳定，同时也拥有独特的优化和 BUG 修复。
+  不同于 Cauldron 系，CatServer 支持 1.12.2 的 BukkitAPI+ForgeAPI，发展至今已十分稳定，同时也拥有独特的优化和 BUG 修复。
 
   CatServer 有如下的属性:
 
@@ -409,7 +409,7 @@ Cauldron 有如下的属性:
 
     1. CodeMC Jenkins CI: https://ci.codemc.io/job/Mohist-Community/job/Mohist-1.12.2/
 
-  下载Mohist-1.15.2:
+  下载 Mohist-1.15.2:
 
     1. CodeMC Jenkins CI: https://ci.codemc.io/job/Mohist-Community/job/Mohist-1.15.2/
 
