@@ -12,7 +12,7 @@
 - [贺兰星辰](https://www.mcbbs.net/home.php?mod=space&uid=495221)(主要编写者)
 - [TheZihanGu](https://github.com/TheZihanGu)
 - [Subilan](https://github.com/Subilan)
-- [iceBear67](https://github.com/iceBear67
+- [iceBear67](https://github.com/iceBear67)
 - [晓夜](https://github.com/LDS-XiaoYe)
 - 以及所有对本文提出过宝贵意见的人
 
