@@ -28,6 +28,6 @@
 
 - 本文所有操作均视为您的操作系统环境已显示文件拓展名。且重命名文件时均包含拓展名
 
-- 如无特殊说明，本文均采用 CC BY-NC 4.0 协议
+- 如无特殊说明，本文均采用 [CC BY-NC 3.0 中国大陆](https://creativecommons.org/licenses/by-nc/3.0/cn/) 协议授权
 
 如果您已经准备好了，请 [点此开始](https://guide.minecraft.kim/guide)。 
